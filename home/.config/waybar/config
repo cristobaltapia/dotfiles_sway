@@ -45,7 +45,7 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-        "interval": 5,
+        "interval": 2,
         "states": {
             "idle": 5,
             "low": 26,
