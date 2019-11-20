@@ -1,0 +1,30 @@
+font=FuraCode Nerd Font 12
+background-color=#073642CC
+text-color=#eee8d5
+border-color=#333333
+ignore-timeout=1
+border-size=8
+border-radius=10
+border-color=#268bd2
+margin=25
+format=<b>%a:</b> %s\n%b
+width=350
+layer=top
+default-timeout=15000
+progress-color=over #eee8d5
+icons=1
+icon-path=/usr/share/icons:/usr/share/pixmaps
+group-by=app-name,summary
+
+[hidden]
+format=(and %h more)
+text-color=#777777
+
+[urgency=high]
+border-color=#dc322f
+default-timeout=0
+
+[urgency=low]
+border-color=#859900
+default-timeout=5000
+

@@ -1,0 +1,6 @@
+SSH_AGENT_PID	DEFAULT=
+SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+PATH   DEFAULT="/usr/bin/site_perl:${PATH}"
+PATH   DEFAULT="/usr/bin/vendor_perl:${PATH}"
+PATH   DEFAULT="/usr/bin/core_perl:${PATH}"
+PATH   DEFAULT="/usr/lib/jvm/default/bin:${PATH}"

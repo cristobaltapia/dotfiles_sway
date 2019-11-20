@@ -1,0 +1,153 @@
+{
+    "layer": "top",
+    "height": 30,
+    // Choose the order of the modules
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "disk",
+        "disk#home",
+        "pulseaudio",
+        "pulseaudio#mic",
+        "network",
+        "cpu",
+        "memory",
+        "backlight",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    // Modules configuration
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format": "{:%d/%m/%Y • %H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+        "interval": 5,
+        "states": {
+            "idle": 5,
+            "low": 26,
+            "medium": 51,
+            "high": 76
+        }
+    },
+    "memory": {
+        "format": "{}% ",
+        "states": {
+            "high": 95
+        }
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            ""
+        ],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            // "good": 95,
+            "warning": 25,
+            "critical": 10
+        },
+        "interval": 10,
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        //"format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-full": "{capacity}% ",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-click": "gnome-power-statistics"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{free} on ",
+        "path": "/"
+    },
+    "disk#home": {
+        "interval": 30,
+        "format": "{free} on ",
+        "path": "/home"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Offline ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) "
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio#mic": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": ""
+        },
+        "on-click": "pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo toggle",
+        "on-scroll-up": "pactl set-source-volume alsa_input.pci-0000_00_1b.0.analog-stereo +5%",
+        "on-scroll-down": "pactl set-source-volume alsa_input.pci-0000_00_1b.0.analog-stereo -5%"
+    }
+}
+// vim: set ft=json:
