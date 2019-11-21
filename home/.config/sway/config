@@ -273,10 +273,20 @@ bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
 
 # ------------------------------------------
+# Set floating windows
+# swaymsg -t get_tree
+for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
+for_window [app_id="evolution" title="Re:*"] floating enable
+for_window [app_id="evolution" title="Fw:*"] floating enable
+
+# ------------------------------------------
 # Window aspect
 default_border pixel 5
 default_floating_border pixel 5
 hide_edge_borders smart
+
+gaps inner 6
+smart_gaps on
 
 # class        border  backgr. text    indicator child_border
 client.focused #859900 #859900 #fdf6e3 #268bd2 #859900
