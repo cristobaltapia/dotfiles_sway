@@ -253,6 +253,10 @@ label:focus {
 #custom-bluetooth {
     background-color: #2980b9;
     border-bottom: 3px solid #409ad5;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 #idle_inhibitor {

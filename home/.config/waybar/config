@@ -44,7 +44,7 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "custom/bluetooth": {
-        "format": "    ",
+        "format": "",
         "on-click": "blueberry",
         "tooltip": false
     },
