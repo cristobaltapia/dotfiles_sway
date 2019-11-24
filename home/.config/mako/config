@@ -15,6 +15,7 @@ progress-color=over #eee8d5
 icons=1
 icon-path=/usr/share/icons:/usr/share/pixmaps
 group-by=app-name,summary
+max-icon-size=32
 
 [hidden]
 format=(and %h more)
