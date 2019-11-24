@@ -196,8 +196,8 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
-    border-bottom: 3px solid #409ad5;
+    background-color: #7070F0;
+    border-bottom: 3px solid #9e9ef5;
 }
 
 #network.disconnected {
@@ -246,6 +246,11 @@ label:focus {
 }
 
 #tray {
+    background-color: #2980b9;
+    border-bottom: 3px solid #409ad5;
+}
+
+#custom-bluetooth {
     background-color: #2980b9;
     border-bottom: 3px solid #409ad5;
 }

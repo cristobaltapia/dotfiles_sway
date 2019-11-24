@@ -14,6 +14,7 @@
         "disk#home",
         "pulseaudio",
         "pulseaudio#mic",
+        "custom/bluetooth",
         "network",
         "cpu",
         "memory",
@@ -41,6 +42,11 @@
         "tooltip-format": "{:%Y-%m-%d | %H:%M}",
         "format": "{:%d/%m/%Y • %H:%M}",
         "format-alt": "{:%Y-%m-%d}"
+    },
+    "custom/bluetooth": {
+        "format": "    ",
+        "on-click": "blueberry",
+        "tooltip": false
     },
     "cpu": {
         "format": "{usage}% ",
@@ -109,8 +115,9 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Offline ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) "
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "on-click": "nmguish -w"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
