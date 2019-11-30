@@ -282,6 +282,7 @@ for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="gnote"] floating enable
 # For nmguish (networkmanaker gui)
 for_window [app_id="yad"] floating enable; resize set width 720 height 300
+for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="blueberry.py"] floating enable; resize set height 760
 
 # ------------------------------------------

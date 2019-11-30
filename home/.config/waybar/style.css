@@ -149,35 +149,58 @@ label:focus {
     background-color: #7070F0;
     border-bottom: 3px solid #9e9ef5;
 }
-
 #cpu {
-    background-color: #2ecc71;
-    border-bottom: 3px solid #54d98c;
+    background-color: #fff7ec;
+    border-bottom: 3px solid #ffffff;
     color: #000000;
 }
 
-#cpu.idle {
-    background-color: #2ecc71;
-    border-bottom: 3px solid #54d98c;
+#cpu.1 {
+    background-color: #fff7ec;
+    border-bottom: 3px solid #ffffff;
     color: #000000;
 }
 
-#cpu.low {
-    background-color: #f1c40f;
-    border-bottom: 3px solid #f4d03f;
+#cpu.2 {
+    background-color: #fee8c8;
+    border-bottom: 3px solid #fff7ec;
     color: #000000;
 }
 
-#cpu.medium {
-    background-color: #FF8F00;
-    border-bottom: 3px solid #ffa533;
+#cpu.3 {
+    background-color: #fdd49e;
+    border-bottom: 3px solid #fee8c8;
     color: #000000;
 }
 
-#cpu.high {
-    background-color: #f53c3c;
-    border-bottom: 3px solid #f76c6c;
-    color: #FFFFFF;
+#cpu.4 {
+    background-color: #fdbb84;
+    border-bottom: 3px solid #fdd49e;
+    color: #000000;
+}
+
+#cpu.5 {
+    background-color: #fc8d59;
+    border-bottom: 3px solid #fdbb84;
+    color: #000000;
+}
+
+#cpu.6 {
+    background-color: #ef6548;
+    border-bottom: 3px solid #fc8d59;
+    color: #000000;
+}
+
+#cpu.7 {
+    background-color: #d7301f;
+    border-bottom: 3px solid #ef6548;
+    color: #000000;
+}
+
+#cpu.8 {
+    background-color: #990000;
+    border-bottom: 3px solid #d7301f;
+    color: #000000;
 }
 
 #memory {
@@ -196,8 +219,9 @@ label:focus {
 }
 
 #network {
-    background-color: #7070F0;
-    border-bottom: 3px solid #9e9ef5;
+    background-color: #2ecc71;
+    border-bottom: 3px solid #54d98c;
+    color: #000000;
 }
 
 #network.disconnected {
@@ -261,10 +285,12 @@ label:focus {
 
 #idle_inhibitor {
     background-color: #2d3436;
+    border-bottom: 3px solid #4d5456;
 }
 
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
+    border-bottom: 3px solid #ccd0d1;
     color: #2d3436;
 }
 

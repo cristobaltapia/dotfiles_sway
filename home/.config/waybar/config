@@ -21,6 +21,7 @@
         "backlight",
         "battery",
         "clock",
+        "idle_inhibitor",
         "tray"
     ],
     // Modules configuration
@@ -53,10 +54,14 @@
         "tooltip": false,
         "interval": 2,
         "states": {
-            "idle": 5,
-            "low": 26,
-            "medium": 51,
-            "high": 76
+            "1": 11,
+            "2": 22,
+            "3": 33,
+            "4": 44,
+            "5": 55,
+            "6": 67,
+            "7": 78,
+            "8": 88
         }
     },
     "memory": {
