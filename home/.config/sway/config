@@ -73,6 +73,10 @@ input 1739:30381:DLL0665:01_06CB:76AD_Touchpad {
     click_method clickfinger
 }
 
+input 1267:8400:ELAN_Touchscreen {
+
+}
+
 ### Focus
 focus_follows_mouse no
 seat seat0 hide_cursor 10000
@@ -283,6 +287,7 @@ for_window [app_id="gnote"] floating enable
 # For nmguish (networkmanaker gui)
 for_window [app_id="yad"] floating enable; resize set width 720 height 300
 for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="gnome-power-statistics"] floating enable
 for_window [app_id="blueberry.py"] floating enable; resize set height 760
 
 # ------------------------------------------
