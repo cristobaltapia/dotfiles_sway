@@ -5,11 +5,3 @@
     output eDP-1 scale 2 mode 3200x1800 position 0,0
     output "Sony SONY TV  *02 0x0000010" scale 1 mode 1920x1080  position 1600,0
 }
-{
-    output eDP-1 scale 2 mode 3200x1800
-    output HDMI-A-1 scale 1 mode 1920x1080 position 1600,0
-}
-{
-    output eDP-1 scale 2 mode 3200x1800
-    output DP-1 scale 1 mode 1280x1024 position 3200,0
-}
