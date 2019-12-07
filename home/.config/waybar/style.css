@@ -80,7 +80,8 @@ window#waybar.NeovimGtk {
 #backlight,
 #network,
 #pulseaudio,
-#custom-media,
+#custom-bluetooth,
+#custom-weather,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -247,20 +248,6 @@ label:focus {
     color: #2a5c45;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
 #temperature {
     background-color: #f0932b;
 }
@@ -277,10 +264,11 @@ label:focus {
 #custom-bluetooth {
     background-color: #2980b9;
     border-bottom: 3px solid #409ad5;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 4px;
-    margin-right: 4px;
+}
+
+#custom-weather {
+    background-color: #2980b9;
+    border-bottom: 3px solid #409ad5;
 }
 
 #idle_inhibitor {

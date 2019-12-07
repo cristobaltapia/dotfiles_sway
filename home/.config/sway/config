@@ -18,7 +18,7 @@ set $term termite
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 # set $menu rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 12'
-set $menu wofi --show drun
+set $menu wofi -I -i --show drun
 
 # set $passmenu passmenu -fn "pango:DejaVu Sans 12":
 set $passmenu rofi-pass -fn "pango:Noto Sans 12":
