@@ -130,7 +130,6 @@ if x["cod"] != "404":
         "percentage": icon_codes[code],
         "code": code,
     }
-    print(json.dumps(out))
 
 else:
     out = {
@@ -140,3 +139,4 @@ else:
         "code": code,
     }
 
+print(json.dumps(out))
