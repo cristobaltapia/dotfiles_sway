@@ -56,10 +56,20 @@
       "exec": "python ~/.config/waybar/scripts/weather.py",
       "return-type": "json",
       "interval": 1800,
-      "format": "{icon} {}",
-      "on-click": "blueberry",
+      "format": " {}  {icon}",
       "tooltip": true,
-      "format-icons": ["", "", " ", "", "", "", "", "", ""]
+      "format-icons": [
+        "",
+        "",
+        " ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
     },
     "cpu": {
       "format": "{usage}% ",
@@ -127,7 +137,7 @@
       "path": "/home"
     },
     "network": {
-      // "interface": "wlp2*", // (Optional) To force the use of this interface
+      "interface": "wlp2*", // (Optional) To force the use of this interface
       "format-wifi": "",
       "format-ethernet": "",
       "format-linked": "",
@@ -135,6 +145,7 @@
       // "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
+      "tooltip-format-disconnected": "Offline ",
       "on-click": "nmguish -w"
     },
     "pulseaudio": {

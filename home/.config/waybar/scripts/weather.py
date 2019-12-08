@@ -1,22 +1,70 @@
-# Python program to find current
-# weather details of any city
-# using openweathermap api
+#!/usr/bin/env python
+"""
+Script to obtain weather information from openweathermap [1] and feed
+a custom block for waybar [2].
 
-# import required modules
-import requests, json
+The information has to be provided in a configuration file ('weather.conf')
+in the same forlder as the script. A sample of the configuration file looks like this:
+
+    ```
+    [DEFAULT]
+    cityid=2825297
+    apikey=67e1af894e6079e8b5b79881505e2fb2
+    lang=de
+    ```
+
+The custom block in the waybar configuration should look like this, in order to use
+the icons correctly:
+
+    ```json
+    "custom/weather": {
+      "exec": "python ~/.config/waybar/scripts/weather.py",
+      "return-type": "json",
+      "interval": 1800,
+      "format": " {}  {icon}",
+      "tooltip": true,
+      "format-icons": [
+        "",
+        "",
+        " ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    ```
+
+The script is based on the script posted in[3]
+
+[1] https://openweathermap.org/
+[2] https://github.com/Alexays/Waybar
+[3] https://www.geeksforgeeks.org/python-find-current-weather-of-any-city-using-openweathermap-api/
+
+"""
+import requests
+import json
+import datetime
+import configparser
 from numpy import linspace, around
+import os
 
-# Enter your API key here
-api_key = "67e1af894e6079e8b5b79881505e2fb2"
+config = configparser.ConfigParser()
+config.read(os.path.expandvars("${HOME}") + "/.config/waybar/scripts/weather.conf")
+
+# Read config file information here
+api_key = config["DEFAULT"]["apikey"]
+city_id = config["DEFAULT"]["cityid"]
+lang = config["DEFAULT"]["lang"]
 
 # base_url variable to store url
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
-# Give city name
-city_id = "2825297"
 
-# complete_url variable to store
 # complete url address
-complete_url = base_url + "appid=" + api_key + "&id=" + city_id
+complete_url = base_url + "appid=" + api_key + "&id=" + city_id + f"&lang={lang}"
 
 # get method of requests module
 # return response object
@@ -27,19 +75,9 @@ response = requests.get(complete_url)
 # python format data
 x = response.json()
 
-percentages = around(linspace(0, 100, 9), 0)
-codes = [
-    "01d",
-    "02d",
-    "03d",
-    "04d",
-    "09d",
-    "10d",
-    "11d",
-    "13d",
-    "50d",
-]
-
+# Define 'percentages' for each weather code
+percentages = around(linspace(0, 100, 10), 0)
+codes = ["01d", "02d", "03d", "04d", "09d", "10d", "11d", "13d", "50d", "01m"]
 icon_codes = {c: p for c, p in zip(codes, percentages)}
 
 # Now x contains list of nested dictionaries
@@ -52,8 +90,7 @@ if x["cod"] != "404":
     # key in variable y
     y = x["main"]
 
-    # store the value corresponding
-    # to the "temp" key of y
+    # Get temperature in celsius
     current_temperature = y["temp"] - 273.15
 
     # store the value corresponding
@@ -68,14 +105,22 @@ if x["cod"] != "404":
     # key in variable z
     z = x["weather"]
 
-    # Cluods in percentage
-    current_clouds = x["clouds"]["all"]
-
-    # store the value corresponding
-    # to the "description" key at
-    # the 0th index of z
+    # Get the weather description string
     weather_description = z[0]
     code = weather_description["icon"]
+
+    # Get current time
+    curr_time = datetime.datetime.now()
+    sunset_int = x["sys"]["sunset"]
+    sunset = datetime.datetime.fromtimestamp(sunset_int)
+    sunrise_int = x["sys"]["sunrise"]
+    sunrise = datetime.datetime.fromtimestamp(sunset_int)
+
+    # Show a moon symbol in the night if it there is a clear sky
+    if code == "01d" and (curr_time > sunset):
+        code = "01m"
+    elif code == "01d" and (curr_time < sunrise):
+        code = "01m"
 
     info = weather_description["description"]
 
@@ -88,5 +133,10 @@ if x["cod"] != "404":
     print(json.dumps(out))
 
 else:
-    print(" City Not Found ")
+    out = {
+        "text": fr"Not found",
+        "tooltip": fr"Stuttgart {current_temperature:1.1f}°C, {info}",
+        "percentage": icon_codes["01d"],
+        "code": code,
+    }
 
