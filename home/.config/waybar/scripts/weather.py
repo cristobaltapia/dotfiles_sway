@@ -49,7 +49,7 @@ import requests
 import json
 import datetime
 import configparser
-from numpy import linspace, around
+from numpy import linspace, around, arange
 import os
 
 config = configparser.ConfigParser()
@@ -76,7 +76,8 @@ response = requests.get(complete_url)
 x = response.json()
 
 # Define 'percentages' for each weather code
-percentages = around(linspace(0, 100, 18), 0)
+percentages = around(linspace(0, 100, 19), 0)[:-1]
+
 codes = [
     "01d",
     "02d",
@@ -97,6 +98,7 @@ codes = [
     "13n",
     "50n",
 ]
+
 icon_codes = {c: p for c, p in zip(codes, percentages)}
 
 # Now x contains list of nested dictionaries
@@ -135,6 +137,7 @@ if x["cod"] != "404":
     sunset_int = x["sys"]["sunset"]
     sunset = datetime.datetime.fromtimestamp(sunset_int)
     ss = "{h:02d}:{m:02d}".format(h=sunset.hour, m=sunset.minute)
+    city = x["name"]
 
     info = weather_description["description"]
 
@@ -145,9 +148,9 @@ if x["cod"] != "404":
         daynight = "night"
 
     out = {
-        "text": fr"Stuttgart • {current_temperature:1.1f}°C",
+        "text": fr"{city} • {current_temperature:1.1f}°C",
         "tooltip": (
-            f"Stuttgart • {current_temperature:1.1f}°C\n{info}"
+            f"{city} • {current_temperature:1.1f}°C\n{info}"
             + f"\nSunrise: {sr}\nSunset: {ss}"
         ),
         "percentage": icon_codes[code],
