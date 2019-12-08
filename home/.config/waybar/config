@@ -13,7 +13,8 @@
     ],
     "modules-right": [
       "battery#kb",
-      //"battery#mouse","custom/weather",
+      //"battery#mouse",
+      "custom/weather",
       "disk",
       "disk#home",
       "pulseaudio",
