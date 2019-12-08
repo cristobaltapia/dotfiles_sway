@@ -76,8 +76,27 @@ response = requests.get(complete_url)
 x = response.json()
 
 # Define 'percentages' for each weather code
-percentages = around(linspace(0, 100, 10), 0)
-codes = ["01d", "02d", "03d", "04d", "09d", "10d", "11d", "13d", "50d", "01m"]
+percentages = around(linspace(0, 100, 18), 0)
+codes = [
+    "01d",
+    "02d",
+    "03d",
+    "04d",
+    "09d",
+    "10d",
+    "11d",
+    "13d",
+    "50d",
+    "01n",
+    "02n",
+    "03n",
+    "04n",
+    "09n",
+    "10n",
+    "11n",
+    "13n",
+    "50n",
+]
 icon_codes = {c: p for c, p in zip(codes, percentages)}
 
 # Now x contains list of nested dictionaries
@@ -110,25 +129,30 @@ if x["cod"] != "404":
     code = weather_description["icon"]
 
     # Get current time
-    curr_time = datetime.datetime.now()
+    sunrise_int = x["sys"]["sunrise"]
+    sunrise = datetime.datetime.fromtimestamp(sunrise_int)
+    sr = "{h:02d}:{m:02d}".format(h=sunrise.hour, m=sunrise.minute)
     sunset_int = x["sys"]["sunset"]
     sunset = datetime.datetime.fromtimestamp(sunset_int)
-    sunrise_int = x["sys"]["sunrise"]
-    sunrise = datetime.datetime.fromtimestamp(sunset_int)
-
-    # Show a moon symbol in the night if it there is a clear sky
-    if code == "01d" and (curr_time > sunset):
-        code = "01m"
-    elif code == "01d" and (curr_time < sunrise):
-        code = "01m"
+    ss = "{h:02d}:{m:02d}".format(h=sunset.hour, m=sunset.minute)
 
     info = weather_description["description"]
 
+    # Day or night?
+    if code[-1] == "d":
+        daynight = "day"
+    else:
+        daynight = "night"
+
     out = {
-        "text": fr"Stuttgart {current_temperature:1.1f}°C",
-        "tooltip": fr"Stuttgart {current_temperature:1.1f}°C, {info}",
+        "text": fr"Stuttgart • {current_temperature:1.1f}°C",
+        "tooltip": (
+            f"Stuttgart • {current_temperature:1.1f}°C\n{info}"
+            + f"\nSunrise: {sr}\nSunset: {ss}"
+        ),
         "percentage": icon_codes[code],
         "code": code,
+        "class": daynight,
     }
 
 else:

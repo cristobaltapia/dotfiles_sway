@@ -271,6 +271,11 @@ label:focus {
     border-bottom: 3px solid #409ad5;
 }
 
+#custom-weather.night {
+    background-color: #164665;
+    border-bottom: 3px solid #1f638f;
+}
+
 #idle_inhibitor {
     background-color: #2d3436;
     border-bottom: 3px solid #4d5456;
