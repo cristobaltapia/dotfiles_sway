@@ -110,8 +110,8 @@ window#waybar.NeovimGtk {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #444444;
+        color: #ffffff;
     }
 }
 
@@ -132,6 +132,25 @@ window#waybar.NeovimGtk {
     color: #000000;
     animation-name: blink;
     animation-duration: 2.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.kb.normal {
+    padding: 0 0px;
+    margin: 0 0px;
+    color: #000000;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 0px solid rgba(0,0,0,0);
+}
+
+#battery.kb.critical {
+    background-color: #f53c3c;
+    border-bottom: 3px solid #f76c6c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 1.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -287,20 +306,4 @@ label:focus {
     color: #2d3436;
 }
 
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
 

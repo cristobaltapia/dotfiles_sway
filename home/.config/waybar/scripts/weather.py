@@ -49,7 +49,7 @@ import requests
 import json
 import datetime
 import configparser
-from numpy import linspace, around, arange
+from numpy import linspace, around
 import os
 
 config = configparser.ConfigParser()

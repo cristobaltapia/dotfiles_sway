@@ -12,7 +12,8 @@
       "sway/window"
     ],
     "modules-right": [
-      "custom/weather",
+      "battery#kb",
+      //"battery#mouse","custom/weather",
       "disk",
       "disk#home",
       "pulseaudio",
@@ -134,6 +135,18 @@
         ""
       ],
       "on-click": "gnome-power-statistics"
+    },
+    "battery#kb": {
+      "bat": "hid-34:88:5d:5e:0a:ab-battery",
+      "format": "{icon}",
+      "states": {
+        "normal": 100,
+        "critical": 20
+      },
+      "format-icons": {
+        "normal": "",
+        "critical": " "
+      }
     },
     "disk": {
       "interval": 30,
