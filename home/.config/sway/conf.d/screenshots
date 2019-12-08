@@ -1,0 +1,8 @@
+
+# Make screenshots: (requires grim)
+# - Of the whole screen
+bindsym Print exec grim $(xdg-user-dir PICTURES)/Screenshot-$(date +'%Y-%m-%d-%H%M%S_grim.png')
+# - Of selected area (requires slurp)
+bindsym Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshot-$(date +'%Y-%m-%d-%H%M%S_grim.png')
+
+# TODO: look at https://github.com/luispabon/sway-dotfiles/blob/master/configs/sway/conf.d/screenshots

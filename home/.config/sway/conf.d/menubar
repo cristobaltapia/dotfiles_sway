@@ -1,0 +1,22 @@
+# Manubar
+
+# Status Bar: Waybar
+# Read `man 5 sway-bar` for more information about this section.
+
+bar {
+    swaybar_command waybar
+}
+
+# Never give focus to waybar
+no_focus [app_id="waybar"]
+# Fix positioning of tooltips
+for_window [app_id="waybar" floating] {
+    move position cursor
+    move down 60px # adjust if some menus still don't fit
+}
+
+# Wofi as launcher
+set $menu wofi -I -i --show drun
+
+# set $passmenu passmenu -fn "pango:DejaVu Sans 12":
+set $passmenu rofi-pass -fn "pango:Noto Sans 12":

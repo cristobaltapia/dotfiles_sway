@@ -1,0 +1,32 @@
+# Windows
+
+# Borders
+default_border pixel 5
+default_floating_border pixel 5
+hide_edge_borders smart
+
+# Gaps
+gaps inner 6
+smart_gaps on
+
+# class        border  backgr. text    indicator child_border
+client.focused #859900 #859900 #fdf6e3 #268bd2 #859900
+
+### Focus
+focus_follows_mouse no
+seat seat0 hide_cursor 10000
+
+# Set floating windows
+# swaymsg -t get_tree
+for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
+for_window [app_id="evolution" title="Re:*"] floating enable
+for_window [app_id="evolution" title="Fw:*"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="gnote"] floating enable
+# For nmguish (networkmanaker gui)
+for_window [app_id="yad"] floating enable; resize set width 720 height 300
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="gnome-power-statistics"] floating enable
+for_window [app_id="gnome-system-monitor"] floating enable
+for_window [app_id="org.gnome.Weather"] floating enable
+for_window [app_id="blueberry.py"] floating enable; resize set height 760
