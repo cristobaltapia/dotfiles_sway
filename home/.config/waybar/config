@@ -57,6 +57,7 @@
       "return-type": "json",
       "interval": 1800,
       "format": " {}  {icon}",
+      "on-click": "gnome-weather",
       "tooltip": true,
       "format-icons": [
         "",
