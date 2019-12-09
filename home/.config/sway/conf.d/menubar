@@ -9,6 +9,7 @@ bar {
 
 # Never give focus to waybar
 no_focus [app_id="waybar"]
+
 # Fix positioning of tooltips
 for_window [app_id="waybar" floating] {
     move position cursor
@@ -20,3 +21,6 @@ set $menu wofi -I -i --show drun
 
 # set $passmenu passmenu -fn "pango:DejaVu Sans 12":
 set $passmenu rofi-pass -fn "pango:Noto Sans 12":
+
+# Wofi menu for power options (restart, shutdown, etc)
+bindsym $mod+Shift+p exec ~/.config/sway/scripts/wofi-power.sh

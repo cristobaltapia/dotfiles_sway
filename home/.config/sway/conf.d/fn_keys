@@ -1,3 +1,4 @@
+# Function keys
 # ------------------------------------------
 # Brightness controls
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob

@@ -148,7 +148,7 @@ if x["cod"] != "404":
         daynight = "night"
 
     out = {
-        "text": fr"{city} • {current_temperature:1.1f}°C",
+        "text": fr"{current_temperature:1.1f}°C",
         "tooltip": (
             f"{city} • {current_temperature:1.1f}°C\n{info}"
             + f"\nSunrise: {sr}\nSunset: {ss}"
