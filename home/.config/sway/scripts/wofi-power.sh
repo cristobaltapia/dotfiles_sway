@@ -6,7 +6,7 @@
 entries="Lock\nLogout\nSuspend\nReboot\nShutdown"
 
 # selected=$(echo $entries | rofi -show-icons -m 0 -dmenu -sep ',' -p "power" -i | awk '{print tolower($1)}')
-selected=$(printf $entries|wofi --width 300 --height 150 --dmenu --cache-file /dev/null | awk '{print tolower($1)}')
+selected=$(printf $entries|wofi -i --width 300 --height 150 --dmenu --cache-file /dev/null | awk '{print tolower($1)}')
 
 case $selected in
   logout)
