@@ -12,11 +12,12 @@ list_passwords() {
 
 }
 
-SECRET=$(list_passwords | wofi -i --width 700 --height 250 --dmenu)
+prompt='search for passwords...'
+SECRET=$(list_passwords | wofi -i --width 700 --height 250 --prompt="${prompt}" --dmenu)
 
 # Get password
 PASSWD_PASS=$(pass ${SECRET})
 # Strip extra lines
 PASSWD_PASS=(${PASSWD_PASS[@]})
 
-wl-copy -t -o ${PASSWD_PASS}
+wl-copy -o ${PASSWD_PASS}

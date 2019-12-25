@@ -17,11 +17,11 @@ for_window [app_id="waybar" floating] {
 }
 
 # Wofi as launcher
-set $menu wofi -I -i --show drun
+set $menu wofi -i --show drun
 
 # Passmenu
 # set $passmenu rofi-pass -fn "pango:Noto Sans 12":
 set $passmenu ~/.config/sway/scripts/wofi-pass.sh
 
-# Wofi menu for power options (restart, shutdown, etc)
-bindsym $mod+Shift+p exec ~/.config/sway/scripts/wofi-power.sh
+# Wofi menu for searching through publications
+bindsym $mod+Shift+p exec ~/.local/bin/wofi-papis.sh

@@ -6,7 +6,7 @@ default_floating_border pixel 5
 hide_edge_borders smart
 
 # Gaps
-gaps inner 6
+gaps inner 10
 smart_gaps on
 
 # class        border  backgr. text    indicator child_border
@@ -19,14 +19,14 @@ seat seat0 hide_cursor 10000
 # Set floating windows
 # swaymsg -t get_tree
 for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
-for_window [app_id="evolution" title="Re:*"] floating enable
-for_window [app_id="evolution" title="Fw:*"] floating enable
+for_window [app_id="evolution" title="Re: *"] floating enable
+for_window [app_id="evolution" title="Fw: *"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="gnote"] floating enable
-# For nmguish (networkmanaker gui)
-for_window [app_id="yad"] floating enable; resize set width 720 height 300
 for_window [app_id="nm-connection-editor"] floating enable
-for_window [app_id="gnome-power-statistics"] floating enable
-for_window [app_id="gnome-system-monitor"] floating enable
+for_window [app_id="gnome-[power-statistics,system-monitor,contacts,clocks]"] floating enable
 for_window [app_id="org.gnome.Weather"] floating enable
 for_window [app_id="blueberry.py"] floating enable; resize set height 760
+# For nmguish (networkmanaker gui)
+for_window [app_id="yad"] floating enable; resize set width 720 height 300
+for_window [app_id="NeovimGtk" title="info.yaml"] floating enable

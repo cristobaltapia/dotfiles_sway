@@ -76,7 +76,7 @@ response = requests.get(complete_url)
 x = response.json()
 
 # Define 'percentages' for each weather code
-percentages = around(linspace(0, 100, 19), 0)[:-1]
+percentages = around(linspace(0, 85, 18), 0)
 
 codes = [
     "01d",
