@@ -62,24 +62,24 @@
       "on-click": "gnome-weather",
       "tooltip": true,
       "format-icons": [
-        "",
-        "",
-        " ",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        " ",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>",
+        "<span font_desc='Weather Icons'></span>"
       ]
     },
     "cpu": {
@@ -122,10 +122,9 @@
       },
       "interval": 10,
       "format": "{capacity}% {icon}",
-      "format-charging": "{capacity}% ",
       //"format-plugged": "{capacity}% ",
       //"format-alt": "{time} {icon}",
-      "format-full": "{capacity}% ",
+      "format-full": "",
       // "format-good": "", // An empty format will hide the module
       // "format-full": "",
       "format-icons": [
@@ -160,16 +159,17 @@
       "path": "/home"
     },
     "network": {
-      "interface": "wlp2*", // (Optional) To force the use of this interface
+      "interface": "wlp2s0", // (Optional) To force the use of this interface
       "format-wifi": "",
-      "format-ethernet": "",
-      "format-linked": "",
+      //"format-ethernet": "",
+      //"format-linked": "",
       "format-disconnected": "",
       // "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
+      //"tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
       "tooltip-format-disconnected": "Offline ",
-      "on-click": "nmguish -w"
+      "on-click": "nmguish -w",
+      "interval": 30
     },
     "pulseaudio": {
       // "scroll-step": 1, // %, can be a float

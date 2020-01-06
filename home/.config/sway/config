@@ -181,6 +181,7 @@ bindsym $mod+Shift+e mode "$mode_system"
 # ------------------------------------------
 # Start at boot
 exec --no-startup-id redshift -m wayland
+exec --no-startup-id nm-applet
 # Always mute mic at boot
 exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo 1
 
