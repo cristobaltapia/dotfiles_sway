@@ -29,3 +29,31 @@ input 1739:30381:DLL0665:01_06CB:76AD_Touchpad {
 input 1267:8400:ELAN_Touchscreen {
 
 }
+
+# Wacom configurations
+# - With USB-Cable
+input 1386:788:Wacom_Intuos_Pro_S_Finger {
+    click_method clickfinger
+    drag enabled
+    scroll_method two_finger
+    natural_scroll enabled
+    tap enabled
+    accel_profile adaptive
+}
+
+input 1386:788:Wacom_Intuos_Pro_S_Pad {
+    click_method clickfinger
+    drag enabled
+    scroll_method two_finger
+    natural_scroll enabled
+    tap enabled
+}
+
+# Compute region:
+# resolution: (3200x1800)
+# area wacom: (157x98mm) >$ libinput list-devices
+# -> 1800 * 157 / 3200 = x -> x / 98 = y (use 'y')
+input 1386:788:Wacom_Intuos_Pro_S_Pen {
+    map_to_output HDMI-A-1
+    map_from_region 0.0x0.0 1.0x0.901
+}

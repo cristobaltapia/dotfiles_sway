@@ -21,6 +21,7 @@ seat seat0 hide_cursor 10000
 for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
 for_window [app_id="evolution" title="Re: *"] floating enable
 for_window [app_id="evolution" title="Fw: *"] floating enable
+for_window [app_id="evolution-alarm-notif"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="gnote"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
@@ -30,6 +31,7 @@ for_window [app_id="blueberry.py"] floating enable; resize set height 760
 # For nmguish (networkmanaker gui)
 for_window [app_id="yad"] floating enable; resize set width 720 height 300
 for_window [title="Papis edit"] floating enable; resize set width 800 height 800
+for_window [title="Pubs edit"] floating enable; resize set width 800 height 800
 for_window [app_id="zenity"] floating enable; resize set width 400 height 220
 for_window [app_id="nm-openconnect-auth-dialog"] floating enable; resize set width 400 height 250
 for_window [app_id="org.remmina.Remmina"] floating enable

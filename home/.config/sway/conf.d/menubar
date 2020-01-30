@@ -17,7 +17,7 @@ for_window [app_id="waybar" floating] {
 }
 
 # Wofi as launcher
-set $menu wofi -i --show drun
+set $menu wofi -i -I --show drun
 
 # Passmenu
 # set $passmenu rofi-pass -fn "pango:Noto Sans 12":
