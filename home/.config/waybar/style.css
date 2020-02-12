@@ -1,9 +1,9 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-weight: normal;
-    font-size: 13px;
+    font-family: FontAwesome,Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -87,38 +87,38 @@ window#waybar.NeovimGtk {
 #idle_inhibitor,
 #mpd {
     padding: 0 10px;
-    margin: 0 4px;
+    margin: 0 1px;
     color: #ffffff;
+    background-color: #073642;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
 }
 
 #clock {
-    background-color: #960050;
+    color: #ffffff;
     border-bottom: 3px solid #c9006b;
 }
 
 #battery {
-    background-color: #ffffff;
-    border-bottom: 3px solid #e6e6e6;
-    color: #000000;
+    color: #ffffff;
+    border-bottom-color: #e6e6e6;
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
-    border-bottom: 3px solid #30cf72;
+    color: #26A65B;
+    border-bottom-color: #30cf72;
 }
 
 @keyframes blink {
     to {
-        background-color: #444444;
         color: #ffffff;
+        border-bottom-color: #e6e6e6;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    border-bottom: 3px solid #f76c6c;
-    color: #ffffff;
+    color: #f53c3c;
+    border-bottom-color: #f76c6c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -127,9 +127,8 @@ window#waybar.NeovimGtk {
 }
 
 #battery.warning:not(.charging) {
-    background-color: #f1c40f;
-    border-bottom: 3px solid #f4d03f;
-    color: #000000;
+    color: #f4d03f;
+    border-bottom-color: #f4d03f;
     animation-name: blink;
     animation-duration: 2.0s;
     animation-timing-function: linear;
@@ -142,13 +141,12 @@ window#waybar.NeovimGtk {
     margin: 0 0px;
     color: #000000;
     background-color: rgba(0,0,0,0);
-    border-bottom: 0px solid rgba(0,0,0,0);
+    border-bottom-color: rgba(0,0,0,0);
 }
 
 #battery.kb.critical {
-    background-color: #f53c3c;
-    border-bottom: 3px solid #f76c6c;
-    color: #ffffff;
+    color: #f53c3c;
+    border-bottom-color: #f76c6c;
     animation-name: blink;
     animation-duration: 1.5s;
     animation-timing-function: linear;
@@ -161,104 +159,92 @@ label:focus {
 }
 
 #disk {
-    background-color: #51a37a;
-    border-bottom: 3px solid #6fb893;
+    color: #53a50a;
+    border-bottom-color: #6fb893;
 }
 
 #disk.home {
-    background-color: #7070F0;
-    border-bottom: 3px solid #9e9ef5;
+    color: #7070F0;
+    border-bottom-color: #9e9ef5;
 }
 #cpu {
-    background-color: #fff7ec;
+    color: #fff7ec;
     border-bottom: 3px solid #ffffff;
-    color: #000000;
 }
 
 #cpu.1 {
-    background-color: #fff7ec;
-    border-bottom: 3px solid #ffffff;
-    color: #000000;
+    color: #fff7ec;
+    border-bottom-color: #ffffff;
 }
 
 #cpu.2 {
-    background-color: #fee8c8;
-    border-bottom: 3px solid #fff7ec;
-    color: #000000;
+    color: #fee8c8;
+    border-bottom-color: #ffffff;
 }
 
 #cpu.3 {
-    background-color: #fdd49e;
-    border-bottom: 3px solid #fee8c8;
-    color: #000000;
+    color: #fdd49e;
+    border-bottom-color: #ffffff;
 }
 
 #cpu.4 {
-    background-color: #fdbb84;
-    border-bottom: 3px solid #fdd49e;
-    color: #000000;
+    color: #fdbb84;
+    border-bottom-color: #ffffff;
 }
 
 #cpu.5 {
-    background-color: #fc8d59;
-    border-bottom: 3px solid #fdbb84;
-    color: #000000;
+    color: #fc8d59;
+    border-bottom-color: #ffffff;
 }
 
 #cpu.6 {
-    background-color: #ef6548;
-    border-bottom: 3px solid #fc8d59;
-    color: #000000;
+    color: #ef6548;
+    border-bottom-color: #ffffff;
 }
 
 #cpu.7 {
-    background-color: #d7301f;
-    border-bottom: 3px solid #ef6548;
-    color: #000000;
+    color: #d7301f;
+    border-bottom-color: #ffffff;
 }
 
 #cpu.8 {
-    background-color: #990000;
-    border-bottom: 3px solid #d7301f;
-    color: #000000;
+    color: #990000;
+    border-bottom-color: #ffffff;
 }
 
 #memory {
-    background-color: #9b59b6;
-    border-bottom: 3px solid #b07cc6;
+    color: #Ab68CA;
+    border-bottom-color: #b07cc6;
 }
 
 #memory.high {
-    background-color: #f53c3c;
-    border-bottom: 3px solid #f76c6c;
+    color: #f53c3c;
+    border-bottom-color: #f76c6c;
 }
 
 #backlight {
-    background-color: #90b1b1;
-    border-bottom: 3px solid #aec6c6;
+    color: #aec6c6;
+    border-bottom-color: #aec6c6;
 }
 
 #network {
-    background-color: #2ecc71;
+    color: #2ecc71;
     border-bottom: 3px solid #54d98c;
-    color: #000000;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
-    border-bottom: 3px solid #f76c6c;
+    color: #f53c3c;
+    border-bottom-color: #f76c6c;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    border-bottom: 3px solid #f4d03f;
-    color: #000000;
+    color: #f1c40f;
+    border-bottom-color: #f4d03f;
 }
 
 #pulseaudio.mic {
-    background-color: #f1c40f;
-    border-bottom: 3px solid #f4d03f;
-    color: #000000;
+    color: #f1c40f;
+    border-bottom-color: #f4d03f;
 }
 
 #pulseaudio.muted {
@@ -281,28 +267,28 @@ label:focus {
 }
 
 #custom-bluetooth {
-    background-color: #2980b9;
-    border-bottom: 3px solid #409ad5;
+    color: #409ad5;
+    border-bottom-color: #409ad5;
 }
 
 #custom-weather {
-    background-color: #2980b9;
-    border-bottom: 3px solid #409ad5;
+    color: #ecf0f1;
+    border-bottom-color: #ecf0f1;
 }
 
 #custom-weather.night {
-    background-color: #164665;
-    border-bottom: 3px solid #1f638f;
+    color: #ecf0f1;
+    border-bottom-color: #ccd0d1;
 }
 
 #idle_inhibitor {
     background-color: #2d3436;
-    border-bottom: 3px solid #4d5456;
+    border-bottom-color: #ccd0d1;
 }
 
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
-    border-bottom: 3px solid #ccd0d1;
+    border-bottom-color: #2d3436;
     color: #2d3436;
 }
 
