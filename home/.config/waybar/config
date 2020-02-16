@@ -46,7 +46,7 @@
     },
     "clock": {
       "tooltip-format": "{calendar}",
-      "format": "  {:%d/%m/%Y •  %H:%M}",
+      "format": "  {:%d/%m/%Y •  %H:%M}",
       "format-alt": "{:%Y-%m-%d}"
     },
     "custom/bluetooth": {

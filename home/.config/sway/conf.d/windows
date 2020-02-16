@@ -19,6 +19,7 @@ seat seat0 hide_cursor 10000
 # Set floating windows
 # swaymsg -t get_tree
 for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
+for_window [app_id="Send Pubs reference"] floating enable
 for_window [app_id="evolution" title="Re: *"] floating enable
 for_window [app_id="evolution" title="Fw: *"] floating enable
 for_window [app_id="evolution-alarm-notif"] floating enable

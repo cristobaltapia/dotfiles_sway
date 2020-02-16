@@ -3,8 +3,13 @@ window {
     margin: 5px;
     border: 0px solid #444444;
     background-color: rgba(0, 0, 0, 0.0);
-    opacity: 1;
+    /* opacity: 1; */
     font-family: FontAwesome;
+}
+
+@keyframes erscheinen {
+    from {opacity: 0;}
+      to {opacity: 1;}
 }
 
 #input {
@@ -36,6 +41,7 @@ window {
     border: 5px solid #586e75;
     border-radius: 0px;
     background-color: rgba(7, 54, 66, 0.9);
+    animation: erscheinen 0.3s linear;
 }
 
 #text {
