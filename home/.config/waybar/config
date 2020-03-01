@@ -49,6 +49,11 @@
       "format": "  {:%d/%m/%Y •  %H:%M}",
       "format-alt": "{:%Y-%m-%d}"
     },
+    "custom/touchpad": {
+      "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
+      "tooltip": "Touchpad: active",
+      "format": ""
+    },
     "custom/bluetooth": {
       "format": "",
       "on-click": "blueberry",

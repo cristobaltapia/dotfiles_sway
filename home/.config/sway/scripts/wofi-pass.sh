@@ -14,7 +14,7 @@ list_passwords() {
 }
 
 prompt='search for passwords...'
-SECRET=$(list_passwords | wofi -i --width 700 --height 250 --prompt="${prompt}" --dmenu --cache-file ${CACHE})
+SECRET=$(list_passwords | wofi -i --width 700 --lines 20 --height 250 --prompt="${prompt}" --dmenu --cache-file ${CACHE})
 
 # Get password
 PASSWD_PASS=$(pass ${SECRET})

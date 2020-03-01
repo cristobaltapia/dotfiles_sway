@@ -36,3 +36,4 @@ for_window [title="Pubs edit"] floating enable; resize set width 800 height 800
 for_window [app_id="zenity"] floating enable; resize set width 400 height 220
 for_window [app_id="nm-openconnect-auth-dialog"] floating enable; resize set width 400 height 250
 for_window [app_id="org.remmina.Remmina"] floating enable
+for_window [class="Matplotlib"] floating enable

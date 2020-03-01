@@ -30,12 +30,10 @@ LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | awk '{ printf 
 
 # Bluetooth connections
 LISTB=$(nmcli --fields NAME,TYPE con show | awk '/bluetooth/ { printf "<tt>%s</tt>\n", $0 }')
-printf $LISTB
 #echo "${LIST_W}"
 # For some reason rofi always approximates character width 2 short... hmmm
 # WWIDTH=$(($(echo "$LIST" | head -n 1 | awk '{print length($0); }')+2))
 # Dynamically change the height of the rofi menu
-LINENUM=$(echo -e "${LIST}\n${LISTB}" | wc -l)
 
 WHEIGHT=$((30*$LINENUM))
 
@@ -54,6 +52,8 @@ CURRSSID=$(LANGUAGE=C nmcli -t -f active,ssid dev wifi | awk -F: '$1 ~ /^yes/ {p
 if [[ ! -z $CURRSSID ]]; then
 	HIGHLINE=$(echo  "$(echo "$LIST" | awk -F "[  ]{2,}" '{print $1}' | grep -Fxn -m 1 "$CURRSSID" | awk -F ":" '{print $1}') + 1" | bc )
 fi
+
+LINENUM=$(echo -e "toggle\nmanual\n${LIST}\n${LISTB}" | wc -l)
 
 # If there are more than 20 SSIDs, the menu will still only have 20 lines
 if [ "$LINENUM" -gt 20 ] && [[ "$CONSTATE" =~ "enabled" ]]; then
