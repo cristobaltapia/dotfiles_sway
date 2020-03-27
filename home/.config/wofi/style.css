@@ -41,7 +41,7 @@ window {
     border: 5px solid #586e75;
     border-radius: 0px;
     background-color: rgba(7, 54, 66, 0.9);
-    animation: erscheinen 0.3s linear;
+    /* animation: erscheinen 0.3s linear; */
 }
 
 #text {
