@@ -23,11 +23,11 @@
       "network",
       "cpu",
       "memory",
-      "backlight",
+      //"backlight",
       "battery",
+      "tray",
       "clock",
-      "idle_inhibitor",
-      "tray"
+      "idle_inhibitor"
     ],
     // Modules configuration
     "sway/mode": {
@@ -42,12 +42,11 @@
     },
     "tray": {
       // "icon-size": 21,
-      "spacing": 10
+      "spacing": 15
     },
     "clock": {
       "tooltip-format": "{calendar}",
-      "format": "  {:%d/%m/%Y •  %H:%M}",
-      "format-alt": "{:%Y-%m-%d}"
+      "format": "  {:%d/%m/%Y •  %H:%M}"
     },
     "custom/touchpad": {
       "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
@@ -230,12 +229,42 @@
       "sway/window"
     ],
     "modules-right": [
+      // "custom/backlight",
+      "cpu",
+      "memory",
       "clock"
     ],
+    "cpu": {
+      "format": "{usage}% ",
+      "tooltip": false,
+      "interval": 2,
+      "states": {
+        "1": 11,
+        "2": 22,
+        "3": 33,
+        "4": 44,
+        "5": 55,
+        "6": 67,
+        "7": 78,
+        "8": 88
+      }
+    },
+    "memory": {
+      "format": "{}% ",
+      "states": {
+        "high": 95
+      }
+    },
+    "custom/backlight": {
+      "exec": "ddcutil -b 8 getvcp 10",
+      "format": "",
+      "interval": 10,
+      "on-scroll-up": "ddcutil -b 8 setvcp 10 + 10",
+      "on-scroll-down": "ddcutil -b 8 setvcp 10 - 10"
+    },
     "clock": {
       "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-      "format": "{:%d/%m/%Y • %H:%M}",
-      "format-alt": "{:%Y-%m-%d}"
+      "format": "{:%d/%m/%Y • %H:%M}"
     }
   }
 ]
