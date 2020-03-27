@@ -1,3 +1,3 @@
 # Bockground
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output DP-1 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output eDP-1 bg /usr/share/backgrounds/adapta/suna.jpg fill

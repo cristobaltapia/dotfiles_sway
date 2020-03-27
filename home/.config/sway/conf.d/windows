@@ -22,8 +22,12 @@ for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
 for_window [app_id="Send Pubs reference"] floating enable
 for_window [app_id="evolution" title="Re: *"] floating enable
 for_window [app_id="evolution" title="Fw: *"] floating enable
+for_window [app_id="evolution" title="Fwd: *"] floating enable
+for_window [app_id="evolution" title="Termin *"] floating enable
+for_window [app_id="evolution" title="Besprechung *"] floating enable
 for_window [app_id="evolution-alarm-notif"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [class="vlc"] floating enable; resize set width 1080 height 720
 for_window [app_id="gnote"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="gnome-[power-statistics,system-monitor,contacts,clocks,font-viewer]"] floating enable

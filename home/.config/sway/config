@@ -23,6 +23,7 @@ set $term termite
 #
     # start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec ~/.config/sway/scripts/executable_cwd-term.sh
 
     # kill focused window
     bindsym $mod+Shift+q kill
@@ -181,10 +182,10 @@ bindsym $mod+Shift+e mode "$mode_system"
 # ------------------------------------------
 # Start at boot
 exec --no-startup-id redshift -m wayland
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
+
 # Always mute mic at boot
 exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo 1
 
 include ~/.config/sway/conf.d/*
-# include /etc/sway/config.d/*
 #exec startup sway

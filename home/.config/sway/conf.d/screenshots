@@ -16,3 +16,18 @@ bindsym ctrl+Print exec ~/.config/sway/scripts/screenshots.sh region-to-file
 
 # Current display to file
 bindsym ctrl+alt+Print exec ~/.config/sway/scripts/screenshots.sh active-display-to-file
+
+# needed for temporary/hacked wayland screen sharing
+# for_window [class=ffplay] floating enable, sticky enable
+# # TODO modes can be now generated dynamically, see: https://github.com/swaywm/sway/pull/4271
+# set $mode_adjust "zoom screen sharing: (s)tart; s(t)op; st(a)tus"
+# bindsym $mod+z mode $mode_adjust
+
+# mode $mode_adjust {
+# 	bindsym s exec ~/.scripts/wayland-screen-share/share-screen.sh start, mode "default"
+# 	bindsym t exec ~/.scripts/wayland-screen-share/share-screen.sh stop, mode "default"
+# 	bindsym a exec ~/.scripts/wayland-screen-share/share-screen.sh is-recording, mode "default"
+
+# 	bindsym Return mode "default"
+# 	bindsym Escape mode "default"
+# }
