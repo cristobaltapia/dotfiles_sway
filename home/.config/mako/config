@@ -29,3 +29,7 @@ default-timeout=0
 border-color=#859900
 default-timeout=5000
 
+[app-name=evolution-mail-notification]
+border-color=#dc322f
+default-timeout=0
+
