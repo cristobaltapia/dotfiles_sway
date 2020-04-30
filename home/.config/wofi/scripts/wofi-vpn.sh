@@ -13,7 +13,6 @@ FIELDS=NAME,TYPE,STATE
 POSITION=0
 XOFF=-10
 LOC=3
-FONT="DejaVu Sans Mono 8"
 CACHE=~/.local/tmp/vpn-wofi
 WWIDTH=430
 
