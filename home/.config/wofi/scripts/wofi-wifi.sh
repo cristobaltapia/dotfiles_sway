@@ -18,32 +18,14 @@ CACHE=~/.local/tmp/wifi-wofi
 WWIDTH=410
 MAXHEIGHT=1000
 
-# if [ -r "$DIR/config" ]; then
-#     source "$DIR/config"
-# elif [ -r "$HOME/.config/wofi/wifi" ]; then
-#     source "$HOME/.config/wofi/wifi"
-# else
-#     echo "WARNING: config file not found! Using default values."
-# fi
-
 LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | awk '{ printf "<tt>%s</tt>\n", $0 }')
 
 # Bluetooth connections
 LISTB=$(nmcli --fields NAME,TYPE con show | awk '/bluetooth/ { printf "<tt>%s</tt>\n", $0 }')
-#echo "${LIST_W}"
-# For some reason rofi always approximates character width 2 short... hmmm
-# WWIDTH=$(($(echo "$LIST" | head -n 1 | awk '{print length($0); }')+2))
-# Dynamically change the height of the rofi menu
-
-WHEIGHT=$((30*$LINENUM))
-
-if (($WHEIGHT > $MAXHEIGHT)) ; then
-    echo $WHEIGHT
-    WHEIGHT=${MAXHEIGHT}
-fi
 
 # Gives a list of known connections so we can parse it later
 KNOWNCON=$(nmcli connection show | awk -F '[[:space:]][[:space:]]+' '{printf "%s\n", $1}')
+
 # Really janky way of telling if there is currently a connection
 CONSTATE=$(nmcli -fields WIFI g | awk '/enabled|disabled/ { print $0}')
 
@@ -86,9 +68,6 @@ if [ "$CHENTRY" = "manual" ] ; then
 	MSSID=$(echo "enter the SSID of the network (SSID,password)" | wofi --dmenu -p "Manual Entry: " --cache-file ${CACHE})
 	# Separating the password from the entered string
 	MPASS=$(echo "$MSSID" | awk -F "," '{print $2}')
-
-	#echo "$MSSID"
-	#echo "$MPASS"
 
 	# If the user entered a manual password, then use the password nmcli command
 	if [ "$MPASS" = "" ]; then
