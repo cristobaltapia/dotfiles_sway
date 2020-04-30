@@ -4,6 +4,7 @@
 # Get all password files and create an array
 root=~/.password-store
 CACHE=~/.local/tmp/pass_wofi
+seat=seat0
 
 list_passwords() {
     shopt -s nullglob globstar
@@ -21,4 +22,4 @@ PASSWD_PASS=$(pass ${SECRET})
 # Strip extra lines
 PASSWD_PASS=(${PASSWD_PASS[@]})
 
-wl-copy -o ${PASSWD_PASS}
+wl-copy -o -s ${seat} ${PASSWD_PASS}

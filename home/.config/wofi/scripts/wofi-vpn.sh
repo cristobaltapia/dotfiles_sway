@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Connect to VPN connections
-# Modified from https://github.com/zbaylin/rofi-wifi-menu/blob/master/rofi-wifi-menu.sh
 
 # Starts a scan of available broadcasting SSIDs
 # nmcli dev wifi rescan
@@ -18,21 +17,10 @@ FONT="DejaVu Sans Mono 8"
 CACHE=~/.local/tmp/vpn-wofi
 WWIDTH=430
 
-# if [ -r "$DIR/config" ]; then
-#     source "$DIR/config"
-# elif [ -r "$HOME/.config/wofi/wifi" ]; then
-#     source "$HOME/.config/wofi/wifi"
-# else
-#     echo "WARNING: config file not found! Using default values."
-# fi
-
 LIST=$(nmcli --fields "$FIELDS" connection show | awk \
     -F "[  ]{2,}" \
     '$2 ~ /vpn/ { sub(/activated/, ""); printf "<tt>%s</tt>\n", $0 }')
 
-#echo "${LIST_W}"
-# For some reason rofi always approximates character width 2 short... hmmm
-# WWIDTH=$(($(echo "$LIST" | head -n 1 | awk '{print length($0); }')+2))
 # Dynamically change the height of the rofi menu
 LINENUM=$(echo "$LIST" | wc -l)
 
