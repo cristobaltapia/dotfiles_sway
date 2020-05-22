@@ -14,8 +14,13 @@ set $down j
 set $up k
 set $right l
 
+set $out-main eDP-1
+set $out-left "Dell Inc. DELL P2219H 9Y3B8W2"
+set $out-secondary DP-1
+
 # Your preferred terminal emulator
-set $term termite
+# set $term termite
+set $term alacritty
 
 ### Key bindings
 #
@@ -82,6 +87,9 @@ set $term termite
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
+    bindsym $mod+F1 workspace P1
+    bindsym $mod+F2 workspace P2
+    bindsym $mod+F3 workspace P3
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -93,8 +101,25 @@ set $term termite
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
     bindsym $mod+Shift+0 move container to workspace 10
+    bindsym $mod+Shift+F1 move container to workspace P1
+    bindsym $mod+Shift+F2 move container to workspace P2
+    bindsym $mod+Shift+F3 move container to workspace P3
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+    #
+    workspace 1 output $out-left $out-main
+    workspace 2 output $out-left $out-main
+    workspace 3 output $out-left $out-main
+    workspace 4 output $out-left $out-main
+    workspace 5 output $out-left $out-main
+    workspace 6 output $out-left $out-main
+    workspace 7 output $out-main
+    workspace 8 output $out-main
+    workspace 9 output $out-main
+    workspace 10 output $out-main
+    workspace P1 output $out-secondary $out-main
+    workspace P2 output $out-secondary $out-main
+    workspace P3 output $out-secondary $out-main
 #
 # Layout stuff:
 #
@@ -163,11 +188,16 @@ bindsym $mod+r mode "resize"
 # ------------------------------------------
 # System control (Logout, shutdown, etc)
 set $lock swaylock-blur --blur-sigma 40 -- -f
-set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
+set $mode_system System: (l) lock, (e) logout, (o) turn off screens, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
+
+set $screenoff  swayidle -w  \
+                timeout 1 'swaymsg "output * dpms off"' \
+                resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
 
 mode "$mode_system" {
     bindsym l exec $lock, mode "default"
     bindsym e exit
+    bindsym o exec --no-startup-id $screenoff, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
@@ -179,13 +209,17 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
+mode "screen_off" {
+    bindsym Return output * enable, mode "default"
+}
+
 # ------------------------------------------
 # Start at boot
 exec --no-startup-id redshift -m wayland
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # Always mute mic at boot
 exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo 1
 
 include ~/.config/sway/conf.d/*
-#exec startup sway
+# exec startup sway -d 2> ~/sway.log

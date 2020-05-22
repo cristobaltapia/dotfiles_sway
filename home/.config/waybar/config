@@ -19,7 +19,7 @@
       "disk#home",
       "pulseaudio",
       "pulseaudio#mic",
-      "custom/bluetooth",
+      "bluetooth",
       "network",
       "cpu",
       "memory",
@@ -53,10 +53,15 @@
       "tooltip": "Touchpad: active",
       "format": ""
     },
-    "custom/bluetooth": {
-      "format": "",
+    "bluetooth": {
+      "format": "{icon}",
+      "format-icons": {
+        "enabled": "",
+        "disabled": ""
+      },
+      "interval": 15,
       "on-click": "blueberry",
-      "tooltip": false
+      "tooltip": "{status}"
     },
     "custom/weather": {
       "exec": "python ~/.config/waybar/scripts/weather.py",
@@ -91,14 +96,10 @@
       "tooltip": false,
       "interval": 2,
       "states": {
-        "1": 11,
-        "2": 22,
-        "3": 33,
-        "4": 44,
-        "5": 55,
-        "6": 67,
-        "7": 78,
-        "8": 88
+        "a": 22,
+        "b": 44,
+        "c": 67,
+        "d": 88
       }
     },
     "memory": {
@@ -149,7 +150,7 @@
       },
       "format-icons": {
         "normal": "",
-        "critical": " "
+        "critical": " "
       }
     },
     "disk": {
@@ -165,12 +166,13 @@
     "network": {
       "interface": "wlp2s0", // (Optional) To force the use of this interface
       "format-wifi": "",
-      //"format-ethernet": "",
-      //"format-linked": "",
+      "format-ethernet": "",
+      "format-linked": "",
       "format-disconnected": "",
       // "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      //"tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
+      "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
+      "tooltip-format-linked": "Connected: IP:{ipaddr}/{cidr} ",
       "tooltip-format-disconnected": "Offline ",
       "on-click": "nmguish -w",
       "interval": 30
@@ -183,8 +185,8 @@
       "format-muted": "",
       "format-icons": {
         "headphones": "",
-        "handsfree": "",
-        "headset": "",
+        "handsfree": "",
+        "headset": "",
         "phone": "",
         "portable": "",
         "car": "",
@@ -239,14 +241,10 @@
       "tooltip": false,
       "interval": 2,
       "states": {
-        "1": 11,
-        "2": 22,
-        "3": 33,
-        "4": 44,
-        "5": 55,
-        "6": 67,
-        "7": 78,
-        "8": 88
+        "a": 22,
+        "b": 44,
+        "c": 67,
+        "d": 88
       }
     },
     "memory": {

@@ -8,8 +8,8 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(43, 48, 59, 1.0);
+    border-bottom: 3px solid rgba(100, 114, 125, 1.0);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -17,30 +17,6 @@ window#waybar {
 
 window#waybar.hidden {
     opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-    border-bottom: 3px solid #585858;
-}
-
-window#waybar.firefox {
-    background-color: #733f00;
-    border-bottom: 3px solid #a65b00;
-}
-
-window#waybar.NeovimGtk {
-    background-color: #285327;
-    border-bottom: 3px solid #397637;
 }
 
 #workspaces button {
@@ -86,7 +62,7 @@ window#waybar.NeovimGtk {
 #backlight,
 #network,
 #pulseaudio,
-#custom-bluetooth,
+#bluetooth,
 #custom-weather,
 #tray,
 #mode,
@@ -95,7 +71,6 @@ window#waybar.NeovimGtk {
     padding: 0 10px;
     margin: 0 1px;
     color: #ffffff;
-    /* background-color: #073642; */
     background-color: transparent;
     border-bottom-style: solid;
     border-bottom-width: 3px;
@@ -104,19 +79,16 @@ window#waybar.NeovimGtk {
 #clock {
     color: #ffffff;
     border-bottom: 3px solid #c9006b;
-    background-color: #30001a;
 }
 
 #battery {
     color: #ffffff;
-    border-bottom-color: #e6e6e6;
-    background-color: #4d4d4d;
+    border-bottom-color: #30cf72;
 }
 
 #battery.charging {
-    color: #26A65B;
+    color: #30cf72;
     border-bottom-color: #30cf72;
-    background-color: #14522e;
 }
 
 @keyframes blink {
@@ -171,57 +143,33 @@ label:focus {
 #disk {
     color: #ecf0f1;
     border-bottom-color: #6fb893;
-    background-color: #1e3d2d;
 }
 
 #disk.home {
     color: #ecf0f1;
     border-bottom-color: #9e9ef5;
-    background-color: #090957;
 }
 #cpu {
     color: #fff7ec;
     border-bottom: 3px solid #ffffff;
-    background-color: #334245;
 }
 
-#cpu.1 {
-    color: #fff7ec;
-    border-bottom-color: #fff7ec;
-}
-
-#cpu.2 {
+#cpu.a {
     color: #fee8c8;
     border-bottom-color: #fee8c8;
 }
 
-#cpu.3 {
-    color: #fdd49e;
-    border-bottom-color: #fdd49e;
-}
-
-#cpu.4 {
+#cpu.b {
     color: #fdbb84;
     border-bottom-color: #fdbb84;
 }
 
-#cpu.5 {
-    color: #fc8d59;
-    border-bottom-color: #fc8d59;
-}
-
-#cpu.6 {
+#cpu.c {
     color: #ef6548;
     border-bottom-color: #ef6548;
 }
 
-#cpu.7 {
-    color: #fff7ec;
-    background-color: #d7301f;
-    border-bottom-color: #fff7ec;
-}
-
-#cpu.8 {
+#cpu.d {
     color: #fff7ec;
     background-color: #990000;
     border-bottom-color: #fff7ec;
@@ -230,7 +178,6 @@ label:focus {
 #memory {
     color: #ecf0f1;
     border-bottom-color: #b07cc6;
-    background-color: #452452;
 }
 
 #memory.high {
@@ -244,30 +191,26 @@ label:focus {
 }
 
 #network {
-    color: #ecf0f1;
+    color: #54d98c;
     border-bottom: 3px solid #54d98c;
-    background-color: #124f2b;
 }
 
 #network.disconnected {
-    color: #ecf0f1;
+    color: #f76c6c;
     border-bottom-color: #f76c6c;
-    background-color: #8f0808;
 }
 
 #pulseaudio {
     color: #ecf0f1;
     border-bottom-color: #f4d03f;
-    background-color: #614f06;
 }
 
 #pulseaudio.mic {
     color: #ecf0f1;
-    border-bottom-color: #f4d03f;
+    /* border-bottom-color: #f4d03f; */
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
     border-bottom: 3px solid #aec6c6;
     color: #2a5c45;
 }
@@ -285,26 +228,22 @@ label:focus {
     border-bottom: 3px solid #409ad5;
 }
 
-#custom-bluetooth {
-    color: #ecf0f1;
+#bluetooth {
+    color: #409ad5;
     border-bottom-color: #409ad5;
-    background-color: #0d293c;
 }
 
 #custom-weather {
     color: #ecf0f1;
     border-bottom-color: #409ad5;
-    background-color: #0d293c;
 }
 
 #custom-weather.night {
     color: #ecf0f1;
     border-bottom-color: #ccd0d1;
-    background-color: #0d293c;
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
     border-bottom-color: #ccd0d1;
 }
 
@@ -313,5 +252,3 @@ label:focus {
     border-bottom-color: #2d3436;
     color: #2d3436;
 }
-
-

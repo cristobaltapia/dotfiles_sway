@@ -12,10 +12,6 @@ smart_gaps on
 # class        border  backgr. text    indicator child_border
 client.focused #859900 #859900 #fdf6e3 #268bd2 #859900
 
-### Focus
-focus_follows_mouse no
-seat seat0 hide_cursor 10000
-
 # Set floating windows
 # swaymsg -t get_tree
 for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
@@ -32,12 +28,28 @@ for_window [app_id="gnote"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="gnome-[power-statistics,system-monitor,contacts,clocks,font-viewer]"] floating enable
 for_window [app_id="org.gnome.Weather"] floating enable
+for_window [app_id="org.gnome.clocks"] floating enable
 for_window [app_id="blueberry.py"] floating enable; resize set height 760
-# For nmguish (networkmanaker gui)
-for_window [app_id="yad"] floating enable; resize set width 720 height 300
+for_window [app_id="obs" title="^OBS Studio"] floating enable
+for_window [app_id="obs" title="^V4l2sinkProperties$"] \
+    floating enable; \
+    move position 1120 0
+for_window [app_id="yad"] \ floating enable; resize set width 720 height 300
 for_window [title="Papis edit"] floating enable; resize set width 800 height 800
 for_window [title="Pubs edit"] floating enable; resize set width 800 height 800
 for_window [app_id="zenity"] floating enable; resize set width 400 height 220
-for_window [app_id="nm-openconnect-auth-dialog"] floating enable; resize set width 400 height 250
+for_window [app_id="nm-openconnect-auth-dialog"] \
+    floating enable; \
+    resize set width 400 height 250
 for_window [app_id="org.remmina.Remmina"] floating enable
 for_window [class="Matplotlib"] floating enable
+for_window [class="vtk" title="PyVista"] floating enable
+for_window [class="vtk" title="Visualization Toolkit - OpenGL"] floating enable
+for_window [title="Steam - News *"] floating enable
+for_window [app_id="firefox" title="^Picture-in-Picture$"] \
+    floating enable; \
+    sticky enable; \
+    move position 1250 0
+for_window [app_id="firefox" title="^Firefox - Sharing Indicator$"] \
+    floating enable; \
+    move position 1800 920

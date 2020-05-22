@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Open a new terminal in the current working directory of a focused terminal
-terminal="termite"
+# terminal="termite"
+terminal="alacritty"
 
 # Get the process id of the currently selected window
 pid=$(swaymsg -t get_tree | jq '.. | select(.type?) | select(.type=="con") | select(.focused==true).pid')
@@ -18,7 +19,8 @@ then
     workdir=$(readlink /proc/${ppid}/cwd)
     notify-send -t 2000 "Terminal in $workdir"
     echo $workdir
-    $terminal -d $workdir
+    # $terminal -d $workdir
+    $terminal --working-directory $workdir
 else
     notify-send -t 2000 -- "Failed to obtain current directory from $pname"
     echo $HOME
