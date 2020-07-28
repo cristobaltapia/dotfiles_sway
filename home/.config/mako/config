@@ -3,7 +3,8 @@ background-color=#073642CC
 text-color=#eee8d5
 border-color=#333333
 ignore-timeout=1
-border-size=8
+border-size=5
+padding=10
 border-radius=10
 border-color=#268bd2
 margin=25
@@ -32,4 +33,5 @@ default-timeout=5000
 [app-name=evolution-mail-notification]
 border-color=#dc322f
 default-timeout=0
+actions=0
 

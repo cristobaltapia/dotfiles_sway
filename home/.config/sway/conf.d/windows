@@ -15,7 +15,7 @@ client.focused #859900 #859900 #fdf6e3 #268bd2 #859900
 # Set floating windows
 # swaymsg -t get_tree
 for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
-for_window [app_id="Send Pubs reference"] floating enable
+for_window [app_id="evolution" title="^Reference for *"] floating enable
 for_window [app_id="evolution" title="Re: *"] floating enable
 for_window [app_id="evolution" title="Fw: *"] floating enable
 for_window [app_id="evolution" title="Fwd: *"] floating enable
@@ -25,8 +25,11 @@ for_window [app_id="evolution-alarm-notif"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [class="vlc"] floating enable; resize set width 1080 height 720
 for_window [app_id="gnote"] floating enable
+for_window [app_id="bluetooth-sendto"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="gnome-[power-statistics,system-monitor,contacts,clocks,font-viewer]"] floating enable
+for_window [app_id="NeovimGtk" title="index.wiki"] floating enable; \
+    resize set width 850 height 810
 for_window [app_id="org.gnome.Weather"] floating enable
 for_window [app_id="org.gnome.clocks"] floating enable
 for_window [app_id="blueberry.py"] floating enable; resize set height 760
@@ -43,6 +46,7 @@ for_window [app_id="nm-openconnect-auth-dialog"] \
     resize set width 400 height 250
 for_window [app_id="org.remmina.Remmina"] floating enable
 for_window [class="Matplotlib"] floating enable
+for_window [title="Figure 1" app_id="python3"] floating enable
 for_window [class="vtk" title="PyVista"] floating enable
 for_window [class="vtk" title="Visualization Toolkit - OpenGL"] floating enable
 for_window [title="Steam - News *"] floating enable
@@ -53,3 +57,11 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] \
 for_window [app_id="firefox" title="^Firefox - Sharing Indicator$"] \
     floating enable; \
     move position 1800 920
+for_window [app_id="firefox" title="^Firefox - Weitergabe-Indikator$"] \
+    floating enable; \
+    move position 1800 920
+for_window [app_id="org.pwmt.zathura" title="^\/tmp\/mozilla_*"] \
+    floating enable; \
+    resize set width 1000 height 1050
+for_window [title="^Vibrometer*"] floating enable; \
+    resize set width 630 height 820

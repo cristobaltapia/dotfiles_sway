@@ -50,4 +50,4 @@ else
     nmcli connection up "$VPNID"
 fi
 
-
+pkill -SIGRTMIN+2 waybar

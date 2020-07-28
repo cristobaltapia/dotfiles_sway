@@ -12,6 +12,11 @@
 }
 
 {
+    output eDP-1 scale 2 mode 3200x1800 position 1920,0
+    output DP-1 scale 1 mode 1920x1080 position 0,0
+}
+
+{
     output eDP-1 scale 2 mode 3200x1800
 }
 

@@ -9,6 +9,12 @@ input type:keyboard {
     xkb_options grp:alt_shift_toggle
 }
 
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0.6
+    # accel_profile adaptive
+}
+
 input 1739:30381:DLL0665:01_06CB:76AD_Touchpad {
     natural_scroll enabled
     middle_emulation enabled
@@ -83,7 +89,7 @@ input 1386:788:Wacom_Intuos_Pro_S_(WL)_Pad {
 # seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Pen"
 # seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_Pad"
 # seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Pad"
-#
+
 # seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_Finger"
 # seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Finger"
 

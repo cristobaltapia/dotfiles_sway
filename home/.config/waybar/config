@@ -12,6 +12,7 @@
       "sway/window"
     ],
     "modules-right": [
+      "custom/kblayout",
       "battery#kb",
       //"battery#mouse",
       "custom/weather",
@@ -20,6 +21,7 @@
       "pulseaudio",
       "pulseaudio#mic",
       "bluetooth",
+      "custom/vpn",
       "network",
       "cpu",
       "memory",
@@ -153,6 +155,12 @@
         "critical": " "
       }
     },
+    "custom/kblayout": {
+      "format": "<b>  </b>{}",
+      "interval": 5,
+      "signal": 1,
+      "exec": "~/.config/waybar/scripts/kblayout.sh"
+    },
     "disk": {
       "interval": 30,
       "format": "{free} on ",
@@ -177,8 +185,19 @@
       "on-click": "nmguish -w",
       "interval": 30
     },
+    "custom/vpn": {
+      "format": "{icon}",
+      "tooltip-format": "{icon}",
+      "exec": "$HOME/.config/waybar/scripts/vpn_check.sh",
+      "return-type": "json",
+      "interval": 30,
+      "signal": 2,
+      "format-icons": [
+        "",
+        ""
+      ]
+    },
     "pulseaudio": {
-      // "scroll-step": 1, // %, can be a float
       "format": "{volume}% {icon}",
       "format-bluetooth": "{volume}% {icon}",
       "format-bluetooth-muted": " {icon}",
@@ -199,7 +218,6 @@
       "on-click": "pavucontrol"
     },
     "pulseaudio#mic": {
-      // "scroll-step": 1, // %, can be a float
       "format": "{format_source}",
       "format-source": "{volume}% ",
       "format-source-muted": "",

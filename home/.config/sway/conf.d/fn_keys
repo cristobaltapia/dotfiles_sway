@@ -2,8 +2,11 @@
 # ------------------------------------------
 # Brightness controls
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+exec mkfifo ${SWAYSOCK}_screen.wob && tail -f ${SWAYSOCK}_screen.wob | wob -O eDP-1 2
+exec mkfifo ${SWAYSOCK}_dell_screen.wob && tail -f ${SWAYSOCK}_dell_screen.wob | wob -O DP-1 3
+
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 5 && light -G | cut -d'.' -f1 > ${SWAYSOCK}_screen.wob
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 5 && light -G | cut -d'.' -f1 > ${SWAYSOCK}_screen.wob
 
 # ------------------------------------------
 # Pulse Audio controls
@@ -23,8 +26,8 @@ set $mode_brightness Brightness: (j) Decrease, (k) Increase - (1) 10%, (2) 20%, 
 set $get_dell_bright ddcutil -b 8 getvcp 10 | awk '{gsub(",", "", $9); printf "%s\n", $9}'
 
 mode "$mode_brightness" {
-    bindsym $up exec ddcutil -b 8 setvcp 10 + 5 && $get_dell_bright > $SWAYSOCK.wob
-    bindsym $down exec ddcutil -b 8 setvcp 10 - 5 && $get_dell_bright > $SWAYSOCK.wob
+    bindsym $up exec ddcutil -b 8 setvcp 10 + 5 && $get_dell_bright > ${SWAYSOCK}_dell_screen.wob
+    bindsym $down exec ddcutil -b 8 setvcp 10 - 5 && $get_dell_bright > ${SWAYSOCK}_dell_screen.wob
     bindsym 1 exec ddcutil -b 8 setvcp 10 10; mode "default"
     bindsym 2 exec ddcutil -b 8 setvcp 10 20; mode "default"
     bindsym 3 exec ddcutil -b 8 setvcp 10 30; mode "default"

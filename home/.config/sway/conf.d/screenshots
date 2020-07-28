@@ -17,6 +17,9 @@ bindsym ctrl+Print exec ~/.config/sway/scripts/screenshots.sh region-to-file
 # Current display to file
 bindsym ctrl+alt+Print exec ~/.config/sway/scripts/screenshots.sh active-display-to-file
 
+# Swappy
+bindsym alt+Print exec grim -g "$(slurp)" - | swappy -f -
+
 # needed for temporary/hacked wayland screen sharing
 # for_window [class=ffplay] floating enable, sticky enable
 # # TODO modes can be now generated dynamically, see: https://github.com/swaywm/sway/pull/4271

@@ -64,7 +64,9 @@ window#waybar.hidden {
 #pulseaudio,
 #bluetooth,
 #custom-weather,
+#custom-kblayout,
 #tray,
+#custom-vpn,
 #mode,
 #idle_inhibitor,
 #mpd {
@@ -193,6 +195,21 @@ label:focus {
 #network {
     color: #54d98c;
     border-bottom: 3px solid #54d98c;
+    margin-left: 0;
+}
+
+#custom-vpn {
+    margin-right: 0;
+    padding-right: 0;
+    border-bottom: 3px solid #54d98c;
+}
+
+#custom-vpn.disconnected {
+    color: #aec6c6;
+}
+
+#custom-vpn.connected {
+    color: #54d98c;
 }
 
 #network.disconnected {
@@ -251,4 +268,9 @@ label:focus {
     background-color: #ecf0f1;
     border-bottom-color: #2d3436;
     color: #2d3436;
+}
+
+#custom-kblayout {
+    color: #ecf0f1;
+    border-bottom-color: #c9006b;
 }

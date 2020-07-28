@@ -46,9 +46,10 @@ set $term alacritty
 
     # reload the configuration file
     bindsym $mod+Shift+c reload
+    #
+    # Open nvim with vimwiki
+    bindsym $mod+Shift+n exec "nvim-gtk -- -c VimwikiIndex"
 
-    # exit sway (logs you out of your Wayland session)
-    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -217,6 +218,7 @@ mode "screen_off" {
 # Start at boot
 exec --no-startup-id redshift -m wayland
 exec --no-startup-id nm-applet
+exec --no-startup-id nextcloud --background
 
 # Always mute mic at boot
 exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo 1
