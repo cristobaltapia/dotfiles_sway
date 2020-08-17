@@ -24,7 +24,7 @@ set $menu wofi -i -I --show drun
 set $passmenu ~/.config/sway/scripts/wofi-pass.sh
 
 # Wofi menu for searching through publications
-bindsym $mod+Shift+p exec ~/.local/bin/wofi-pubs
+bindsym $mod+Shift+p exec wofi-pubs
 # Wofi menu for searching wifi connections
 bindsym $mod+Shift+w exec ~/.config/wofi/scripts/wofi-wifi.sh
 # Wofi menu for searching through the VPN connections

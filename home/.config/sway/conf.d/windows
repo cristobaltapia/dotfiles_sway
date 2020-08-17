@@ -65,3 +65,5 @@ for_window [app_id="org.pwmt.zathura" title="^\/tmp\/mozilla_*"] \
     resize set width 1000 height 1050
 for_window [title="^Vibrometer*"] floating enable; \
     resize set width 630 height 820
+for_window [title="Wofi-pubs"] floating enable; resize set width 450 height 130
+for_window [title="Blender Render"] floating enable; resize width 1300 heigth 800
