@@ -1,56 +1,57 @@
-
-window {
-    margin: 5px;
-    border: 0px solid #444444;
-    background-color: rgba(0, 0, 0, 0.0);
-    /* opacity: 1; */
-    font-family: FontAwesome;
+#entry {
+  border-radius: 3;
+  padding: 2px 3px 2px 3px;
 }
 
-@keyframes erscheinen {
-    from {opacity: 0;}
-      to {opacity: 1;}
+#entry:selected {
+  background-color: #5e81ac;
+}
+
+#text:selected {
+  color: #d8dee9;
+}
+
+#window {
+  padding: 2px;
+  background-color: rgba(53, 59, 73, 0.97);
+  border: 3px solid #3b4252;
+  border-radius: 2px;
+  font-family: Product Sans;
 }
 
 #input {
-    margin: 0px 0px 5px;
-    border: 5px solid #b58900;
-    background-color: rgb(7, 54, 66);
-    border-radius: 20px;
-    color : #fdf6e3;
+  text-align: center;
+  border: 2px solid #5e81ac;
+  background-color: #4c566a;
+  color: #d8dee9;
+  padding: 3 5 3 5;
+  border-radius: 5px;
 }
 
 #inner-box {
-    margin: 0px;
-    border: 0px solid #444444;
-    background-color: rgba(68, 68, 68, 0.0);
+  color: #d8dee9;
+  padding: 2px;
+  background-color: transparent;
 }
 
-/* #inner-box flowboxchild:nth-child(even) { */
-/*     background-color: #555555; */
-/* } */
-
 #outer-box {
-    margin: 0px;
-    border: 0px solid rgb(203, 75, 22);
-    background-color: rgba(0, 0, 0, 0.0);
+  margin: 15px;
+  background-color: transparent;
 }
 
 #scroll {
-    margin: 0px;
-    border: 5px solid #586e75;
-    border-radius: 0px;
-    background-color: rgba(7, 54, 66, 0.9);
-    /* animation: erscheinen 0.3s linear; */
+  margin-top: 10px;
+  background-color: none;
+  border: none;
 }
 
 #text {
-    margin: 1px;
-    border: 0px solid #44AA44;
-    /* background-color: #444444; */
-    color: #FFFFFF;
+  padding: 6px;
+  font-size: 14px;
+  background-color: transparent;
 }
 
-#selected {
-    background-color: rgb(76, 162, 223);
+#img {
+  background-color: transparent;
+  padding: 5px;
 }
