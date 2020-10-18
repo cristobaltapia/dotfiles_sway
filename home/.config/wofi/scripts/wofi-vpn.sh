@@ -11,7 +11,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 FIELDS=NAME,TYPE,STATE
 POSITION=0
-XOFF=-10
+XOFF=-30
 LOC=3
 CACHE=~/.local/tmp/vpn-wofi
 WWIDTH=430

@@ -12,7 +12,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 FIELDS=SSID,SECURITY,BARS
 POSITION=0
-XOFF=-10
+XOFF=-30
 LOC=3
 CACHE=~/.local/tmp/wifi-wofi
 WWIDTH=410
