@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="3200"
+   height="1800"
+   id="svg2424"
+   sodipodi:docname="archlinux-logo.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   inkscape:export-filename="/home/tapia/Documents/wallpaper/archlinux-logo-1920-1080.png"
+   inkscape:export-xdpi="57.599998"
+   inkscape:export-ydpi="57.599998">
+  <metadata
+     id="metadata189">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1044"
+     id="namedview187"
+     showgrid="false"
+     width="3200px"
+     inkscape:zoom="0.283125"
+     inkscape:cx="1499.7414"
+     inkscape:cy="906.1049"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g2424"
+     inkscape:document-rotation="0"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="false"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:snap-bbox-midpoints="false"
+     inkscape:object-paths="false"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-smooth-nodes="false"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-others="false"
+     inkscape:snap-nodes="true" />
+  <defs
+     id="defs2426">
+    <linearGradient
+       x1="112.49854"
+       y1="6.1372099"
+       x2="112.49853"
+       y2="129.3468"
+       id="path1082_2_"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(287,-83)">
+      <stop
+         id="stop193"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="0" />
+      <stop
+         id="stop195"
+         style="stop-color:#ffffff;stop-opacity:0.27450982"
+         offset="1" />
+      <midPointStop
+         offset="0"
+         style="stop-color:#FFFFFF"
+         id="midPointStop197" />
+      <midPointStop
+         offset="0.5"
+         style="stop-color:#FFFFFF"
+         id="midPointStop199" />
+      <midPointStop
+         offset="1"
+         style="stop-color:#000000"
+         id="midPointStop201" />
+    </linearGradient>
+    <linearGradient
+       x1="541.33502"
+       y1="104.50665"
+       x2="606.91248"
+       y2="303.14029"
+       id="linearGradient2544"
+       xlink:href="#path1082_2_"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.3937741,0,0,0.393752,357.51969,122.00151)" />
+    <linearGradient
+       id="linearGradient3388">
+      <stop
+         id="stop3390"
+         style="stop-color:#000000;stop-opacity:0"
+         offset="0" />
+      <stop
+         id="stop3392"
+         style="stop-color:#000000;stop-opacity:0.37113401"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="490.72305"
+       y1="237.72447"
+       x2="490.72305"
+       y2="183.9644"
+       id="linearGradient4416"
+       xlink:href="#linearGradient3388"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.749107,0,0,0.749107,-35.459862,91.44108)" />
+  </defs>
+  <g
+     transform="translate(-34.777313,-129.80241)"
+     id="layer1">
+    <g
+       transform="matrix(0.8746356,0,0,0.8746356,14.730518,23.408954)"
+       id="g2424">
+      <rect
+         style="fill:#2e3440;stroke-width:1.15835"
+         id="rect854"
+         width="3658.6665"
+         height="2058"
+         x="22.920183"
+         y="121.64314" />
+      <path
+         d="m 1852.1681,696.42841 c -40.4335,99.13207 -64.8209,163.9761 -109.8383,260.16135 27.6013,29.25736 61.4805,63.32904 116.5004,101.80984 -59.1517,-24.3407 -99.5004,-48.778 -129.6537,-74.13671 -57.6136,120.21981 -147.8776,291.46731 -331.0523,620.59501 143.9692,-83.1159 255.5715,-134.3577 359.5795,-153.9102 -4.4661,-19.2089 -7.0053,-39.987 -6.8328,-61.6667 l 0.1707,-4.6122 c 2.2844,-92.2372 50.2662,-163.1676 107.1051,-158.3516 56.839,4.816 101.0193,83.5382 98.7349,175.7755 -0.4298,17.3561 -2.3873,34.0525 -5.8079,49.5383 102.8788,20.1249 213.2878,71.2355 355.309,153.2269 -28.0038,-51.5569 -52.9996,-98.0318 -76.8697,-142.2944 -37.5993,-29.1419 -76.8173,-67.0703 -156.8143,-108.1301 54.9854,14.2876 94.3542,30.7715 125.0414,49.1967 -242.694,-451.85387 -262.347,-511.89594 -345.5721,-707.20169 z"
+         id="path2518"
+         style="fill:#8fbcbb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5.46628" />
+    </g>
+  </g>
+</svg>
