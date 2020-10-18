@@ -23,6 +23,8 @@ window#waybar {
   font-size: 14px;
   border-radius: 2px;
   margin: 0;
+  padding-left: 8;
+  padding-right: 8;
   padding-top: 0;
   padding-bottom: 0;
   color: #ffffff;
