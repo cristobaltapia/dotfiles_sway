@@ -1,276 +1,395 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: FontAwesome,Roboto;
-    font-weight: 500;
-    font-size: 14px;
-    min-height: 0;
+  border: none;
+  font-size: 13px;
+  margin: 2;
+  font-family: Product Sans, Arial, Helvetica, sans-serif;
+  /* font-family: FontAwesome,Roboto; */
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 1.0);
-    border-bottom: 3px solid rgba(100, 114, 125, 1.0);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: #3b4252;
+  color: #ffffff;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+#workspaces {
+  background-color: #434c5e;
+  padding: 1 5 1 5;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-right: 10;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-    border-bottom: 3px solid transparent;
+  font-size: 14px;
+  border-radius: 2px;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #ffffff;
+  background-color: #434c5e;
+}
+
+#window {
+  background-color: transparent;
+  color: #d8dee9;
+  padding-right: 10px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inherit;
-    border-bottom: 3px solid #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#workspaces button.visible {
-    border-bottom: 3px solid #409ad5;
-    background-color: #64727D;
+  box-shadow: inherit;
+  background-color: #ebcb8b;
+  color: #5e81ac;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    border-bottom: 3px solid #eb4d4b;
+  color: #ffffff;
+  background-color: #5e81ac;
 }
 
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+#workspaces button.urgent {
+  color: #eb4d4b;
 }
 
-#clock,
-#battery,
-#cpu,
-#disk,
-#memory,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
+#mpd {
+  padding: 0 10px;
+  color: #ffffff;
+}
+
+/* TASKBAR */
+
+#taskbar {
+  background-color: transparent;
+  font-size: 15px;
+  border-radius: 15px;
+  margin-right: 7;
+}
+
+#taskbar button {
+  border-radius: 0px;
+  margin: 0;
+  padding: 0 8 0 8;
+  background-color: transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+#taskbar button.active {
+  color: #81a1c1;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid #81a1c1;
+}
+
+#taskbar button.minimized {
+  color: #7c818c;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid #7c818c;
+}
+
+#taskbar button:hover {
+  box-shadow: inherit;
+  color: #5e81ac;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid #5e81ac;
+}
+
+/* BROWSER BOOKMARKS */
+
+#custom-newtab,
+#custom-name,
+#custom-github,
+#custom-reddit,
+#custom-crunchyroll,
+#custom-youtube,
+#custom-mail {
+  background-color: #3b4252;
+  font-size: 14px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 13 0 13;
+}
+
+#custom-newtab {
+  color: #bf616a;
+  font-size: 18px;
+  border-radius: 10px 0 0 10px;
+}
+
+#custom-github {
+  color: #d08770;
+}
+
+#custom-reddit {
+  color: #ebcb8b;
+}
+
+#custom-crunchyroll {
+  font-size: 13px;
+  color: #a3be8c;
+  margin-right: 15px;
+  border-radius: 0 10px 10px 0;
+}
+
+#custom-youtube {
+  font-size: 13px;
+  color: #b48ead;
+}
+
+#custom-mail {
+  color: #88c0d0;
+}
+
+/* WIDGETS */
+
+#custom-name {
+  border-radius: 15px;
+  margin-right: 10;
+}
+
 #bluetooth,
 #custom-weather,
 #custom-kblayout,
-#tray,
 #custom-vpn,
-#mode,
+#cpu,
 #idle_inhibitor,
+#custom-media,
+#clock,
+#custom-pacman,
+#memory,
+#backlight,
+#disk,
+#network,
+#pulseaudio,
+#custom-weather,
+#temperature,
 #mpd {
-    padding: 0 10px;
-    margin: 0 1px;
-    color: #ffffff;
-    background-color: transparent;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
-}
-
-#clock {
-    color: #ffffff;
-    border-bottom: 3px solid #c9006b;
-}
-
-#battery {
-    color: #ffffff;
-    border-bottom-color: #30cf72;
-}
-
-#battery.charging {
-    color: #30cf72;
-    border-bottom-color: #30cf72;
-}
-
-@keyframes blink {
-    to {
-        color: #ffffff;
-        border-bottom-color: #e6e6e6;
-    }
-}
-
-#battery.critical:not(.charging) {
-    color: #f53c3c;
-    border-bottom-color: #f76c6c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.warning:not(.charging) {
-    color: #f4d03f;
-    border-bottom-color: #f4d03f;
-    animation-name: blink;
-    animation-duration: 2.0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.kb.normal {
-    padding: 0 0px;
-    margin: 0 0px;
-    color: #000000;
-    background-color: rgba(0,0,0,0);
-    border-bottom-color: rgba(0,0,0,0);
-}
-
-#battery.kb.critical {
-    color: #f53c3c;
-    border-bottom-color: #f76c6c;
-    animation-name: blink;
-    animation-duration: 1.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#disk {
-    color: #ecf0f1;
-    border-bottom-color: #6fb893;
-}
-
-#disk.home {
-    color: #ecf0f1;
-    border-bottom-color: #9e9ef5;
-}
-#cpu {
-    color: #fff7ec;
-    border-bottom: 3px solid #ffffff;
-}
-
-#cpu.a {
-    color: #fee8c8;
-    border-bottom-color: #fee8c8;
-}
-
-#cpu.b {
-    color: #fdbb84;
-    border-bottom-color: #fdbb84;
-}
-
-#cpu.c {
-    color: #ef6548;
-    border-bottom-color: #ef6548;
-}
-
-#cpu.d {
-    color: #fff7ec;
-    background-color: #990000;
-    border-bottom-color: #fff7ec;
-}
-
-#memory {
-    color: #ecf0f1;
-    border-bottom-color: #b07cc6;
-}
-
-#memory.high {
-    color: #f53c3c;
-    border-bottom-color: #f76c6c;
-}
-
-#backlight {
-    color: #aec6c6;
-    border-bottom-color: #aec6c6;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0px 10px 0px 10px;
 }
 
 #network {
-    color: #54d98c;
-    border-bottom: 3px solid #54d98c;
-    margin-left: 0;
+  color: #a3be8c;
+  margin-left: 0;
 }
 
 #custom-vpn {
-    margin-right: 0;
-    padding-right: 0;
-    border-bottom: 3px solid #54d98c;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 #custom-vpn.disconnected {
-    color: #aec6c6;
+  color: #4c566a;
 }
 
 #custom-vpn.connected {
-    color: #54d98c;
+  color: #a3be8c;
 }
 
 #network.disconnected {
-    color: #f76c6c;
-    border-bottom-color: #f76c6c;
+  color: #f76c6c;
+  border-bottom-color: #f76c6c;
 }
 
-#pulseaudio {
-    color: #ecf0f1;
-    border-bottom-color: #f4d03f;
+#disk {
+  color: #d08770;
 }
 
-#pulseaudio.mic {
-    color: #ecf0f1;
-    /* border-bottom-color: #f4d03f; */
+#disk.home {
+  color: #81a1c1;
 }
 
-#pulseaudio.muted {
-    border-bottom: 3px solid #aec6c6;
-    color: #2a5c45;
+#memory {
+  color: #b48ead;
 }
 
-#temperature {
-    background-color: #f0932b;
+#memory.high {
+  color: #bf616a;
 }
 
-#temperature.critical {
-    background-color: #eb4d4b;
+#cpu {
+  color: #a3be8c;
 }
 
-#tray {
-    color: #2980b9;
-    border-bottom: 3px solid #409ad5;
+#cpu.a {
+  color: #a3be8c;
+}
+
+#cpu.b {
+  color: #ebcb8b;
+}
+
+#cpu.c {
+  color: #bf616a;
+}
+
+#cpu.d {
+  color: #ffffff;
+  background-color: #bf616a;
 }
 
 #bluetooth {
-    color: #409ad5;
-    border-bottom-color: #409ad5;
-}
-
-#custom-weather {
-    color: #ecf0f1;
-    border-bottom-color: #409ad5;
+  color: #81a1c1;
 }
 
 #custom-weather.night {
-    color: #ecf0f1;
-    border-bottom-color: #ccd0d1;
+  color: #ecf0f1;
+}
+
+#custom-weather {
+  color: #81a1c1;
+}
+
+#clock {
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+#custom-weather {
+  padding: 0px 8px 0px 8px;
+}
+
+#custom-media {
+  border-radius: 10px;
+}
+
+#custom-media.playing {
+  background-color: #434c5e;
+}
+
+#custom-media.paused {
+}
+
+#custom-playerctl {
+  border-radius: 15px;
+}
+
+#pulseaudio {
+  color: #ebcb8b;
+  border-radius: 10px 0 0 10px;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+#pulseaudio.muted {
+  background-color: #b1b190;
+  color: #2a5c45;
+}
+
+#pulseaudio.mic {
+  color: #ebcb8b;
+  border-radius: 0 10px 10px 0;
+  margin-right: 0px;
+  padding-right: 10px;
+}
+
+#temperature {
+  color: #88c0d0;
+}
+
+#temperature.critical {
+  color: #eb4d4b;
+}
+
+#tray {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #3b4252;
+  padding: 0px 12px 0px 8px;
+  border-radius: 0 10px 10px 0;
+  color: #8fbcbb;
+}
+
+#battery {
+  color: #8fbcbb;
+  padding: 0px 8px 0px 8px;
+}
+
+#battery.charging {
+  color: #ffffff;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffffff;
+  border-bottom-color: #ebcb8b;
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#custom-power {
+  font-size: 17px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 10;
+}
+
+#mpd.disconnected {
+  background-color: #f53c3c;
+}
+
+#mpd.stopped {
+  background-color: #90b1b1;
+}
+
+#mpd.paused {
+  background-color: #51a37a;
 }
 
 #idle_inhibitor {
-    border-bottom-color: #ccd0d1;
+  font-size: 16px;
+  color: #6f7787;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    border-bottom-color: #2d3436;
-    color: #2d3436;
+  color: #ffffff;
 }
 
 #custom-kblayout {
-    color: #ecf0f1;
-    border-bottom-color: #c9006b;
+  color: #ffffff;
+}
+
+/*
+ */
+
+#battery.kb.normal {
+  padding: 0 0px;
+  margin: 0 0px;
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+#battery.kb.critical {
+  color: #f53c3c;
+  border-bottom-color: #f76c6c;
+  animation-name: blink;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }

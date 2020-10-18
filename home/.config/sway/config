@@ -219,7 +219,7 @@ mode "screen_off" {
 exec --no-startup-id redshift -m wayland
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud --background
-exec --no-startup-id flashfocus
+# exec --no-startup-id flashfocus
 
 # Always mute mic at boot
 exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo 1

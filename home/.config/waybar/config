@@ -8,11 +8,10 @@
       "sway/workspaces",
       "sway/mode"
     ],
-    "modules-center": [
-      "sway/window"
-    ],
+    // "modules-center": [
+    //    "sway/window"
+    // ],
     "modules-right": [
-      "custom/kblayout",
       "battery#kb",
       //"battery#mouse",
       "custom/weather",
@@ -27,6 +26,7 @@
       "memory",
       //"backlight",
       "battery",
+      "custom/kblayout",
       "tray",
       "clock",
       "idle_inhibitor"
@@ -63,7 +63,8 @@
       },
       "interval": 15,
       "on-click": "blueberry",
-      "tooltip": "{status}"
+      "tooltip": true,
+      "tooltip-format": "{status}"
     },
     "custom/weather": {
       "exec": "python ~/.config/waybar/scripts/weather.py",
@@ -157,18 +158,18 @@
     },
     "custom/kblayout": {
       "format": "<b>  </b>{}",
-      "interval": 5,
-      "signal": 1,
-      "exec": "~/.config/waybar/scripts/kblayout.sh"
+      // "interval": 5,
+      // "signal": 1,
+      "exec": "~/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'"
     },
     "disk": {
       "interval": 30,
-      "format": "{free} on ",
+      "format": "{free} ",
       "path": "/"
     },
     "disk#home": {
       "interval": 30,
-      "format": "{free} on ",
+      "format": "{free} ",
       "path": "/home"
     },
     "network": {

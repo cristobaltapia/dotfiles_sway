@@ -10,7 +10,7 @@ gaps inner 10
 smart_gaps on
 
 # class        border  backgr. text    indicator child_border
-client.focused #859900 #859900 #fdf6e3 #268bd2 #859900
+client.focused #a3be8c #a3be8c #fdf6e3 #bf616a #a3be8c
 
 # Set floating windows
 # swaymsg -t get_tree
@@ -54,6 +54,10 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] \
     floating enable; \
     sticky enable; \
     move position 1250 0
+for_window [app_id="firefox" title="^Bild-im-Bild$"] \
+    floating enable; \
+    sticky enable; \
+    move position 1250 0
 for_window [app_id="firefox" title="^Firefox - Sharing Indicator$"] \
     floating enable; \
     move position 1800 920
@@ -67,3 +71,5 @@ for_window [title="^Vibrometer*"] floating enable; \
     resize set width 630 height 820
 for_window [title="Wofi-pubs"] floating enable; resize set width 450 height 130
 for_window [title="Blender Render"] floating enable; resize width 1300 heigth 800
+for_window [class="zoom" title="Zoom - Free Account"] floating enable
+for_window [class="zoom" title="Settings"] floating enable

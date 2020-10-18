@@ -1,3 +1,7 @@
 # Bockground
-output DP-1 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output eDP-1 bg /usr/share/backgrounds/adapta/suna.jpg fill
+# output DP-1 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output eDP-1 bg /usr/share/backgrounds/adapta/suna.jpg fill
+output DP-1 bg ~/Documents/wallpaper/archlinux-logo-1920-1080.png fill
+output eDP-1 bg ~/Documents/wallpaper/archlinux-logo-3200-1800.png fill
+# output eDP-1 bg #5e81ac solid_color
+# output DP-1 bg #5e81ac solid_color
