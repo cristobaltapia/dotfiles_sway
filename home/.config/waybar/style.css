@@ -46,9 +46,14 @@ window#waybar {
   color: #5e81ac;
 }
 
-#workspaces button.focused {
+#workspaces button.visible {
   color: #ffffff;
   background-color: #5e81ac;
+}
+
+#workspaces button.focused {
+  color: #ffffff;
+  background-color: #81a1c1;
 }
 
 #workspaces button.urgent {
