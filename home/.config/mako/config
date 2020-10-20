@@ -1,18 +1,16 @@
-font=FuraCode Nerd Font 12
-background-color=#073642CC
-text-color=#eee8d5
-border-color=#333333
+font=DejaVu Sans 12
+background-color=#4c566aCC
+text-color=#eceff4
+border-color=#5e81ac
 ignore-timeout=1
-border-size=5
-padding=10
-border-radius=10
-border-color=#268bd2
-margin=25
+border-size=4
+padding=10,5,20
+border-radius=5
 format=<b>%s</b> \n%b
 width=350
 layer=top
 default-timeout=15000
-progress-color=over #eee8d5
+progress-color=over #eceff4
 icons=1
 icon-path=/usr/share/icons:/usr/share/pixmaps
 group-by=app-name,summary
@@ -23,15 +21,15 @@ format=(and %h more)
 text-color=#777777
 
 [urgency=high]
-border-color=#dc322f
+border-color=#bf616a
 default-timeout=0
 
 [urgency=low]
-border-color=#859900
+border-color=#a3be8c
 default-timeout=5000
 
 [app-name=evolution-mail-notification]
-border-color=#dc322f
+border-color=#bf616a
 default-timeout=0
 actions=0
 
