@@ -1,5 +1,5 @@
 #entry {
-  border-radius: 3;
+  border-radius: 3px;
   padding: 2px 3px 2px 3px;
 }
 
@@ -20,11 +20,10 @@
 }
 
 #input {
-  text-align: center;
   border: 2px solid #5e81ac;
   background-color: #4c566a;
   color: #d8dee9;
-  padding: 3 5 3 5;
+  padding: 3px 5px 3px 5px;
   border-radius: 5px;
 }
 
@@ -41,7 +40,7 @@
 
 #scroll {
   margin-top: 10px;
-  background-color: none;
+  background-color: transparent;
   border: none;
 }
 
