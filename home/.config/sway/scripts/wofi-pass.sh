@@ -21,9 +21,10 @@ SECRET=$(list_passwords | wofi -i --width 700 --lines 20 --height 250 --prompt="
 
 options=("Password" \
         "User" \
-        "User and password")
+        "User and password" \
+        "QR-Code")
 
-option=$(printf '%s\n' "${options[@]%}" | wofi -i --dmenu --width 400 --lines 3 --prompt="..." --cache-file /dev/null)
+option=$(printf '%s\n' "${options[@]%}" | wofi -i --dmenu --width 400 --lines 4 --prompt="..." --cache-file /dev/null)
 
 echo $option
 
@@ -39,6 +40,18 @@ case ${option} in
     ydotool type $(pass get_user ${SECRET})
     ydotool key  TAB
     ydotool type $(pass get_pass ${SECRET})
+    ;;
+  "QR-Code" )
+    if [[ $SECRET =~ wifi$ ]]; then
+      # Produce a valid wifi QR-code
+      WIFISSID=$(pass get_user ${SECRET})
+      WIFIPASS=$(pass get_pass ${SECRET})
+      WIFIQR="WIFI:T:WPA;S:${WIFISSID};P:${WIFIPASS};;"
+      qrencode -s 8 -o - $WIFIQR | feh --title "pass: QR-WIFI" -
+    else
+      # Only password
+      pass show -q1 ${SECRET}
+    fi
     ;;
 esac
 
