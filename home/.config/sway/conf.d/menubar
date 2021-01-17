@@ -7,6 +7,8 @@ bar {
     swaybar_command waybar
 }
 
+# bindsym $mod+Shift+x exec killall -SIGUSR1 waybar
+
 # Never give focus to waybar
 no_focus [app_id="waybar"]
 

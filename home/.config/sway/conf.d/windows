@@ -28,7 +28,7 @@ for_window [app_id="gnote"] floating enable
 for_window [app_id="bluetooth-sendto"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="gnome-[power-statistics,system-monitor,contacts,clocks,font-viewer]"] floating enable
-for_window [app_id="NeovimGtk" title="index.wiki"] floating enable; \
+for_window [app_id="Alacritty" title="vimwiki"] floating enable; \
     resize set width 850 height 810
 for_window [app_id="org.gnome.Weather"] floating enable
 for_window [app_id="org.gnome.clocks"] floating enable
@@ -47,6 +47,7 @@ for_window [app_id="nm-openconnect-auth-dialog"] \
 for_window [app_id="org.remmina.Remmina"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [title="Figure 1" app_id="python3"] floating enable
+for_window [app_id="gksqt"] floating enable
 for_window [class="vtk" title="PyVista"] floating enable
 for_window [class="vtk" title="Visualization Toolkit - OpenGL"] floating enable
 for_window [title="Steam - News *"] floating enable
@@ -58,7 +59,7 @@ for_window [app_id="firefox" title="^Bild-im-Bild$"] \
     floating enable; \
     sticky enable; \
     move position 1250 0
-for_window [app_id="firefox" title="^Firefox - Sharing Indicator$"] \
+for_window [app_id="firefox" title="^Firefox — Sharing Indicator$"] \
     floating enable; \
     move position 1800 920
 for_window [app_id="firefox" title="^Firefox - Weitergabe-Indikator$"] \

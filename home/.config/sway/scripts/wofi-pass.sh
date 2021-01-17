@@ -17,9 +17,29 @@ list_passwords() {
 prompt='search for passwords...'
 SECRET=$(list_passwords | wofi -i --width 700 --lines 20 --height 250 --prompt="${prompt}" --dmenu --cache-file ${CACHE})
 
-# Get password
-PASSWD_PASS=$(pass ${SECRET})
-# Strip extra lines
-PASSWD_PASS=(${PASSWD_PASS[@]})
+# Ask whether pass, user or both are required
 
-wl-copy -o -s ${seat} ${PASSWD_PASS}
+options=("Password" \
+        "User" \
+        "User and password")
+
+option=$(printf '%s\n' "${options[@]%}" | wofi -i --dmenu --width 400 --lines 3 --prompt="..." --cache-file /dev/null)
+
+echo $option
+
+case ${option} in
+  Password )
+    echo "Test"
+    ydotool type $(pass get_pass ${SECRET})
+    ;;
+  User )
+    ydotool type $(pass get_user ${SECRET})
+    ;;
+  "User and password" )
+    ydotool type $(pass get_user ${SECRET})
+    ydotool key  TAB
+    ydotool type $(pass get_pass ${SECRET})
+    ;;
+esac
+
+# wl-copy -o -s ${seat} ${PASSWD_PASS}

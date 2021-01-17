@@ -1,7 +1,7 @@
 * {
   border: none;
   font-size: 13px;
-  margin: 2;
+  margin: 2px;
   font-family: Product Sans, Arial, Helvetica, sans-serif;
   /* font-family: FontAwesome,Roboto; */
 }
@@ -13,20 +13,20 @@ window#waybar {
 
 #workspaces {
   background-color: #434c5e;
-  padding: 1 5 1 5;
+  padding: 1px 5px 1px 5px;
   font-size: 15px;
   border-radius: 10px;
-  margin-right: 10;
+  margin-right: 10px;
 }
 
 #workspaces button {
   font-size: 14px;
   border-radius: 2px;
-  margin: 0;
-  padding-left: 8;
-  padding-right: 8;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   color: #ffffff;
   background-color: #434c5e;
 }
@@ -71,13 +71,13 @@ window#waybar {
   background-color: transparent;
   font-size: 15px;
   border-radius: 15px;
-  margin-right: 7;
+  margin-right: 7px;
 }
 
 #taskbar button {
   border-radius: 0px;
-  margin: 0;
-  padding: 0 8 0 8;
+  margin: 0px;
+  padding: 0px 8px 0px 8px;
   background-color: transparent;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
@@ -113,9 +113,9 @@ window#waybar {
 #custom-mail {
   background-color: #3b4252;
   font-size: 14px;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0 13 0 13;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px 13px 0px 13px;
 }
 
 #custom-newtab {
@@ -152,7 +152,7 @@ window#waybar {
 
 #custom-name {
   border-radius: 15px;
-  margin-right: 10;
+  margin-right: 10px;
 }
 
 #bluetooth,
@@ -165,16 +165,17 @@ window#waybar {
 #clock,
 #custom-pacman,
 #memory,
+#battery,
 #backlight,
 #disk,
 #network,
 #pulseaudio,
-#custom-weather,
 #temperature,
 #mpd {
   margin-left: 0;
   margin-right: 0;
   padding: 0px 10px 0px 10px;
+  background-color: transparent;
 }
 
 #network {
@@ -201,11 +202,11 @@ window#waybar {
 }
 
 #disk {
-  color: #d08770;
+  color: #d8dee9;
 }
 
 #disk.home {
-  color: #81a1c1;
+  color: #eceff4;
 }
 
 #memory {
@@ -239,23 +240,21 @@ window#waybar {
 
 #bluetooth {
   color: #81a1c1;
+  padding: 0px 8px 0px 8px;
 }
 
 #custom-weather.night {
   color: #ecf0f1;
+  padding: 0px 8px 0px 8px;
 }
 
 #custom-weather {
-  color: #81a1c1;
+  color: #ebcb8b;
 }
 
 #clock {
   border-radius: 10px;
   font-size: 14px;
-}
-
-#custom-weather {
-  padding: 0px 8px 0px 8px;
 }
 
 #custom-media {
@@ -283,6 +282,13 @@ window#waybar {
 #pulseaudio.muted {
   background-color: #b1b190;
   color: #2a5c45;
+}
+
+#pulseaudio.mic.muted {
+  color: #b1b190;
+  border-radius: 0 10px 10px 0;
+  margin-right: 0px;
+  padding-right: 10px;
 }
 
 #pulseaudio.mic {
@@ -315,18 +321,19 @@ window#waybar {
 }
 
 #battery.charging {
-  color: #ffffff;
+  color: #a3be8c;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #3b4252;
+    color: #ffffff;
   }
 }
 
 #battery.critical:not(.charging) {
   background-color: #f53c3c;
+  border-radius: 4px;
   color: #ffffff;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -337,7 +344,8 @@ window#waybar {
 
 #battery.warning:not(.charging) {
   color: #ffffff;
-  border-bottom-color: #ebcb8b;
+  background-color: #ebcb8b;
+  border-radius: 4px;
   animation-name: blink;
   animation-duration: 2s;
   animation-timing-function: linear;
@@ -352,7 +360,7 @@ label:focus {
 #custom-power {
   font-size: 17px;
   padding: 0px 10px 0px 10px;
-  border-radius: 10;
+  border-radius: 10px;
 }
 
 #mpd.disconnected {
@@ -391,12 +399,3 @@ label:focus {
   border-bottom-color: rgba(0, 0, 0, 0);
 }
 
-#battery.kb.critical {
-  color: #f53c3c;
-  border-bottom-color: #f76c6c;
-  animation-name: blink;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
