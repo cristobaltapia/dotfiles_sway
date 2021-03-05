@@ -182,6 +182,10 @@ mode "resize" {
     bindsym $up resize shrink height 20px
     bindsym $right resize grow width 20px
 
+    # Place window on the top right corner
+    bindsym p floating enable; resize set width 830 height 470; \
+        move position 765 10; mode "default"
+
     # ditto, with arrow keys
     bindsym Left resize shrink width 20px
     bindsym Down resize grow height 20px
