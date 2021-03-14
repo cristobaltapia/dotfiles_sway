@@ -128,16 +128,16 @@ window#waybar {
 
 #custom-sep3 {
   color: #81a1c1;
-  background: #3b4252;
+  background: #434c5e;
 }
 
 #custom-sep3b {
   background: #3b4252;
-  color: #4c566a;
+  color: #434c5e;
 }
 
 #custom-sep4 {
-  color: #3b4252;
+  color: #434c5e;
   background: #5e81ac;
 }
 
@@ -189,7 +189,7 @@ window#waybar {
 #tray,
 #custom-kblayout {
   background-color: #5e81ac;
-  color: #3b4252;
+  color: #2e3440;
 }
 
 #custom-vpn,
@@ -201,7 +201,8 @@ window#waybar {
 
 #memory,
 #cpu {
-  background-color: #3b4252;
+  background-color: #434c5e;
+  min-width: 50px;
 }
 
 #pulseaudio {
@@ -211,7 +212,7 @@ window#waybar {
 
 #disk {
   background-color: #81a1c1;
-  color: #2e3440;
+  color: #3b4252;
 }
 
 #custom-weather,
@@ -243,7 +244,7 @@ window#waybar {
 }
 
 #memory {
-  color: #e5e9f0;
+  color: #d8dee9;
 }
 
 #memory.high {
@@ -251,11 +252,11 @@ window#waybar {
 }
 
 #cpu {
-  color: #e5e9f0;
+  color: #d8dee9;
 }
 
 #cpu.a {
-  color: #e5e9f0;
+  color: #d8dee9;
 }
 
 #cpu.b {
@@ -263,7 +264,7 @@ window#waybar {
 }
 
 #cpu.c {
-  color: #bf616a;
+  color: #d08770;
 }
 
 #cpu.d {

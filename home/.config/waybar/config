@@ -13,7 +13,7 @@
     // ],
     "modules-right": [
       "custom/sep7",
-      "battery#kb",
+      //"battery#kb",
       //"battery#mouse",
       "custom/weather",
       "custom/sep6",
@@ -56,7 +56,7 @@
     },
     "clock": {
       "tooltip-format": "{calendar}",
-      "format": "  {:%d/%m/%Y •  %H:%M}"
+      "format": "  {:%d/%m/%Y • %H:%M}"
     },
     "custom/sep0": {
       "format": ""
@@ -321,7 +321,8 @@
       "format": ""
     },
     "custom/sep3b": {
-      "format": ""
+      //"format": ""
+      "format": ""
     }
   }
 ]
