@@ -2,7 +2,7 @@
   {
     "layer": "top",
     "output": "eDP-1",
-    "height": 30,
+    "height": 26,
     // Choose the order of the modules
     "modules-left": [
       "sway/workspaces",
@@ -12,23 +12,30 @@
     //    "sway/window"
     // ],
     "modules-right": [
+      "custom/sep6",
       "battery#kb",
       //"battery#mouse",
       "custom/weather",
+      "custom/sep5",
       "disk",
       "disk#home",
+      "custom/sep4",
       "pulseaudio",
       "pulseaudio#mic",
-      "bluetooth",
-      "custom/vpn",
-      "network",
+      "custom/sep3",
       "cpu",
       "memory",
       //"backlight",
+      "custom/sep2",
+      "bluetooth",
+      "custom/vpn",
+      "network",
       "battery",
       "custom/kblayout",
       "tray",
+      "custom/sep1",
       "clock",
+      "custom/sep0",
       "idle_inhibitor"
     ],
     // Modules configuration
@@ -49,6 +56,27 @@
     "clock": {
       "tooltip-format": "{calendar}",
       "format": "  {:%d/%m/%Y •  %H:%M}"
+    },
+    "custom/sep0": {
+      "format": ""
+    },
+    "custom/sep1": {
+      "format": ""
+    },
+    "custom/sep2": {
+      "format": ""
+    },
+    "custom/sep3": {
+      "format": ""
+    },
+    "custom/sep4": {
+      "format": ""
+    },
+    "custom/sep5": {
+      "format": ""
+    },
+    "custom/sep6": {
+      "format": ""
     },
     "custom/touchpad": {
       "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
@@ -157,7 +185,7 @@
       }
     },
     "custom/kblayout": {
-      "format": "<b>  </b>{}",
+      "format": "<b> </b>{}",
       // "interval": 5,
       // "signal": 1,
       "exec": "~/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'"
@@ -240,7 +268,7 @@
       "HDMI-A-1",
       "DP-1"
     ],
-    "height": 30,
+    "height": 26,
     // Choose the order of the modules
     "modules-left": [
       "sway/workspaces",
@@ -251,8 +279,11 @@
     ],
     "modules-right": [
       // "custom/backlight",
+      "custom/sep3b",
       "cpu",
       "memory",
+      "custom/sep2",
+      "custom/sep1",
       "clock"
     ],
     "cpu": {
@@ -272,16 +303,18 @@
         "high": 95
       }
     },
-    "custom/backlight": {
-      "exec": "ddcutil -b 8 getvcp 10",
-      "format": "",
-      "interval": 10,
-      "on-scroll-up": "ddcutil -b 8 setvcp 10 + 10",
-      "on-scroll-down": "ddcutil -b 8 setvcp 10 - 10"
-    },
     "clock": {
       "tooltip-format": "{:%Y-%m-%d | %H:%M}",
       "format": "{:%d/%m/%Y • %H:%M}"
+    },
+    "custom/sep1": {
+      "format": ""
+    },
+    "custom/sep2": {
+      "format": ""
+    },
+    "custom/sep3b": {
+      "format": ""
     }
   }
 ]
