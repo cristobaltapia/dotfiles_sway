@@ -200,7 +200,7 @@ bindsym $mod+r mode "resize"
 
 # ------------------------------------------
 # System control (Logout, shutdown, etc)
-set $lock swaylock-blur --blur-sigma 40 -- -f
+set $lock swaylock
 set $mode_system System: (l) lock, (e) logout, (o) turn off screens, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
 
 set $screenoff  swayidle -w  \
