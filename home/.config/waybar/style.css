@@ -16,13 +16,11 @@ window#waybar {
   background-color: #434c5e;
   padding: 0px 5px 0px 5px;
   font-size: 15px;
-  /* border-radius: 10px; */
   margin-right: 10px;
 }
 
 #workspaces button {
   font-size: 14px;
-  /* border-radius: 2px; */
   margin: 0px;
   padding-left: 8px;
   padding-right: 8px;
@@ -106,7 +104,8 @@ window#waybar {
 #custom-sep3b,
 #custom-sep4,
 #custom-sep5,
-#custom-sep6 {
+#custom-sep6,
+#custom-sep7 {
   font-size: 22px;
   margin: 0px;
   padding: 0px;
@@ -114,22 +113,22 @@ window#waybar {
 
 #custom-sep0 {
   color: #b48ead;
-  background: #5e81ac;
+  background: #88c0d0;
 }
 
 #custom-sep1 {
+  color: #88c0d0;
+  background: #5e81ac;
+}
+
+#custom-sep2 {
   color: #5e81ac;
   background: #81a1c1;
 }
 
-#custom-sep2 {
+#custom-sep3 {
   color: #81a1c1;
   background: #3b4252;
-}
-
-#custom-sep3 {
-  color: #3b4252;
-  background: #4c566a;
 }
 
 #custom-sep3b {
@@ -138,16 +137,21 @@ window#waybar {
 }
 
 #custom-sep4 {
-  color: #4c566a;
+  color: #3b4252;
   background: #5e81ac;
 }
 
 #custom-sep5 {
   color: #5e81ac;
-  background: #4c566a;
+  background: #81a1c1;
 }
 
 #custom-sep6 {
+  color: #81a1c1;
+  background: #4c566a;
+}
+
+#custom-sep7 {
   color: #4c566a;
   background: #3b4252;
 }
@@ -177,15 +181,19 @@ window#waybar {
 }
 
 #clock {
-  background-color: #5e81ac;
-  color: #e5e9f0;
+  background-color: #88c0d0;
+  color: #2e3440;
 }
 
 #battery,
-#network,
 #tray,
+#custom-kblayout {
+  background-color: #5e81ac;
+  color: #3b4252;
+}
+
 #custom-vpn,
-#custom-kblayout,
+#network,
 #bluetooth {
   background-color: #81a1c1;
   color: #3b4252;
@@ -197,11 +205,13 @@ window#waybar {
 }
 
 #pulseaudio {
-  background-color: #4c566a;
+  background-color: #5e81ac;
+  color: #2e3440;
 }
 
 #disk {
-  background-color: #5e81ac;
+  background-color: #81a1c1;
+  color: #2e3440;
 }
 
 #custom-weather,
@@ -221,7 +231,7 @@ window#waybar {
 }
 
 #custom-vpn.disconnected {
-  color: #d8dee9;
+  color: #4c566a;
 }
 
 #custom-vpn.connected {
@@ -230,19 +240,10 @@ window#waybar {
 
 #network.disconnected {
   color: #f76c6c;
-  border-bottom-color: #f76c6c;
-}
-
-#disk {
-  color: #d8dee9;
-}
-
-#disk.home {
-  color: #eceff4;
 }
 
 #memory {
-  color: #b48ead;
+  color: #e5e9f0;
 }
 
 #memory.high {
@@ -250,11 +251,11 @@ window#waybar {
 }
 
 #cpu {
-  color: #a3be8c;
+  color: #e5e9f0;
 }
 
 #cpu.a {
-  color: #a3be8c;
+  color: #e5e9f0;
 }
 
 #cpu.b {
@@ -267,11 +268,6 @@ window#waybar {
 
 #cpu.d {
   color: #bf616a;
-  /* background-color: #bf616a; */
-}
-
-#bluetooth {
-  padding: 0px 8px 0px 8px;
 }
 
 #custom-weather.night {
@@ -284,27 +280,21 @@ window#waybar {
 }
 
 #pulseaudio {
-  color: #ebcb8b;
-  /* border-radius: 10px 0 0 10px; */
   margin-right: 0;
   padding-right: 0;
 }
 
 #pulseaudio.muted {
-  background-color: #b1b190;
-  color: #2a5c45;
+  background-color: #4c566a;
 }
 
 #pulseaudio.mic.muted {
-  color: #b1b190;
-  /* border-radius: 0 10px 10px 0; */
+  color: #4c566a;
   margin-right: 0px;
   padding-right: 10px;
 }
 
 #pulseaudio.mic {
-  color: #ebcb8b;
-  /* border-radius: 0 10px 10px 0; */
   margin-right: 0px;
   padding-right: 10px;
 }
@@ -315,12 +305,6 @@ window#waybar {
 
 #temperature.critical {
   color: #eb4d4b;
-}
-
-#tray {
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0px 12px 0px 8px;
 }
 
 #battery {

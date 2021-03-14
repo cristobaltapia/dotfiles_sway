@@ -12,24 +12,25 @@
     //    "sway/window"
     // ],
     "modules-right": [
-      "custom/sep6",
+      "custom/sep7",
       "battery#kb",
       //"battery#mouse",
       "custom/weather",
-      "custom/sep5",
+      "custom/sep6",
       "disk",
       "disk#home",
-      "custom/sep4",
+      "custom/sep5",
       "pulseaudio",
       "pulseaudio#mic",
-      "custom/sep3",
+      "custom/sep4",
       "cpu",
       "memory",
       //"backlight",
-      "custom/sep2",
+      "custom/sep3",
       "bluetooth",
       "custom/vpn",
       "network",
+      "custom/sep2",
       "battery",
       "custom/kblayout",
       "tray",
@@ -76,6 +77,9 @@
       "format": ""
     },
     "custom/sep6": {
+      "format": ""
+    },
+    "custom/sep7": {
       "format": ""
     },
     "custom/touchpad": {
@@ -181,7 +185,7 @@
       },
       "format-icons": {
         "normal": "",
-        "critical": " "
+        "critical": ""
       }
     },
     "custom/kblayout": {
@@ -278,10 +282,10 @@
       "sway/window"
     ],
     "modules-right": [
-      // "custom/backlight",
       "custom/sep3b",
       "cpu",
       "memory",
+      "custom/sep3",
       "custom/sep2",
       "custom/sep1",
       "clock"
@@ -311,6 +315,9 @@
       "format": ""
     },
     "custom/sep2": {
+      "format": ""
+    },
+    "custom/sep3": {
       "format": ""
     },
     "custom/sep3b": {
