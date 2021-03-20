@@ -5,6 +5,7 @@
   /* font-family: Product Sans, Arial, Helvetica, sans-serif; */
   /* font-family: "FuraCode Nerd Font", Arial, Helvetica, sans-serif; */
   font-family: FontAwesome,Roboto,FuraCode Nerd Font;
+  font-weight: 500;
 }
 
 window#waybar {
@@ -12,30 +13,39 @@ window#waybar {
   color: #eceff4;
 }
 
-#workspaces {
-  background-color: #434c5e;
-  padding: 0px 5px 0px 5px;
-  font-size: 15px;
-  margin-right: 10px;
-}
-
-#workspaces button {
-  font-size: 14px;
-  margin: 0px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #eceff4;
-  background-color: #434c5e;
-}
-
 #window {
   background-color: transparent;
   color: #d8dee9;
   padding-right: 10px;
-  font-size: 14px;
   font-weight: 700;
+}
+
+#workspaces {
+  background-color: #4c566a;
+  padding: 0px 4px 0px 4px;
+  font-size: 15px;
+  margin-right: 0px;
+  border-radius: 0px;
+}
+
+#workspaces button {
+  border-radius: 0px;
+  margin: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #eceff4;
+  background-color: #4c566a;
+}
+
+#custom-left1 {
+  color: #b48ead;
+  background: #4c566a;
+}
+
+#custom-left2 {
+  color: #4c566a;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -47,12 +57,14 @@ window#waybar {
 
 #workspaces button.visible {
   color: #eceff4;
-  background-color: #5e81ac;
+  background-color: #81a1c1;
+  border-radius: 4px;
 }
 
 #workspaces button.focused {
   color: #eceff4;
-  background-color: #81a1c1;
+  background-color: #d08770;
+  border-radius: 4px;
 }
 
 #workspaces button.urgent {
@@ -97,6 +109,8 @@ window#waybar {
 }
 
 /* WIDGETS */
+#custom-left1,
+#custom-left2,
 #custom-sep0,
 #custom-sep1,
 #custom-sep2,
@@ -113,36 +127,36 @@ window#waybar {
 
 #custom-sep0 {
   color: #b48ead;
-  background: #88c0d0;
+  background: #ebcb8b;
 }
 
 #custom-sep1 {
-  color: #88c0d0;
-  background: #5e81ac;
+  color: #ebcb8b;
+  background: #a3be8c;
 }
 
 #custom-sep2 {
-  color: #5e81ac;
-  background: #81a1c1;
+  color: #a3be8c;
+  background: #d08770;
 }
 
 #custom-sep3 {
-  color: #81a1c1;
-  background: #434c5e;
+  color: #d08770;
+  background: #81a1c1;
 }
 
 #custom-sep3b {
   background: #3b4252;
-  color: #434c5e;
+  color: #88c0d0;
 }
 
 #custom-sep4 {
-  color: #434c5e;
-  background: #5e81ac;
+  color: #81a1c1;
+  background: #88c0d0;
 }
 
 #custom-sep5 {
-  color: #5e81ac;
+  color: #88c0d0;
   background: #81a1c1;
 }
 
@@ -181,33 +195,34 @@ window#waybar {
 }
 
 #clock {
-  background-color: #88c0d0;
+  background-color: #ebcb8b;
   color: #2e3440;
 }
 
 #battery,
 #tray,
 #custom-kblayout {
-  background-color: #5e81ac;
+  background-color: #a3be8c;
   color: #2e3440;
 }
 
 #custom-vpn,
 #network,
 #bluetooth {
-  background-color: #81a1c1;
-  color: #3b4252;
+  background-color: #d08770;
+  color: #2e3440;
 }
 
 #memory,
 #cpu {
-  background-color: #434c5e;
+  background-color: #88c0d0;
   min-width: 50px;
+  color: #3b4252;
 }
 
 #pulseaudio {
-  background-color: #5e81ac;
-  color: #2e3440;
+  background-color: #81a1c1;
+  color: #3b4252;
 }
 
 #disk {
@@ -243,24 +258,16 @@ window#waybar {
   color: #f76c6c;
 }
 
-#memory {
-  color: #d8dee9;
-}
-
 #memory.high {
   color: #bf616a;
 }
 
-#cpu {
-  color: #d8dee9;
-}
-
 #cpu.a {
-  color: #d8dee9;
+  color: #3b4252;
 }
 
 #cpu.b {
-  color: #ebcb8b;
+  color: #3b4252;
 }
 
 #cpu.c {

@@ -5,7 +5,9 @@
     "height": 26,
     // Choose the order of the modules
     "modules-left": [
+      "custom/left1",
       "sway/workspaces",
+      "custom/left2",
       "sway/mode"
     ],
     // "modules-center": [
@@ -20,11 +22,11 @@
       "disk",
       "disk#home",
       "custom/sep5",
-      "pulseaudio",
-      "pulseaudio#mic",
-      "custom/sep4",
       "cpu",
       "memory",
+      "custom/sep4",
+      "pulseaudio",
+      "pulseaudio#mic",
       //"backlight",
       "custom/sep3",
       "bluetooth",
@@ -81,6 +83,12 @@
     },
     "custom/sep7": {
       "format": ""
+    },
+    "custom/left1": {
+      "format": ""
+    },
+    "custom/left2": {
+      "format": ""
     },
     "custom/touchpad": {
       "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
@@ -275,7 +283,9 @@
     "height": 26,
     // Choose the order of the modules
     "modules-left": [
+      "custom/left1",
       "sway/workspaces",
+      "custom/left2",
       "sway/mode"
     ],
     "modules-center": [
@@ -285,6 +295,7 @@
       "custom/sep3b",
       "cpu",
       "memory",
+      "custom/sep4",
       "custom/sep3",
       "custom/sep2",
       "custom/sep1",
@@ -323,6 +334,15 @@
     "custom/sep3b": {
       //"format": ""
       "format": ""
+    },
+    "custom/sep4": {
+      "format": ""
+    },
+    "custom/left1": {
+      "format": ""
+    },
+    "custom/left2": {
+      "format": ""
     }
   }
 ]
