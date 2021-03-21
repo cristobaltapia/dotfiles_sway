@@ -88,7 +88,7 @@
       "format": ""
     },
     "custom/left2": {
-      "format": ""
+      "format": ""
     },
     "custom/touchpad": {
       "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
@@ -242,7 +242,7 @@
       "format": "{volume}% {icon}",
       "format-bluetooth": "{volume}% {icon}",
       "format-bluetooth-muted": " {icon}",
-      "format-muted": "",
+      "format-muted": "",
       "format-icons": {
         "headphones": "",
         "handsfree": "",

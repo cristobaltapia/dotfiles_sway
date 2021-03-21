@@ -293,7 +293,7 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-  background-color: #4c566a;
+  color: #4c566a;
 }
 
 #pulseaudio.mic.muted {
