@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+vol=$(pamixer -t && pamixer --get-mute --get-volume | awk '{val = $1 == "true" ? 0 : $2; printf "%s\n", val}')
+if [[ $vol = "0" ]]; then
+  echo $vol > ${SWAYSOCK}_mute.wob
+else
+  echo $vol > ${SWAYSOCK}.wob
+fi

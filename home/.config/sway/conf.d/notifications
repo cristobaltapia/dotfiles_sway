@@ -1,11 +1,14 @@
 # Notifications
 exec_always mako
 
-bindsym $mod+n mode notifications
+set $mode_notifications Notifications: (d) dismiss, (D) dismiss all, (m) show action menu
 
-mode notifications {
+mode "$mode_notifications" {
 	bindsym Escape mode default
 	bindsym Return exec makoctl invoke; exec makoctl dismiss; mode default
 	bindsym d exec makoctl dismiss; mode default
 	bindsym Shift+d exec makoctl dismiss -a; mode default
+	bindsym m exec makoctl menu wofi -d -L 4 -p 'Choose Action:'; mode default
 }
+
+bindsym $mod+n mode "$mode_notifications"
