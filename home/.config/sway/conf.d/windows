@@ -43,6 +43,7 @@ for_window [app_id="obs" title="^V4l2sinkProperties$"] floating enable; \
     move position 1120 0
 # Gnome
 for_window [app_id="gnote"] floating enable
+for_window [app_id="cheese"] floating enable
 for_window [app_id="bluetooth-sendto"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="gnome-[power-statistics,system-monitor,contacts,clocks,font-viewer]"] floating enable
