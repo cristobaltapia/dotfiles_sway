@@ -239,6 +239,8 @@ exec --no-startup-id persway --autolayout --opacity 0.8
 # Always mute mic at boot
 exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo 1
 
+exec_always "systemctl --user import-environment
+
 # exec startup sway -d 2> ~/sway.log
 
 # Fix delay in start of GTK apps
@@ -247,4 +249,3 @@ include ~/.config/sway/conf.d/*
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
