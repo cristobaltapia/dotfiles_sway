@@ -2,7 +2,7 @@
   {
     "layer": "top",
     "output": "eDP-1",
-    "height": 26,
+    "height": 27,
     // Choose the order of the modules
     "modules-left": [
       "custom/left1",
@@ -34,7 +34,7 @@
       "network",
       "custom/sep2",
       "battery",
-      "custom/kblayout",
+      "sway/language",
       "tray",
       "custom/sep1",
       "clock",
@@ -79,7 +79,7 @@
       "format": ""
     },
     "custom/sep6": {
-      "format": ""
+      "format": ""
     },
     "custom/sep7": {
       "format": ""
@@ -202,6 +202,10 @@
       // "signal": 1,
       "exec": "~/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'"
     },
+    "sway/language" : {
+      "min-length": 2,
+      "max-length": 3
+    },
     "disk": {
       "interval": 30,
       "format": "{free} ",
@@ -280,7 +284,7 @@
       "HDMI-A-1",
       "DP-1"
     ],
-    "height": 26,
+    "height": 27,
     // Choose the order of the modules
     "modules-left": [
       "custom/left1",
@@ -298,9 +302,13 @@
       "custom/sep4",
       "custom/sep3",
       "custom/sep2",
+      "sway/language",
       "custom/sep1",
       "clock"
     ],
+    "sway/mode": {
+      "format": "<i>{}</i>"
+    },
     "cpu": {
       "format": "{usage}% ",
       "tooltip": false,
@@ -311,6 +319,11 @@
         "c": 67,
         "d": 88
       }
+    },
+    "sway/language" : {
+      "min-length": 2,
+      "max-length": 3,
+      "on-update": "~/.config/sway/scripts/kblayout_notification.sh"
     },
     "memory": {
       "format": "{}% ",

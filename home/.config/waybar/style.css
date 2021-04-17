@@ -182,6 +182,7 @@ window#waybar {
 #tray,
 #custom-vpn,
 #custom-kblayout,
+#language,
 #bluetooth,
 #clock,
 #idle_inhibitor {
@@ -201,7 +202,7 @@ window#waybar {
 
 #battery,
 #tray,
-#custom-kblayout {
+#language {
   background-color: #a3be8c;
   color: #2e3440;
 }
@@ -226,8 +227,7 @@ window#waybar {
 }
 
 #disk {
-  background-color: #81a1c1;
-  color: #3b4252;
+  background-color: #4c566a;
 }
 
 #custom-weather,
@@ -328,7 +328,6 @@ window#waybar {
 
 #battery.critical:not(.charging) {
   background-color: #f53c3c;
-  /* border-radius: 4px; */
   color: #eceff4;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -340,7 +339,6 @@ window#waybar {
 #battery.warning:not(.charging) {
   color: #eceff4;
   background-color: #ebcb8b;
-  /* border-radius: 4px; */
   animation-name: blink;
   animation-duration: 2s;
   animation-timing-function: linear;
@@ -355,7 +353,6 @@ label:focus {
 #custom-power {
   font-size: 17px;
   padding: 0px 10px 0px 10px;
-  /* border-radius: 10px; */
 }
 
 #idle_inhibitor {
