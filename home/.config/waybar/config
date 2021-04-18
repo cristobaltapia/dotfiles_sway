@@ -204,7 +204,8 @@
     },
     "sway/language" : {
       "min-length": 2,
-      "max-length": 3
+      "max-length": 3,
+      "on-update": "~/.config/sway/scripts/kblayout_notification.sh"
     },
     "disk": {
       "interval": 30,
@@ -322,8 +323,7 @@
     },
     "sway/language" : {
       "min-length": 2,
-      "max-length": 3,
-      "on-update": "~/.config/sway/scripts/kblayout_notification.sh"
+      "max-length": 3
     },
     "memory": {
       "format": "{}% ",

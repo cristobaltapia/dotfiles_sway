@@ -4,7 +4,7 @@
   margin: 0px;
   /* font-family: Product Sans, Arial, Helvetica, sans-serif; */
   /* font-family: "FuraCode Nerd Font", Arial, Helvetica, sans-serif; */
-  font-family: FontAwesome,Roboto,FuraCode Nerd Font;
+  font-family: Inter Nerd Font;
   font-weight: 500;
 }
 
@@ -48,11 +48,11 @@ window#waybar {
   color: #4c566a;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
   box-shadow: inherit;
   background-color: #ebcb8b;
   color: #5e81ac;
+  border-radius: 4px;
 }
 
 #workspaces button.visible {
@@ -69,14 +69,11 @@ window#waybar {
 
 #workspaces button.urgent {
   color: #eb4d4b;
+  border-radius: 4px;
 }
 
-/* TASKBAR */
-
 #taskbar {
-  /* background-color: transparent; */
   font-size: 15px;
-  /* border-radius: 15px; */
   margin-right: 7px;
 }
 
@@ -108,7 +105,6 @@ window#waybar {
   border-bottom: 3px solid #5e81ac;
 }
 
-/* WIDGETS */
 #custom-left1,
 #custom-left2,
 #custom-sep0,
@@ -123,6 +119,7 @@ window#waybar {
   font-size: 22px;
   margin: 0px;
   padding: 0px;
+  font-family: FuraCode Nerd Font;
 }
 
 #custom-sep0 {
@@ -157,11 +154,11 @@ window#waybar {
 
 #custom-sep5 {
   color: #88c0d0;
-  background: #81a1c1;
+  background: #4c566a;
 }
 
 #custom-sep6 {
-  color: #81a1c1;
+  color: #3b4252;
   background: #4c566a;
 }
 
@@ -181,7 +178,6 @@ window#waybar {
 #cpu,
 #tray,
 #custom-vpn,
-#custom-kblayout,
 #language,
 #bluetooth,
 #clock,
