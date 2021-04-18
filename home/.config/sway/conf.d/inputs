@@ -2,11 +2,12 @@
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 #
+# To add Neo2: xkb_layout "de", variant neo
 
 input type:keyboard {
     xkb_layout de,es
     xkb_variant ,nodeadkeys
-    xkb_options grp:alt_shift_toggle
+    xkb_options "grp:alt_shift_toggle, caps:escape"
 }
 
 input "9011:26214:ydotoold_virtual_device" {
@@ -21,7 +22,7 @@ input type:pointer {
     # accel_profile adaptive
 }
 
-input 1739:30381:DLL0665:01_06CB:76AD_Touchpad {
+input "1739:30381:DLL0665:01_06CB:76AD_Touchpad" {
     natural_scroll enabled
     middle_emulation enabled
     scroll_method two_finger
@@ -33,9 +34,22 @@ input 1739:30381:DLL0665:01_06CB:76AD_Touchpad {
     click_method clickfinger
 }
 
-input 1267:8400:ELAN_Touchscreen {
+input "1267:8400:ELAN_Touchscreen" {
 
 }
+
+# Logitech spotlight
+# Mouse
+# 1133:50494:Logitech_USB_Receiver_Mouse
+# input 1133:50494:Logitech_USB_Receiver_Consumer_Control {
+#     accel_profile flat
+#     pointer_accel 0.3
+# }
+input "1133:50494:Logitech_USB_Receiver_Mouse" {
+    accel_profile flat
+    pointer_accel 0.3
+}
+
 
 # Wacom configurations
 # - With USB-Cable
@@ -43,11 +57,11 @@ input 1267:8400:ELAN_Touchscreen {
 # resolution: (3200x1800)
 # area wacom: (157x98mm) >$ libinput list-devices
 # -> 1800 * 157 / 3200 = x -> x / 98 = y (use 'y')
-input 1386:788:Wacom_Intuos_Pro_S_Pen {
+input "1386:788:Wacom_Intuos_Pro_S_Pen" {
     map_to_output DP-1
     map_from_region 0.0x0.0 1.0x0.901
 }
-input 1386:788:Wacom_Intuos_Pro_S_Finger {
+input "1386:788:Wacom_Intuos_Pro_S_Finger" {
     click_method clickfinger
     drag enabled
     scroll_method two_finger
@@ -55,7 +69,7 @@ input 1386:788:Wacom_Intuos_Pro_S_Finger {
     tap enabled
     accel_profile adaptive
 }
-input 1386:788:Wacom_Intuos_Pro_S_Pad {
+input "1386:788:Wacom_Intuos_Pro_S_Pad" {
     click_method clickfinger
     scroll_method two_finger
     natural_scroll enabled
@@ -69,11 +83,11 @@ input 1386:788:Wacom_Intuos_Pro_S_Pad {
 # resolution: (3200x1800)
 # area wacom: (157x98mm) >$ libinput list-devices
 # -> 1800 * 157 / 3200 = x -> x / 98 = y (use 'y')
-input 1386:788:Wacom_Intuos_Pro_S_(WL)_Pen {
+input "1386:788:Wacom_Intuos_Pro_S_(WL)_Pen" {
     map_to_output DP-1
     map_from_region 0.0x0.0 1.0x0.901
 }
-input 1386:788:Wacom_Intuos_Pro_S_(WL)_Finger {
+input "1386:788:Wacom_Intuos_Pro_S_(WL)_Finger" {
     click_method clickfinger
     drag enabled
     scroll_method two_finger
@@ -81,7 +95,7 @@ input 1386:788:Wacom_Intuos_Pro_S_(WL)_Finger {
     tap enabled
     accel_profile adaptive
 }
-input 1386:788:Wacom_Intuos_Pro_S_(WL)_Pad {
+input "1386:788:Wacom_Intuos_Pro_S_(WL)_Pad" {
     click_method clickfinger
     scroll_method two_finger
     natural_scroll enabled
@@ -103,15 +117,36 @@ input 1386:788:Wacom_Intuos_Pro_S_(WL)_Pad {
 ### Seat configurations
 # For the default seat
 seat seat0 hide_cursor 10000
+seat seat0 hide_cursor when-typing enable
 # seat seat0 idle_inhibit keyboard pointer touchpad touch switch
 # seat seat0 idle_wake "keyboard" "pointer" "touchpad" "touch" "switch"
+
+# Define seat for Logitech spotlight
+# seat seat_spotlight {
+#     attach 1133:50494:Logitech_USB_Receiver_Mouse
+#     attach 1133:50494:Logitech_USB_Receiver_Consumer_Control
+#     attach 1133:50494:Logitech_USB_Receiver_System_Control
+#     hide_cursor 300
+#     xcursor_theme "laser-pointer-cursors"
+# }
+
+# bindsym --input-device=1133:50494:Logitech_USB_Receiver_Mouse BTN_LEFT exec ydotool key 5
+# bindsym --input-device=1133:50494:Logitech_USB_Receiver_Mouse --release BTN_LEFT exec ydotool key 1
+# bindcode --input-device=1133:50494:Logitech_USB_Receiver 113 exec ydotool key 5
 
 # For wacom seat
 # seat seat_wacom hide_cursor 10000
 # seat seat_wacom idle_inhibit tablet_tool
 # seat seat_wacom idle_wake tablet_tool
 
-# seat seat0 fallback true
+seat seat0 fallback true
 
 ### Focus
 focus_follows_mouse no
+
+# Cursor theme
+seat seat0 xcursor_theme "capitaine-cursors"
+# seat seat0 xcursor_theme "laser-pointer-cursors"
+# seat seat_spotlight xcursor_theme "laser-pointer-cursors"
+exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
+# exec_always gsettings set org.gnome.desktop.interface cursor-theme "laser-pointer-cursor"

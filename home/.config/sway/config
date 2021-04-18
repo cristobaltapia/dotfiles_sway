@@ -233,7 +233,8 @@ mode "screen_off" {
 exec --no-startup-id gammastep-indicator
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud --background
-exec --no-startup-id persway --autolayout --opacity 0.8
+exec --no-startup-id persway --autolayout \
+    -f "[tiling] opacity 0.8; [app_id=\"firefox\"] opacity 1; opacity 1"
 # exec --no-startup-id flashfocus
 
 # Always mute mic at boot
@@ -247,5 +248,5 @@ exec_always "systemctl --user import-environment
 include ~/.config/sway/conf.d/*
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec dbus-update-activation-environment 2>/dev/null && \
+exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK

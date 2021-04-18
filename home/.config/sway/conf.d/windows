@@ -21,6 +21,7 @@ for_window [app_id="evolution" title="Fw: *"] floating enable
 for_window [app_id="evolution" title="Fwd: *"] floating enable
 for_window [app_id="evolution" title="Termin *"] floating enable
 for_window [app_id="evolution" title="Besprechung *"] floating enable
+for_window [app_id="evolution" title="^Drucken$"] floating enable
 for_window [app_id="evolution-alarm-notif"] floating enable
 # Multimedia
 for_window [app_id="pavucontrol"] floating enable
@@ -38,7 +39,8 @@ for_window [app_id="zoom" title="^Choose ONE of the audio conference options$"] 
 for_window [app_id="zoom" title="^[zZ]oom$"] floating enable
 for_window [app_id="zoom" title="^Chat"] floating enable; \
     resize width 600 height 700
-for_window [app_id="obs" title="^OBS Studio"] floating enable
+for_window [app_id="obs" title="^OBS Studio"] floating enable; \
+    resize width 1450 height 770
 for_window [app_id="obs" title="^V4l2sinkProperties$"] floating enable; \
     move position 1120 0
 # Gnome
@@ -49,6 +51,7 @@ for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="gnome-[power-statistics,system-monitor,contacts,clocks,font-viewer]"] floating enable
 for_window [app_id="org.gnome.Weather"] floating enable
 for_window [app_id="org.gnome.clocks"] floating enable
+for_window [app_id="org.gnome.DejaDup"] floating enable
 for_window [app_id="blueberry.py"] floating enable; \
     resize set height 760
 for_window [app_id="yad"] \ floating enable; \
@@ -85,6 +88,8 @@ for_window [title="^Vibrometer*"] floating enable; \
     resize set width 630 height 820
 for_window [title="Pubs edit"] floating enable; \
     resize set width 800 height 800
+for_window [app_id="wofi-pubs"] floating enable
 for_window [app_id="Alacritty" title="vimwiki"] floating enable; \
     resize set width 850 height 810
 for_window [class="feh" title="^pass: *"] floating enable
+for_window [class="hl_linux" title="Counter-Strike"] fullscreen enable

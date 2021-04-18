@@ -20,6 +20,7 @@ for_window [app_id="waybar" floating] {
 
 # Wofi as launcher
 set $menu wofi -i -I --show drun
+# set $menu nwggrid -f -o 0.5 -wm sway
 
 # Passmenu
 # set $passmenu rofi-pass -fn "pango:Noto Sans 12":
