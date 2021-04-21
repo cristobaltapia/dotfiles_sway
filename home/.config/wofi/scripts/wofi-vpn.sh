@@ -20,6 +20,7 @@ LIST=$(nmcli --fields "$FIELDS" connection show | awk \
     -F "[  ]{2,}" \
     '$2 ~ /vpn/ {
       sub(/activated/, "");
+      sub(/activating/, "");
       sub(/--/, "");
       printf "<tt>%-30s\t</tt>%s\t%s\n", $1,$2,$3 }')
 

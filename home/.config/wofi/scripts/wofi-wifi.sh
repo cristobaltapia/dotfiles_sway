@@ -27,7 +27,11 @@ LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | \
       printf "<tt>%-4s  %-26s </tt>%s   %s\n", $2,$1,$3,$4 }')
 
 # Bluetooth connections
-LISTB=$(nmcli --fields NAME,TYPE con show | awk '/bluetooth/ { printf "<tt>%s</tt>\n", $0 }')
+LISTB=$(nmcli --fields NAME,TYPE,ACTIVE con show | \
+  awk -F "[  ]{2,}" '/bluetooth/ {;
+    sub(/yes/, "", $3);
+    sub(/no/, "", $3);
+    printf "<tt>   %-26s </tt>%s   \n", $1,$3 }')
 
 # Gives a list of known connections so we can parse it later
 KNOWNCON=$(nmcli connection show | awk -F '[[:space:]][[:space:]]+' '{printf "%s\n", $1}')
@@ -41,7 +45,7 @@ if [[ ! -z $CURRSSID ]]; then
 	HIGHLINE=$(echo  "$(echo "$LIST" | awk -F "[  ]{2,}" '{print $2}' | grep -Fxn -m 1 "$CURRSSID" | awk -F ":" '{print $1}') + 1" | bc )
 fi
 
-LINENUM=$(echo -e "toggle\nmanual\n${LIST}\n${LISTB}" | wc -l)
+LINENUM=$(echo -e "toggle\nmanual\n${LISTB}\n${LIST}" | wc -l)
 
 # If there are more than 20 SSIDs, the menu will still only have 20 lines
 if [ "$LINENUM" -gt 20 ] && [[ "$CONSTATE" =~ "enabled" ]]; then
@@ -57,7 +61,7 @@ elif [[ "$CONSTATE" =~ "disabled" ]]; then
 	TOGGLE="toggle on"
 fi
 
-CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LIST\n$LISTB" | uniq -u | \
+CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LISTB\n$LIST" | uniq -u | \
     wofi -i --dmenu -p "Wi-Fi SSID: " --width "$WWIDTH" --lines ${LINENUM} --cache-file /dev/null --location $LOC --xoffset $XOFF | awk -F "[  ]{2,}" '{gsub(/<[^>]*>/, ""); print $0}')
 
 

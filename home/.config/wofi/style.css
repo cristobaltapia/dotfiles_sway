@@ -16,7 +16,8 @@
   background-color: rgba(53, 59, 73, 0.97);
   border: 3px solid #3b4252;
   border-radius: 2px;
-  font-family: Product Sans;
+  font-family: 'Inter Nerd Font','FuraCode Nerd Font Mono';
+  font-size: 15px;
 }
 
 #input {
@@ -46,7 +47,6 @@
 
 #text {
   padding: 3px;
-  font-size: 14px;
   background-color: transparent;
 }
 
