@@ -10,12 +10,15 @@ list_passwords() {
     shopt -s nullglob globstar
 	cd "${root}" || exit
 	pw_list=(**/*.gpg)
-	printf '%s\n' "${pw_list[@]%.gpg}" | sort -n
+	printf '  %s\n' "${pw_list[@]%.gpg}" | sort -n
 
 }
 
 prompt='search for passwords...'
-SECRET=$(list_passwords | wofi -i --width 700 --lines 20 --height 250 --prompt="${prompt}" --dmenu --cache-file ${CACHE})
+SECRET=$(list_passwords | wofi -i --width 400 --lines 15 --prompt="${prompt}" --dmenu --cache-file ${CACHE} | \
+  awk '{print $2}')
+
+[[ -z "$SECRET" ]] && { echo "No secret chosen" ; exit 1; }
 
 # Ask whether pass, user or both are required
 
