@@ -18,7 +18,10 @@ WWIDTH=430
 
 LIST=$(nmcli --fields "$FIELDS" connection show | awk \
     -F "[  ]{2,}" \
-    '$2 ~ /vpn/ { sub(/activated/, ""); printf "<tt>%s</tt>\n", $0 }')
+    '$2 ~ /vpn/ {
+      sub(/activated/, "");
+      sub(/--/, "");
+      printf "<tt>%-30s\t</tt>%s\t%s\n", $1,$2,$3 }')
 
 # Dynamically change the height of the rofi menu
 LINENUM=$(echo "$LIST" | wc -l)
@@ -38,7 +41,7 @@ CHENTRY=$(echo -e "$LIST" | uniq -u | \
 
 rm ${CACHE}
 
-ACTIVE=$(echo $CHENTRY | awk -F "[  ]{2,}" '{print //}')
+ACTIVE=$(echo $CHENTRY | awk -F "[  ]{2,}" '{print //}')
 
 VPNID=$(echo "$CHENTRY" | awk -F "[  ]{2,}" '{print $1}')
 

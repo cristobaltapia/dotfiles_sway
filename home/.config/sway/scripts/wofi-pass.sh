@@ -20,8 +20,8 @@ SECRET=$(list_passwords | wofi -i --width 700 --lines 20 --height 250 --prompt="
 # Ask whether pass, user or both are required
 
 options=("Password" \
-        "User" \
         "User and password" \
+        "User" \
         "QR-Code")
 
 option=$(printf '%s\n' "${options[@]%}" | wofi -i --dmenu --width 400 --lines 4 --prompt="..." --cache-file /dev/null)
@@ -30,7 +30,6 @@ echo $option
 
 case ${option} in
   Password )
-    echo "Test"
     ydotool type $(pass get_pass ${SECRET})
     ;;
   User )

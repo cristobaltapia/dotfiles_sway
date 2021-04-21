@@ -10,7 +10,8 @@ export LANGUAGE="en_US:en"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-FIELDS=SSID,SECURITY,BARS
+# FIELDS=SSID,SECURITY,BARS,ACTIVE
+FIELDS=SSID,BARS,ACTIVE,SECURITY
 POSITION=0
 XOFF=-30
 LOC=3
@@ -18,7 +19,12 @@ CACHE=~/.local/tmp/wifi-wofi
 WWIDTH=410
 MAXHEIGHT=1000
 
-LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | awk '{ printf "<tt>%s</tt>\n", $0 }')
+LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | \
+  awk -F "[  ]{2,}" '/SSID/ {next} {;
+      sub(/yes/, "", $3);
+      sub(/no/, "", $3);
+      if ($4 == "--") $4=""; else $4="";
+      printf "<tt>%-4s  %-26s </tt>%s   %s\n", $2,$1,$3,$4 }')
 
 # Bluetooth connections
 LISTB=$(nmcli --fields NAME,TYPE con show | awk '/bluetooth/ { printf "<tt>%s</tt>\n", $0 }')
@@ -32,7 +38,7 @@ CONSTATE=$(nmcli -fields WIFI g | awk '/enabled|disabled/ { print $0}')
 CURRSSID=$(LANGUAGE=C nmcli -t -f active,ssid dev wifi | awk -F: '$1 ~ /^yes/ {print $2}')
 
 if [[ ! -z $CURRSSID ]]; then
-	HIGHLINE=$(echo  "$(echo "$LIST" | awk -F "[  ]{2,}" '{print $1}' | grep -Fxn -m 1 "$CURRSSID" | awk -F ":" '{print $1}') + 1" | bc )
+	HIGHLINE=$(echo  "$(echo "$LIST" | awk -F "[  ]{2,}" '{print $2}' | grep -Fxn -m 1 "$CURRSSID" | awk -F ":" '{print $1}') + 1" | bc )
 fi
 
 LINENUM=$(echo -e "toggle\nmanual\n${LIST}\n${LISTB}" | wc -l)
@@ -50,22 +56,17 @@ if [[ "$CONSTATE" =~ "enabled" ]]; then
 elif [[ "$CONSTATE" =~ "disabled" ]]; then
 	TOGGLE="toggle on"
 fi
-echo $TOGGLE
-
 
 CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LIST\n$LISTB" | uniq -u | \
     wofi -i --dmenu -p "Wi-Fi SSID: " --width "$WWIDTH" --lines ${LINENUM} --cache-file /dev/null --location $LOC --xoffset $XOFF | awk -F "[  ]{2,}" '{gsub(/<[^>]*>/, ""); print $0}')
 
-rm ${CACHE}
 
-SECURITY=$(echo "$CHENTRY" | awk -F "[  ]{2,}" '{print $2}')
-
-CHSSID=$(echo "$CHENTRY" | awk -F "[  ]{2,}" '{print $1}')
+CHSSID=$(echo "$CHENTRY" | awk -F "[  ]{2,}" '{print $2}')
 
 # If the user inputs "manual" as their SSID in the start window, it will bring them to this screen
 if [ "$CHENTRY" = "manual" ] ; then
 	# Manual entry of the SSID and password (if appplicable)
-	MSSID=$(echo "enter the SSID of the network (SSID,password)" | wofi --dmenu -p "Manual Entry: " --cache-file ${CACHE})
+	MSSID=$(echo "enter the SSID of the network (SSID,password)" | wofi --dmenu -p "Manual Entry: ")
 	# Separating the password from the entered string
 	MPASS=$(echo "$MSSID" | awk -F "," '{print $2}')
 
