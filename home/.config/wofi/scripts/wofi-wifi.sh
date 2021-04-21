@@ -16,7 +16,7 @@ POSITION=0
 XOFF=-30
 LOC=3
 CACHE=~/.local/tmp/wifi-wofi
-WWIDTH=410
+WWIDTH=370
 MAXHEIGHT=1000
 
 LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | \
