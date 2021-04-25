@@ -220,15 +220,14 @@
     "network": {
       "interface": "wlp2s0", // (Optional) To force the use of this interface
       "format-wifi": "",
-      "format-ethernet": "",
-      "format-linked": "",
-      "format-disconnected": "",
+      "format-ethernet": "",
+      "format-linked": "",
+      "format-disconnected": "",
       // "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
+      "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
       "tooltip-format-linked": "Connected: IP:{ipaddr}/{cidr} ",
       "tooltip-format-disconnected": "Offline ",
-      "on-click": "nmguish -w",
       "interval": 30
     },
     "custom/vpn": {
