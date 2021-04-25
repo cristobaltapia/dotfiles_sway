@@ -151,7 +151,7 @@ if x["cod"] != "404":
         "text": fr"{current_temperature:1.1f}°C",
         "tooltip": (
             f"{city} • {current_temperature:1.1f}°C\n{info}"
-            + f"\nSunrise: {sr}\nSunset: {ss}"
+            + f"\n  Sunrise: {sr}\n  Sunset: {ss}"
         ),
         "percentage": icon_codes[code],
         "code": code,
