@@ -8,6 +8,30 @@
   font-weight: 500;
 }
 
+window.HEADLESS-1 * {
+  background-color: #bf616a;
+  color: #eceff4;
+}
+window.HEADLESS-1 #custom-sep3b {
+  background: #bf616a;
+  color: #88c0d0;
+}
+window.HEADLESS-1 #workspaces.focused {
+  color: #eceff4;
+  background-color: #bf616a;
+  border-radius: 4px;
+}
+window.HEADLESS-1 #workspaces.visible {
+  color: #eceff4;
+  background-color: #bf616a;
+  border-radius: 4px;
+}
+window.HEADLESS-1 #workspaces button.visible {
+  color: #eceff4;
+  background-color: #bf616a;
+  border-radius: 4px;
+}
+
 #waybar {
   background-color: #3b4252;
   color: #eceff4;
@@ -168,6 +192,7 @@
 }
 
 #battery,
+#battery.alert,
 #network,
 #custom-weather,
 #temperature,
@@ -197,6 +222,7 @@
 }
 
 #battery,
+#battery.alert,
 #tray,
 #language {
   background-color: #a3be8c;
@@ -315,29 +341,30 @@
   padding: 0px 8px 0px 8px;
 }
 
+#battery.alert {
+  padding: 0px 0px 0px 0px;
+}
+
 @keyframes blink {
   to {
-    background-color: #3b4252;
-    color: #eceff4;
+    color: #7c818c;
   }
 }
 
-#battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #eceff4;
+#battery.alert.critical:not(.charging) {
+  color: #f53c3c;
   animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
+  animation-duration: 0.3s;
+  animation-timing-function: steps(2,start);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 
-#battery.warning:not(.charging) {
-  color: #eceff4;
-  background-color: #ebcb8b;
+#battery.alert.warning:not(.charging) {
+  color: #ebcb8b;
   animation-name: blink;
   animation-duration: 2s;
-  animation-timing-function: linear;
+  animation-timing-function: steps(2,start);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }

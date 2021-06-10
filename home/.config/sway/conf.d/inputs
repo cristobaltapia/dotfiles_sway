@@ -7,19 +7,18 @@
 input type:keyboard {
     xkb_layout de,es
     xkb_variant ,nodeadkeys
-    xkb_options "grp:alt_shift_toggle, caps:escape"
+    xkb_options "grp:rctrl_rshift_toggle, caps:escape"
 }
 
 input "9011:26214:ydotoold_virtual_device" {
     xkb_layout "us,us"
+    xkb_variant ,
 	xkb_options "grp:shifts_toggle, caps:swapescape"
 }
 
 input type:pointer {
     accel_profile flat
     pointer_accel 0.6
-    # remove for CS
-    # accel_profile adaptive
 }
 
 input "1739:30381:DLL0665:01_06CB:76AD_Touchpad" {
@@ -32,10 +31,14 @@ input "1739:30381:DLL0665:01_06CB:76AD_Touchpad" {
     tap enable
     tap_button_map lrm
     click_method clickfinger
+    accel_profile adaptive
+    pointer_accel 0.2
 }
 
 input "1267:8400:ELAN_Touchscreen" {
-
+    drag enable
+    drag_lock enable
+    map_to_output eDP-1
 }
 
 # Logitech spotlight
@@ -45,11 +48,11 @@ input "1267:8400:ELAN_Touchscreen" {
 #     accel_profile flat
 #     pointer_accel 0.3
 # }
+
 input "1133:50494:Logitech_USB_Receiver_Mouse" {
     accel_profile flat
     pointer_accel 0.3
 }
-
 
 # Wacom configurations
 # - With USB-Cable
@@ -104,22 +107,28 @@ input "1386:788:Wacom_Intuos_Pro_S_(WL)_Pad" {
     dwt enable
 }
 
-# Define seat for wacom tablet
-# seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_Pen"
-# seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Pen"
-# seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_Pad"
-# seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Pad"
-
-# seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_Finger"
-# seat seat_wacom attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Finger"
-
-
 ### Seat configurations
 # For the default seat
-seat seat0 hide_cursor 10000
-seat seat0 hide_cursor when-typing enable
-# seat seat0 idle_inhibit keyboard pointer touchpad touch switch
-# seat seat0 idle_wake "keyboard" "pointer" "touchpad" "touch" "switch"
+seat seat0 {
+    hide_cursor 10000
+    hide_cursor when-typing enable
+    fallback true
+    xcursor_theme "capitaine-cursors"
+}
+
+# Define seat for wacom tablet
+# seat seat_wacom {
+#     attach "1386:788:Wacom_Intuos_Pro_S_Pen"
+#     attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Pen"
+#     attach "1386:788:Wacom_Intuos_Pro_S_Pad"
+#     attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Pad"
+#     attach "1386:788:Wacom_Intuos_Pro_S_Finger"
+#     attach "1386:788:Wacom_Intuos_Pro_S_(WL)_Finger"
+#     hide_cursor 10000
+#     idle_inhibit tablet_tool
+#     idle_wake tablet_tool
+#     xcursor_theme "capitaine-cursors"
+# }
 
 # Define seat for Logitech spotlight
 # seat seat_spotlight {
@@ -130,23 +139,15 @@ seat seat0 hide_cursor when-typing enable
 #     xcursor_theme "laser-pointer-cursors"
 # }
 
+# seat seat0 idle_inhibit keyboard pointer touchpad touch switch
+# seat seat0 idle_wake "keyboard" "pointer" "touchpad" "touch" "switch"
+
 # bindsym --input-device=1133:50494:Logitech_USB_Receiver_Mouse BTN_LEFT exec ydotool key 5
 # bindsym --input-device=1133:50494:Logitech_USB_Receiver_Mouse --release BTN_LEFT exec ydotool key 1
 # bindcode --input-device=1133:50494:Logitech_USB_Receiver 113 exec ydotool key 5
 
-# For wacom seat
-# seat seat_wacom hide_cursor 10000
-# seat seat_wacom idle_inhibit tablet_tool
-# seat seat_wacom idle_wake tablet_tool
-
-seat seat0 fallback true
-
 ### Focus
 focus_follows_mouse no
 
-# Cursor theme
-seat seat0 xcursor_theme "capitaine-cursors"
-# seat seat0 xcursor_theme "laser-pointer-cursors"
-# seat seat_spotlight xcursor_theme "laser-pointer-cursors"
 exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
 # exec_always gsettings set org.gnome.desktop.interface cursor-theme "laser-pointer-cursor"

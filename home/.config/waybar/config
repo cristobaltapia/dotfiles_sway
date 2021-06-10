@@ -34,6 +34,7 @@
       "network",
       "custom/sep2",
       "battery",
+      "battery#alert",
       "sway/language",
       "tray",
       "custom/sep1",
@@ -57,7 +58,7 @@
       "spacing": 15
     },
     "clock": {
-      "tooltip-format": "{calendar}",
+      "tooltip-format": "<tt>{calendar}</tt>",
       "format": "  {:%d/%m/%Y • %H:%M}"
     },
     "custom/sep0": {
@@ -151,30 +152,16 @@
         "high": 95
       }
     },
-    "backlight": {
-      // "device": "acpi_video1",
-      "format": "{percent}% {icon}",
-      "format-icons": [
-        "",
-        ""
-      ],
-      "on-scroll-up": "light -A 1",
-      "on-scroll-down": "light -U 1"
-    },
     "battery": {
       "bat": "BAT0",
       "states": {
-        // "good": 95,
         "warning": 25,
         "critical": 10
       },
       "interval": 10,
       "format": "{capacity}% {icon}",
       "format-charging": "{capacity}% ",
-      //"format-alt": "{time} {icon}",
       "format-full": "",
-      // "format-good": "", // An empty format will hide the module
-      // "format-full": "",
       "format-icons": [
         "",
         "",
@@ -183,6 +170,18 @@
         ""
       ],
       "on-click": "gnome-power-statistics"
+    },
+    "battery#alert": {
+      "bat": "BAT0",
+      "states": {
+        "warning": 25,
+        "critical": 10
+      },
+      "interval": 10,
+      "format": "",
+      "format-warning": "",
+      "format-critical": "",
+      "format-charging": ""
     },
     "battery#kb": {
       "bat": "hid-34:88:5d:5e:0a:ab-battery",
@@ -299,6 +298,82 @@
       "custom/sep3b",
       "cpu",
       "memory",
+      "custom/sep4",
+      "custom/sep3",
+      "custom/sep2",
+      "sway/language",
+      "custom/sep1",
+      "clock"
+    ],
+    "sway/mode": {
+      "format": "<i>{}</i>"
+    },
+    "cpu": {
+      "format": "{usage}% ",
+      "tooltip": false,
+      "interval": 2,
+      "states": {
+        "a": 22,
+        "b": 44,
+        "c": 67,
+        "d": 88
+      }
+    },
+    "sway/language" : {
+      "min-length": 2,
+      "max-length": 3
+    },
+    "memory": {
+      "format": "{}% ",
+      "states": {
+        "high": 95
+      }
+    },
+    "clock": {
+      "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+      "format": "{:%d/%m/%Y • %H:%M}"
+    },
+    "custom/sep1": {
+      "format": ""
+    },
+    "custom/sep2": {
+      "format": ""
+    },
+    "custom/sep3": {
+      "format": ""
+    },
+    "custom/sep3b": {
+      //"format": ""
+      "format": ""
+    },
+    "custom/sep4": {
+      "format": ""
+    },
+    "custom/left1": {
+      "format": ""
+    },
+    "custom/left2": {
+      "format": ""
+    }
+  },
+  {
+    "layer": "top",
+    "output": [
+      "HEADLESS-1"
+    ],
+    "height": 27,
+    // Choose the order of the modules
+    "modules-left": [
+      "custom/left1",
+      "sway/workspaces",
+      "custom/left2",
+      "sway/mode"
+    ],
+    "modules-center": [
+      "sway/window"
+    ],
+    "modules-right": [
+      "custom/sep3b",
       "custom/sep4",
       "custom/sep3",
       "custom/sep2",

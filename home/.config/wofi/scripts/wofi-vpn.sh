@@ -14,15 +14,15 @@ POSITION=0
 XOFF=-30
 LOC=3
 CACHE=~/.local/tmp/vpn-wofi
-WWIDTH=430
+WWIDTH=340
 
 LIST=$(nmcli --fields "$FIELDS" connection show | awk \
     -F "[  ]{2,}" \
     '$2 ~ /vpn/ {
       sub(/activated/, "");
-      sub(/activating/, "");
-      sub(/--/, "");
-      printf "<tt>%-30s\t</tt>%s\t%s\n", $1,$2,$3 }')
+      sub(/activating/, "");
+      sub(/--/, "");
+      printf "<tt>%-30s\t</tt>%s\n", $1,$3 }')
 
 # Dynamically change the height of the rofi menu
 LINENUM=$(echo "$LIST" | wc -l)

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Open a new terminal in the current working directory of a focused terminal
-# terminal="termite"
-terminal="alacritty"
+#terminal="alacritty"
+terminal="foot"
 
 # Get the process id of the currently selected window
 pid=$(swaymsg -t get_tree | jq '.. | select(.type?) | select(.type=="con") | select(.focused==true).pid')

@@ -20,8 +20,8 @@ set $out-left "Dell Inc. DELL P2219H 9Y3B8W2"
 set $out-secondary HDMI-A-1
 
 # Your preferred terminal emulator
-# set $term termite
-set $term alacritty
+# set $term alacritty
+set $term foot
 
 # Passthrough mode for headless session over wayvnc
 # mode passthrough {
@@ -55,7 +55,12 @@ set $term alacritty
     bindsym $mod+Shift+c reload
     #
     # Open nvim with vimwiki
-    bindsym $mod+Shift+n exec "alacritty -t 'vimwiki' -e nvim -c WikiIndex"
+    bindsym $mod+Shift+n exec "foot -T 'vimwiki' nvim -c WikiIndex"
+
+mode passthrough {
+    bindsym $mod+XF86AudioPlay mode default
+}
+bindsym $mod+XF86AudioPlay mode passthrough
 
 #
 # Moving around:
@@ -98,6 +103,7 @@ set $term alacritty
     bindsym $mod+F1 workspace P1
     bindsym $mod+F2 workspace P2
     bindsym $mod+F3 workspace P3
+    bindsym $mod+F4 workspace H1
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -112,6 +118,7 @@ set $term alacritty
     bindsym $mod+Shift+F1 move container to workspace P1
     bindsym $mod+Shift+F2 move container to workspace P2
     bindsym $mod+Shift+F3 move container to workspace P3
+    bindsym $mod+Shift+F4 move container to workspace H1
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
     #
@@ -128,6 +135,7 @@ set $term alacritty
     workspace P1 output $out-secondary $out-main
     workspace P2 output $out-secondary $out-main
     workspace P3 output $out-secondary $out-main
+    workspace H1 output HEADLESS-1 $out-main
 #
 # Layout stuff:
 #
@@ -233,8 +241,10 @@ mode "screen_off" {
 exec --no-startup-id gammastep-indicator
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud --background
-exec --no-startup-id persway --autolayout \
-    -f "[tiling] opacity 0.8; [app_id=\"firefox\"] opacity 1; opacity 1"
+exec --no-startup-id persway --autolayout
+exec ~/.config/sway/scripts/hide_mouse_cs
+# exec --no-startup-id persway --autolayout \
+#     -f "[tiling] opacity 1; [app_id=\"Alacritty\"] opacity 0.8; opacity 1"
 # exec --no-startup-id flashfocus
 
 # Always mute mic at boot
@@ -244,8 +254,16 @@ exec_always "systemctl --user import-environment
 
 # exec startup sway -d 2> ~/sway.log
 
+# ------------------------------------------
+# Fonts
+font "Inter Nerd Font Medium 10"
+exec_always gsettings set org.gnome.desktop.interface font-name "Inter Nerd Font Medium 12"
+exec_always gsettings set org.gnome.desktop.interface document-font-name "Inter Nerd Font Medium 12"
+exec_always gsettings set org.gnome.desktop.interface monospace-font-name "FuraCode Nerd Font Medium 12"
+
 # Fix delay in start of GTK apps
 include ~/.config/sway/conf.d/*
+# include /etc/sway/config.d/*
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \

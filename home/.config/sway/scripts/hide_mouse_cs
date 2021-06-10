@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Deactivates the "hide mouse on type" functionality while playing
+# counter-strike
+curr_state=enable
+
+while [[ true ]]; do
+  state=$(swaymsg -rt subscribe '["window"]' | \
+    jq -r '.container.window_properties.class as $f |
+    ["hl_linux", "hl2_linux"] | map(. == $f) | any(.) |
+    if . then
+      "disable"
+    else
+      "enable" end')
+  if [[ $curr_state != $state ]]; then
+    swaymsg "seat seat0 hide_cursor when-typing ${state}"
+    curr_state=$state
+  fi
+done

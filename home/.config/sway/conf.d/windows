@@ -71,7 +71,7 @@ for_window [class="vtk" title="Visualization Toolkit - OpenGL"] floating enable
 for_window [title="Blender Render"] floating enable; \
     resize width 1300 height 800
 #
-for_window [title="Steam - News *"] floating enable
+for_window [title="Steam - News *"] kill
 for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable; \
     sticky enable; \
     move position 1250 0
@@ -89,7 +89,7 @@ for_window [title="^Vibrometer*"] floating enable; \
 for_window [title="Pubs edit"] floating enable; \
     resize set width 800 height 800
 for_window [app_id="wofi-pubs"] floating enable
-for_window [app_id="Alacritty" title="vimwiki"] floating enable; \
+for_window [app_id="foot" title="vimwiki"] floating enable; \
     resize set width 850 height 810
 for_window [class="feh" title="^pass: *"] floating enable
 for_window [class="hl_linux" title="Counter-Strike"] fullscreen enable

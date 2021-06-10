@@ -18,7 +18,7 @@ prompt='search for passwords...'
 SECRET=$(list_passwords | wofi -i --width 400 --lines 15 --prompt="${prompt}" --dmenu --cache-file ${CACHE} | \
   awk '{print $2}')
 
-[[ -z "$SECRET" ]] && { echo "No secret chosen" ; exit 1; }
+[[ -z "$SECRET" ]] && { echo "No secret chosen. Exiting..." ; exit 1; }
 
 # Ask whether pass, user or both are required
 
@@ -27,7 +27,7 @@ options=("Password" \
         "User" \
         "QR-Code")
 
-option=$(printf '%s\n' "${options[@]%}" | wofi -i --dmenu --width 400 --lines 4 --prompt="..." --cache-file /dev/null)
+option=$(printf '%s\n' "${options[@]%}" | wofi -i --dmenu --width 250 --lines 4 --prompt="..." --cache-file /dev/null)
 
 echo $option
 
