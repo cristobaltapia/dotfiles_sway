@@ -251,6 +251,9 @@ exec ~/.config/sway/scripts/hide_mouse_cs
 exec --no-startup-id pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo 1
 
 exec_always "systemctl --user import-environment
+exec swayrd
+
+bindsym $mod+Tab exec swayr switch-window
 
 # exec startup sway -d 2> ~/sway.log
 

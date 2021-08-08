@@ -114,6 +114,8 @@ seat seat0 {
     hide_cursor when-typing enable
     fallback true
     xcursor_theme "capitaine-cursors"
+    # hide_cursor 700
+    # xcursor_theme "laser-pointer-cursors"
 }
 
 # Define seat for wacom tablet
@@ -150,4 +152,4 @@ seat seat0 {
 focus_follows_mouse no
 
 exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
-# exec_always gsettings set org.gnome.desktop.interface cursor-theme "laser-pointer-cursor"
+# exec_always gsettings set org.gnome.desktop.interface cursor-theme "laser-pointer-cursors"

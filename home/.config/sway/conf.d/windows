@@ -25,7 +25,7 @@ for_window [app_id="evolution" title="^Drucken$"] floating enable
 for_window [app_id="evolution-alarm-notif"] floating enable
 # Multimedia
 for_window [app_id="pavucontrol"] floating enable
-for_window [app_id="pulseeffects"] floating enable
+for_window [app_id="com.github.wwmm.easyeffects"] floating enable
 for_window [class="vlc"] floating enable; \
     resize set width 1080 height 720
 for_window [app_id="zoom" title="Zoom - Free Account"] floating enable; \
@@ -39,8 +39,6 @@ for_window [app_id="zoom" title="^Choose ONE of the audio conference options$"] 
 for_window [app_id="zoom" title="^[zZ]oom$"] floating enable
 for_window [app_id="zoom" title="^Chat"] floating enable; \
     resize width 600 height 700
-for_window [app_id="obs" title="^OBS Studio"] floating enable; \
-    resize width 1450 height 770
 for_window [app_id="obs" title="^V4l2sinkProperties$"] floating enable; \
     move position 1120 0
 # Gnome
