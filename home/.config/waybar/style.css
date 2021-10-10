@@ -236,6 +236,10 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #2e3440;
 }
 
+#bluetooth.disabled {
+  color: #4c566a;
+}
+
 #memory,
 #cpu {
   background-color: #88c0d0;
@@ -277,7 +281,11 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #network.disconnected {
-  color: #f76c6c;
+  color: #4c566a;
+}
+
+#network.disabled {
+  color: #4c566a;
 }
 
 #memory.high {

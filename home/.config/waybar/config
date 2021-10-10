@@ -99,8 +99,8 @@
     "bluetooth": {
       "format": "{icon}",
       "format-icons": {
-        "enabled": "",
-        "disabled": ""
+        "enabled": "",
+        "disabled": ""
       },
       "interval": 15,
       "on-click": "blueberry",
