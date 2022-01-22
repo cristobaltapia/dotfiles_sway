@@ -1,8 +1,12 @@
 profile homeoffice {
     output eDP-1 scale 2 mode 3200x1800 position 1920,0
-    output "Dell Inc. DELL P2219H 9Y3B8W" scale 1 mode 1920x1080 position 0,0
+    output "Dell Inc. DELL P2219H 9Y3B8W2" scale 1 mode 1920x1080 position 0,0
     exec swaymsg output DP-1 subpixel rgb
+    exec swaymsg output eDP-1 adaptive_sync on
+    exec swaymsg output DP-1 adaptive_sync on
     exec swaymsg workspace 7
+    exec swaymsg input '"1386:788:Wacom_Intuos_Pro_S_Pen"' map_to_output DP-1
+    exec swaymsg input '"1386:788:Wacom_Intuos_Pro_S_(WL)_Pen"' map_to_output DP-1
 }
 
 profile tv_home {
@@ -14,6 +18,8 @@ profile work {
     output eDP-1 scale 2 mode 3200x1800 position 160,1080
     output "Goldstar Company Ltd W2442 0x00008F22" scale 1 mode 1920x1080 position 0,0
     exec swaymsg output DP-1 subpixel rgb
+    exec swaymsg 'input "1386:788:Wacom_Intuos_Pro_S_Pen" map_to_output DP-1'
+    exec swaymsg 'input "1386:788:Wacom_Intuos_Pro_S_(WL)_Pen" map_to_output DP-1'
 }
 
 profile work_b {
@@ -29,5 +35,8 @@ profile presentation {
 
 profile nomad {
     output eDP-1 scale 2 mode 3200x1800
+    exec swaymsg output eDP-1 adaptive_sync on
+    exec swaymsg input '"1386:788:Wacom_Intuos_Pro_S_Pen"' map_to_output eDP-1
+    exec swaymsg input '"1386:788:Wacom_Intuos_Pro_S_(WL)_Pen"' map_to_output eDP-1
 }
 
