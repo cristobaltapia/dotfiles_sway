@@ -1,10 +1,10 @@
 width=600
 height=400
 mode=drun
-colors=colors
 filter_rate=100
 allow_markup=true
 no_actions=true
+term=foot
 halign=fill
 orientation=vertical
 content_halign=fill
