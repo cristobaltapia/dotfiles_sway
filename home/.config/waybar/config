@@ -54,7 +54,7 @@
       }
     },
     "tray": {
-      // "icon-size": 21,
+      "icon-size": 16,
       "spacing": 15
     },
     "clock": {
@@ -204,6 +204,7 @@
     "sway/language" : {
       "min-length": 2,
       "max-length": 3,
+      "format" : "{short}",
       "on-update": "~/.config/sway/scripts/kblayout_notification.sh"
     },
     "disk": {
@@ -221,6 +222,7 @@
       "format-wifi": "",
       "format-ethernet": "",
       "format-linked": "",
+      "format-disabled": "",
       "format-disconnected": "",
       // "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -308,6 +310,9 @@
     "sway/mode": {
       "format": "<i>{}</i>"
     },
+    "sway/window": {
+      "icon": false
+    },
     "cpu": {
       "format": "{usage}% ",
       "tooltip": false,
@@ -320,6 +325,7 @@
       }
     },
     "sway/language" : {
+      "format" : "{short}",
       "min-length": 2,
       "max-length": 3
     },
@@ -383,6 +389,9 @@
     ],
     "sway/mode": {
       "format": "<i>{}</i>"
+    },
+    "sway/window": {
+      "icon": false
     },
     "cpu": {
       "format": "{usage}% ",

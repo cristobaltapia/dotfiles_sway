@@ -346,7 +346,8 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #battery {
-  padding: 0px 8px 0px 8px;
+  /* padding: 0px 8px 0px 8px; */
+  min-width: 60px;
 }
 
 #battery.alert {
