@@ -6,7 +6,7 @@ curr_state=enable
 while [[ true ]]; do
   state=$(swaymsg -rt subscribe '["window"]' | \
     jq -r '.container.window_properties.class as $f |
-    ["hl_linux", "hl2_linux"] | map(. == $f) | any(.) |
+    ["hl_linux", "hl2_linux", "gamescope"] | map(. == $f) | any(.) |
     if . then
       "disable"
     else
