@@ -242,12 +242,12 @@ mode "screen_off" {
 # ------------------------------------------
 # Start at boot
 # exec --no-startup-id redshift -m wayland
+exec nwg-wrapper -s ~/.config/nwg-wrapper/plan.py -o eDP-1 -p right -c ~/.config/nwg-wrapper/style.css
 exec --no-startup-id gammastep-indicator
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud --background
 exec --no-startup-id persway --autolayout
-exec ~/.config/sway/scripts/hide_mouse_cs
-exec nwg-wrapper -s ~/.config/nwg-wrapper/plan.py -o eDP-1 -p right -c ~/.config/nwg-wrapper/style.css -a start
+# exec ~/.config/sway/scripts/hide_mouse_cs
 # exec --no-startup-id persway --autolayout \
 #     -f "[tiling] opacity 1; [app_id=\"Alacritty\"] opacity 0.8; opacity 1"
 # exec --no-startup-id flashfocus

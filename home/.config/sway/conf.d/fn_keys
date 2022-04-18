@@ -1,7 +1,7 @@
 # Function keys
 # ------------------------------------------
-set $wobopt --border-color '#ffeceff4' --background-color '#aa3b4252' --bar-color '#ffeceff4'
-set $wobopt-mute --border-color '#ffbf616a' --background-color '#aa3b4252' --bar-color '#ffeceff4'
+set $wobopt --border-color '#eceff4ff' --background-color '#3b4252aa' --bar-color '#eceff4ff'
+set $wobopt-mute --border-color '#bf616aff' --background-color '#3b4252aa' --bar-color '#eceff4ff'
 
 # Brightness controls
 exec_always rm $SWAYSOCK.wob && rm ${SWAYSOCK}_screen.wob && rm ${SWAYSOCK}_dell_screen.wob \

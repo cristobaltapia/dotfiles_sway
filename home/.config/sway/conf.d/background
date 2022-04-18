@@ -1,8 +1,11 @@
 # Bockground
 # output DP-1 bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # output eDP-1 bg /usr/share/backgrounds/adapta/suna.jpg fill
-output DP-1 bg ~/.local/share/backgrounds/archlinux-logo-1920-1080.png fill
-output eDP-1 bg ~/.local/share/backgrounds/archlinux-logo-3200-1800.png fill
+# output DP-1 bg ~/.local/share/backgrounds/archlinux-logo-1920-1080.png fill
+output DP-1 bg ~/.local/share/backgrounds/wallpaper_galaxy_nord_02.png fill
+# output eDP-1 bg ~/.local/share/backgrounds/archlinux-logo-3200-1800.png fill
+# output eDP-1 bg ~/.local/share/backgrounds/wallpaper_nord_05.png fill
+output eDP-1 bg ~/.local/share/backgrounds/wallpaper_galaxy_nord_01.png fill
 output HDMI-A-1 bg ~/.local/share/backgrounds/archlinux-logo-1920-1080.png fill
 output HEADLESS-1 bg ~/.local/share/backgrounds/archlinux-logo-1920-1080.png fill
 # output eDP-1 bg #5e81ac solid_color

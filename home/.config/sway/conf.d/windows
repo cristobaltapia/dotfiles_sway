@@ -8,9 +8,13 @@ hide_edge_borders smart
 # Gaps
 gaps inner 10
 smart_gaps on
+# gaps horizontal 100
 
 # class        border  backgr. text    indicator child_border
 client.focused #a3be8c #a3be8c #fdf6e3 #bf616a #a3be8c
+client.focused_inactive #81a1c1 #81a1c1 #d8dee9 #8fbcbb #4c566a
+client.unfocused #4c566a #4c566a #d8dee9 #8fbcbb #4c566a
+client.urgent #bf616a #bf616a #d8dee9 #ebcb8b #bf616a
 
 # Set floating windows
 # swaymsg -t get_tree
@@ -61,6 +65,7 @@ for_window [app_id="nm-openconnect-auth-dialog"] floating enable; \
 for_window [app_id="org.remmina.Remmina"] floating enable
 # Plotting
 for_window [class="Matplotlib"] floating enable
+for_window [class="Makie"] floating enable
 for_window [title="Figure 1" app_id="python3"] floating enable
 for_window [title="Figure 1" app_id="julia"] floating enable
 for_window [app_id="gksqt"] floating enable
@@ -91,3 +96,4 @@ for_window [app_id="foot" title="vimwiki"] floating enable; \
     resize set width 850 height 810
 for_window [class="feh" title="^pass: *"] floating enable
 for_window [class="hl_linux" title="Counter-Strike"] fullscreen enable
+for_window [app_id="nwg-look"] floating enable

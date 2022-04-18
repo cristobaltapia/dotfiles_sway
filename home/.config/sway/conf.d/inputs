@@ -4,16 +4,22 @@
 #
 # To add Neo2: xkb_layout "de", variant neo
 
-input type:keyboard {
-    xkb_layout de,es
-    xkb_variant ,nodeadkeys
-    xkb_options "grp:rctrl_rshift_toggle, caps:escape"
+input "1133:45849:Logitech_K810_Keyboard" {
+    xkb_layout "de,es"
+    xkb_variant ",nodeadkeys"
+    xkb_options "grp:rctrl_rshift_toggle, caps:ctrl_modifier"
+}
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_layout "de,es"
+    xkb_variant ",nodeadkeys"
+    xkb_options "grp:rctrl_rshift_toggle, caps:ctrl_modifier"
 }
 
 input "9011:26214:ydotoold_virtual_device" {
-    xkb_layout "us,us"
-    xkb_variant ,
-	xkb_options "grp:shifts_toggle, caps:swapescape"
+    xkb_layout "us"
+    xkb_variant ""
+	xkb_options "grp:rctrl_rshift_toggle, caps:escape"
 }
 
 input type:pointer {
