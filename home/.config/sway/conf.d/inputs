@@ -19,7 +19,6 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 input "9011:26214:ydotoold_virtual_device" {
     xkb_layout "us"
     xkb_variant ""
-	xkb_options "grp:rctrl_rshift_toggle, caps:escape"
 }
 
 input type:pointer {

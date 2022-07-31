@@ -68,6 +68,7 @@ for_window [class="Matplotlib"] floating enable
 for_window [class="Makie"] floating enable
 for_window [title="Figure 1" app_id="python3"] floating enable
 for_window [title="Figure 1" app_id="julia"] floating enable
+for_window [app_id="gnuplot_qt"] floating enable
 for_window [app_id="gksqt"] floating enable
 for_window [class="vtk" title="PyVista"] floating enable
 for_window [class="vtk" title="Visualization Toolkit - OpenGL"] floating enable
@@ -97,3 +98,5 @@ for_window [app_id="foot" title="vimwiki"] floating enable; \
 for_window [class="feh" title="^pass: *"] floating enable
 for_window [class="hl_linux" title="Counter-Strike"] fullscreen enable
 for_window [app_id="nwg-look"] floating enable
+for_window [app_id="blueman-manager"] floating enable, \
+    resize width 650 height 800

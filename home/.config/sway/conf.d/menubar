@@ -19,27 +19,13 @@ for_window [app_id="waybar" floating] {
 }
 
 # Wofi as launcher
-set $menu wofi -i -I --show drun
-# set $menu fuzzel --width=20 --lines 10 \
-#     --icon-theme=Paper \
-#     --terminal=foot \
-#     --inner-pad=20 \
-#     --line-height=25 \
-#     --background=3b4252dd \
-#     --text-color=d8dee9ff \
-#     --selection-color=5e81acff \
-#     --selection-text-color=eceff4ff \
-#     --match-color=ebcb8bff \
-#     --border-radius=4 \
-#     --border-width=4 \
-#     --border-color=5e81acff \
-#     --fields=filename,name,generic,comment,keywords \
-#     --font='Inter Nerd Font Medium:size=14'
+# set $menu wofi -i -I --show drun
+set $menu fuzzel --width=20 --lines 10
 # set $menu nwggrid -f -o 0.5 -wm sway
 
 # Passmenu
 # set $passmenu rofi-pass -fn "pango:Noto Sans 12":
-set $passmenu ~/.config/sway/scripts/wofi-pass.sh
+set $passmenu ~/.config/sway/scripts/fuzzel-pass.sh
 
 # Wofi menu for searching through publications
 bindsym $mod+Shift+p exec wofi-pubs
