@@ -212,7 +212,7 @@ bindsym $mod+r mode "resize"
 
 # ------------------------------------------
 # System control (Logout, shutdown, etc)
-set $lock swaylock
+set $lock "gtklock -s ~/.config/gtklock/style.css"
 set $mode_system System: (l) lock, (e) logout, (o) turn off screens, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
 
 set $screenoff  swayidle -w  \
@@ -243,7 +243,8 @@ mode "screen_off" {
 # Start at boot
 # exec --no-startup-id redshift -m wayland
 exec nwg-wrapper -s ~/.config/nwg-wrapper/plan.py -o eDP-1 -p right -c ~/.config/nwg-wrapper/style.css
-exec --no-startup-id gammastep-indicator
+# exec --no-startup-id gammastep-indicator
+exec --no-startup-id wlsunset -L 9.16 -l 48.77 -t 2700 -d 180
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud --background
 exec --no-startup-id persway --autolayout

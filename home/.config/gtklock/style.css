@@ -1,0 +1,10 @@
+window#eDP-1 {
+    background-image: url("/home/tapia/.local/share/backgrounds/archlinux-logo-lock-3200-1800.png");
+    background-size: cover;
+    background-position: center;
+}
+window#DP-1 {
+    background-image: url("/home/tapia/.local/share/backgrounds/archlinux-logo-lock-1920-1080.png");
+    background-size: cover;
+    background-position: center;
+}
