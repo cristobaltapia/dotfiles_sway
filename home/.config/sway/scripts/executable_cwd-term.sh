@@ -20,7 +20,7 @@ then
     notify-send -t 2000 "Terminal in $workdir"
     echo $workdir
     # $terminal -d $workdir
-    $terminal --working-directory $workdir
+    $terminal --working-directory "$workdir"
 else
     notify-send -t 2000 -- "Failed to obtain current directory from $pname"
     echo $HOME
