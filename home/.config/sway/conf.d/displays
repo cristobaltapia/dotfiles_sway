@@ -8,3 +8,4 @@
 # output eDP-1 scale 2 resolution 3200x1800 position 0,0
 # output DP-1 scale 1 resolution 1920x1080 position 0,0 subpixel rgb
 exec_always bash -c "killall kanshi; kanshi"
+# exec kanshi
