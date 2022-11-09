@@ -17,8 +17,8 @@ bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 5 && light 
 
 # ------------------------------------------
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
+bindsym --locked XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
+bindsym --locked XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
 bindsym --locked XF86AudioMute exec ~/.config/sway/scripts/wob_muted
 
 # ------------------------------------------
