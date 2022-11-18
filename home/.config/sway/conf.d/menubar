@@ -1,14 +1,5 @@
 # Manubar
 
-# Status Bar: Waybar
-# Read `man 5 sway-bar` for more information about this section.
-
-bar {
-    swaybar_command waybar
-}
-
-# bindsym $mod+Shift+x exec killall -SIGUSR1 waybar
-
 # Never give focus to waybar
 no_focus [app_id="waybar"]
 
@@ -18,13 +9,10 @@ for_window [app_id="waybar" floating] {
     move down 60px # adjust if some menus still don't fit
 }
 
-# Wofi as launcher
-# set $menu wofi -i -I --show drun
+# Fuzzel as launcher
 set $menu fuzzel --width=20 --lines 10
-# set $menu nwggrid -f -o 0.5 -wm sway
 
 # Passmenu
-# set $passmenu rofi-pass -fn "pango:Noto Sans 12":
 set $passmenu ~/.config/sway/scripts/fuzzel-pass.sh
 
 # Wofi menu for searching through publications

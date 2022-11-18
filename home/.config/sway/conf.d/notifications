@@ -1,5 +1,4 @@
 # Notifications
-exec_always mako
 
 set $mode_notifications Notifications: (d) dismiss, (D) dismiss all, (m) show action menu
 
