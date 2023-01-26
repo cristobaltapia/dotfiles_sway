@@ -1,25 +1,15 @@
+set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 # Function keys
 # ------------------------------------------
-set $wobopt --border-color '#eceff4ff' --background-color '#3b4252aa' --bar-color '#eceff4ff'
-set $wobopt-mute --border-color '#bf616aff' --background-color '#3b4252aa' --bar-color '#eceff4ff'
 
-# Brightness controls
-exec_always rm $SWAYSOCK.wob && rm ${SWAYSOCK}_screen.wob && rm ${SWAYSOCK}_dell_screen.wob \
-    && rm ${SWAYSOCK}_mute.wob
-
-exec_always mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob $wobopt
-exec_always mkfifo ${SWAYSOCK}_screen.wob && tail -f ${SWAYSOCK}_screen.wob | wob $wobopt -O eDP-1 2
-exec_always mkfifo ${SWAYSOCK}_dell_screen.wob && tail -f ${SWAYSOCK}_dell_screen.wob | wob $wobopt -t 1500 -O DP-1 3
-exec_always mkfifo ${SWAYSOCK}_mute.wob && tail -f ${SWAYSOCK}_mute.wob | wob $wobopt-mute 4
-
-bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 5 && light -G | cut -d'.' -f1 > ${SWAYSOCK}_screen.wob
-bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 5 && light -G | cut -d'.' -f1 > ${SWAYSOCK}_screen.wob
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 5 && light -G | cut -d'.' -f1 > $WOBSOCK
 
 # ------------------------------------------
 # Pulse Audio controls
-bindsym --locked XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
-bindsym --locked XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
-bindsym --locked XF86AudioMute exec ~/.config/sway/scripts/wob_muted
+bindsym --locked XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $WOBSOCK
+bindsym --locked XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $WOBSOCK
+bindsym --locked XF86AudioMute exec ~/.config/sway/scripts/wob_muted > $WOBSOCK
 
 # ------------------------------------------
 # Media player controls (make the multimedia keys also work when locked)
@@ -30,7 +20,7 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 
 # Dell brightness
 set $mode_brightness Brightness: (j) Decrease, (k) Increase - (1) 10%, (2) 20%, ... , (0) 100%
-set $show-brightness ~/.config/sway/scripts/wob_second_monitor > ${SWAYSOCK}_dell_screen.wob
+set $show-brightness ~/.config/sway/scripts/wob_second_monitor > $WOBSOCK
 
 mode "$mode_brightness" {
     bindsym $up exec ddcutil -b 8 setvcp 10 + 5 && $show-brightness
