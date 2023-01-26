@@ -18,7 +18,7 @@ WWIDTH=340
 
 LIST=$(nmcli --fields "$FIELDS" connection show | awk \
     -F "[  ]{2,}" \
-    '$2 ~ /vpn/ {
+    '$2 ~ /vpn|wireguard/ {
       sub(/activated/, "");
       sub(/activating/, "");
       sub(/--/, "");

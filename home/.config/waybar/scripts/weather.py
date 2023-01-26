@@ -45,15 +45,18 @@ The script is based on the script posted in[3]
 [3] https://www.geeksforgeeks.org/python-find-current-weather-of-any-city-using-openweathermap-api/
 
 """
-import requests
-import json
-import datetime
 import configparser
-from numpy import linspace, around
+import datetime
+import json
 import os
+
+import geocoder
+import requests
+from numpy import around, linspace
 
 config = configparser.ConfigParser()
 config.read(os.path.expandvars("${HOME}") + "/.config/waybar/scripts/weather.conf")
+lat, long = geocoder.ip('me').latlng
 
 # Read config file information here
 api_key = config["DEFAULT"]["apikey"]
@@ -62,9 +65,10 @@ lang = config["DEFAULT"]["lang"]
 
 # base_url variable to store url
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
-
+# base_url = "https://api.openweathermap.org/data/3.0/onecall?"
 # complete url address
-complete_url = base_url + "appid=" + api_key + "&id=" + city_id + f"&lang={lang}"
+# complete_url = base_url + "appid=" + api_key + "&id=" + city_id + f"&lang={lang}"
+complete_url = base_url + f"lat={lat}&lon={long}&exclude=minutely&appid={api_key}"
 
 # get method of requests module
 # return response object
@@ -149,10 +153,8 @@ if x["cod"] != "404":
 
     out = {
         "text": fr"{current_temperature:1.1f}°C",
-        "tooltip": (
-            f"{city} • {current_temperature:1.1f}°C\n{info}"
-            + f"\n  Sunrise: {sr}\n  Sunset: {ss}"
-        ),
+        "tooltip": (f"{city} • {current_temperature:1.1f}°C\n{info}" +
+                    f"\n  Sunrise: {sr}\n  Sunset: {ss}"),
         "percentage": icon_codes[code],
         "code": code,
         "class": daynight,
