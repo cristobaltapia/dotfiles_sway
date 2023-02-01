@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-ddcutil -b 8 getvcp 10 | awk '{gsub(",", "", $9); printf "%s\n", $9}'
+ddcutil -b 8 getvcp 10 | awk '/value/{gsub(",", "", $9); printf "%s\n", $9}'
