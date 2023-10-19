@@ -16,8 +16,7 @@ profile tv_home {
 
 profile work {
     output eDP-1 scale 2 mode 3200x1800 position 160,1080
-    output "Goldstar Company Ltd W2442 0x00008F22" scale 1 mode 1920x1080 position 0,0
-    exec swaymsg output DP-1 subpixel rgb
+    output "Lenovo Group Limited LEN T27p-10 0x00007F38" scale 1 mode 1920x1080 position 0,0
     exec swaymsg 'input "1386:788:Wacom_Intuos_Pro_S_Pen" map_to_output DP-1'
     exec swaymsg 'input "1386:788:Wacom_Intuos_Pro_S_(WL)_Pen" map_to_output DP-1'
 }
@@ -26,6 +25,16 @@ profile work_b {
     output eDP-1 scale 2 mode 3200x1800 position 160,1080
     output "Fujitsu Siemens Computers GmbH P23T-6 LED YV6N018433" scale 1 mode 1920x1080 position 0,0
     exec swaymsg output DP-1 subpixel rgb
+}
+
+profile mpi {
+    output eDP-1 scale 2 mode 3200x1800 position 480,1440
+    output "Dell Inc. DELL U2722D 1K1CFH3" scale 1 mode 2560x1440 position 0,0
+}
+
+profile maydel {
+    output eDP-1 scale 2 mode 3200x1800 position 0,180
+    output "Dell Inc. DELL U2312HM 2GFKN3BQA6YL" scale 1 mode 1920x1080 position 1600,0
 }
 
 profile presentation {

@@ -26,6 +26,7 @@
       "memory",
       "custom/sep4",
       "pulseaudio",
+      // "wireplumber",
       "pulseaudio#mic",
       //"backlight",
       "custom/sep3",
@@ -240,8 +241,14 @@
       "signal": 2,
       "format-icons": [
         "",
+        "",
         ""
       ]
+    },
+    "wireplumber" : {
+      "format": "{volume}%  {icon}",
+      "format-muted": "",
+      "format-icons": ["", "", ""]
     },
     "pulseaudio": {
       "format": "{volume}% {icon}",

@@ -8,6 +8,7 @@
 # - kanshi (kanshi.service)
 # - mako (mako.service)
 # - wlsunset (wlsunset.service)
+# - wob (wob.socket)
 
 ### Variables
 
@@ -15,13 +16,13 @@
 set $mod Mod4
 
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+set $left t
+set $down n
+set $up r
+set $right h
 
 set $out-main eDP-1
-set $out-left "Dell Inc. DELL P2219H 9Y3B8W2"
+set $out-left DP-1
 #set $out-secondary DP-1
 set $out-secondary HDMI-A-1
 
@@ -58,10 +59,10 @@ set $term foot
     floating_modifier $mod normal
 
     # reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+j reload
     #
     # Open nvim with vimwiki
-    bindsym $mod+Shift+n exec "foot -T 'vimwiki' nvim -c WikiIndex"
+    bindsym $mod+w exec "foot -T 'vimwiki' nvim -c WikiIndex"
 
 mode passthrough {
     bindsym $mod+XF86AudioPlay mode default
@@ -138,9 +139,9 @@ bindsym $mod+XF86AudioPlay mode passthrough
     workspace 8 output $out-main
     workspace 9 output $out-main
     workspace 10 output $out-main
-    workspace P1 output $out-secondary $out-main
-    workspace P2 output $out-secondary $out-main
-    workspace P3 output $out-secondary $out-main
+    workspace P1 output $out-secondary $out-left
+    workspace P2 output $out-secondary $out-left
+    workspace P3 output $out-secondary $out-left
     workspace H1 output HEADLESS-1 $out-main
 #
 # Layout stuff:
@@ -148,13 +149,13 @@ bindsym $mod+XF86AudioPlay mode passthrough
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+x splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+y layout stacking
+    bindsym $mod+u layout tabbed
+    bindsym $mod+a layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -167,12 +168,14 @@ bindsym $mod+XF86AudioPlay mode passthrough
     bindsym $mod+space focus mode_toggle
 
     # move focus to the parent container
-    bindsym $mod+a focus parent
-    bindsym $mod+Shift+a focus child
+    bindsym $mod+c focus parent
+    bindsym $mod+Shift+c focus child
 
     # Move to left and right output
     bindsym $mod+Ctrl+$left focus output left
     bindsym $mod+Ctrl+$right focus output right
+    bindsym $mod+Ctrl+$up focus output up
+    bindsym $mod+Ctrl+$down focus output down
 
 # ------------------------------------------
 # Scratchpad:
@@ -214,7 +217,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+s mode "resize"
 
 # ------------------------------------------
 # System control (Logout, shutdown, etc)
@@ -274,6 +277,7 @@ exec_always gsettings set org.gnome.desktop.interface monospace-font-name "FuraC
 # Fix delay in start of GTK apps
 include ~/.config/sway/conf.d/*
 # include /etc/sway/config.d/*
+exec fcitx5
 
 exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
 exec hash dbus-update-activation-environment 2>/dev/null && \

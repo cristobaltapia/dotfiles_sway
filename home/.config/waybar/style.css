@@ -209,6 +209,7 @@ window.HEADLESS-1 #workspaces button.visible {
 #battery.kb,
 #disk,
 #pulseaudio,
+#wireplumber,
 #memory,
 #cpu,
 #tray,
@@ -258,6 +259,11 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #pulseaudio {
+  background-color: #81a1c1;
+  color: #3b4252;
+}
+
+#wireplumber {
   background-color: #81a1c1;
   color: #3b4252;
 }

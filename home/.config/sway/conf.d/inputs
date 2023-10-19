@@ -3,6 +3,17 @@
 # Read `man 5 sway-input` for more information about this section.
 #
 # To add Neo2: xkb_layout "de", variant neo
+#
+input type:keyboard {
+    xkb_layout "de,es"
+    xkb_variant ",nodeadkeys"
+    xkb_options "grp:rctrl_rshift_toggle, caps:ctrl_modifier"
+}
+
+input "36125:46274:splitkb.com_Aurora_Lily58_rev1" {
+    xkb_layout "de"
+    # xkb_variant "neo"
+}
 
 input "1133:45849:Logitech_K810_Keyboard" {
     xkb_layout "de,es"

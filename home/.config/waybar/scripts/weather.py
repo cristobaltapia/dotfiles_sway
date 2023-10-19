@@ -67,8 +67,8 @@ lang = config["DEFAULT"]["lang"]
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 # base_url = "https://api.openweathermap.org/data/3.0/onecall?"
 # complete url address
-# complete_url = base_url + "appid=" + api_key + "&id=" + city_id + f"&lang={lang}"
-complete_url = base_url + f"lat={lat}&lon={long}&exclude=minutely&appid={api_key}"
+complete_url = base_url + "appid=" + api_key + "&id=" + city_id + f"&lang={lang}"
+# complete_url = base_url + f"lat={lat}&lon={long}&exclude=minutely&appid={api_key}"
 
 # get method of requests module
 # return response object

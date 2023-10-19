@@ -23,18 +23,18 @@ set $mode_brightness Brightness: (j) Decrease, (k) Increase - (1) 10%, (2) 20%, 
 set $show-brightness ~/.config/sway/scripts/wob_second_monitor > $WOBSOCK
 
 mode "$mode_brightness" {
-    bindsym $up exec ddcutil -b 8 setvcp 10 + 5 && $show-brightness
-    bindsym $down exec ddcutil -b 8 setvcp 10 - 5 && $show-brightness
-    bindsym 1 exec ddcutil -b 8 setvcp 10 10 && $show-brightness; mode "default"
-    bindsym 2 exec ddcutil -b 8 setvcp 10 20 && $show-brightness; mode "default"
-    bindsym 3 exec ddcutil -b 8 setvcp 10 30 && $show-brightness; mode "default"
-    bindsym 4 exec ddcutil -b 8 setvcp 10 40 && $show-brightness; mode "default"
-    bindsym 5 exec ddcutil -b 8 setvcp 10 50 && $show-brightness; mode "default"
-    bindsym 6 exec ddcutil -b 8 setvcp 10 60 && $show-brightness; mode "default"
-    bindsym 7 exec ddcutil -b 8 setvcp 10 70 && $show-brightness; mode "default"
-    bindsym 8 exec ddcutil -b 8 setvcp 10 80 && $show-brightness; mode "default"
-    bindsym 9 exec ddcutil -b 8 setvcp 10 90 && $show-brightness; mode "default"
-    bindsym 0 exec ddcutil -b 8 setvcp 10 100 && $show-brightness; mode "default"
+    bindsym $up exec ddcutil -b 7 setvcp 10 + 5 && $show-brightness
+    bindsym $down exec ddcutil -b 7 setvcp 10 - 5 && $show-brightness
+    bindsym 1 exec ddcutil -b 7 setvcp 10 10 && $show-brightness; mode "default"
+    bindsym 2 exec ddcutil -b 7 setvcp 10 20 && $show-brightness; mode "default"
+    bindsym 3 exec ddcutil -b 7 setvcp 10 30 && $show-brightness; mode "default"
+    bindsym 4 exec ddcutil -b 7 setvcp 10 40 && $show-brightness; mode "default"
+    bindsym 5 exec ddcutil -b 7 setvcp 10 50 && $show-brightness; mode "default"
+    bindsym 6 exec ddcutil -b 7 setvcp 10 60 && $show-brightness; mode "default"
+    bindsym 7 exec ddcutil -b 7 setvcp 10 70 && $show-brightness; mode "default"
+    bindsym 8 exec ddcutil -b 7 setvcp 10 80 && $show-brightness; mode "default"
+    bindsym 9 exec ddcutil -b 7 setvcp 10 90 && $show-brightness; mode "default"
+    bindsym 0 exec ddcutil -b 7 setvcp 10 100 && $show-brightness; mode "default"
 
     # return to default mode
     bindsym Return mode "default"

@@ -37,10 +37,10 @@ case ${option} in
     pass get_pass ${SECRET} | wl-copy
     ;;
   User )
-    wlrctl keyboard type $(pass get_user ${SECRET})
+    ydotool type $(pass get_user ${SECRET})
     ;;
   "User and password" )
-    wlrctl keyboard type $(pass get_user ${SECRET})
+    ydotool type $(pass get_user ${SECRET})
     ydotool key 15:1 15:0
     # wlrctl keyboard type $(pass get_pass ${SECRET})
     pass get_pass ${SECRET} | wl-copy

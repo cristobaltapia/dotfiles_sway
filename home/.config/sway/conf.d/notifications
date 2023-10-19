@@ -10,4 +10,4 @@ mode "$mode_notifications" {
 	bindsym m exec makoctl menu wofi -d -L 4 -p 'Choose Action:'; mode default
 }
 
-bindsym $mod+n mode "$mode_notifications"
+bindsym $mod+m mode "$mode_notifications"
