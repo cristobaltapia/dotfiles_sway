@@ -7,7 +7,7 @@ mode "$mode_notifications" {
 	bindsym Return exec makoctl invoke; exec makoctl dismiss; mode default
 	bindsym d exec makoctl dismiss; mode default
 	bindsym Shift+d exec makoctl dismiss -a; mode default
-	bindsym m exec makoctl menu wofi -d -L 4 -p 'Choose Action:'; mode default
+	bindsym m exec makoctl menu fuzzel -d -w 20 -l 5; mode default
 }
 
 bindsym $mod+m mode "$mode_notifications"

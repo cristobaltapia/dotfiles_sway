@@ -22,9 +22,9 @@ input "1133:45849:Logitech_K810_Keyboard" {
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_layout "de,es"
-    xkb_variant ",nodeadkeys"
-    xkb_options "grp:rctrl_rshift_toggle, caps:ctrl_modifier"
+    xkb_layout "de,es,custom"
+    xkb_variant ",nodeadkeys,"
+    xkb_options "grp:rctrl_rshift_toggle"
 }
 
 input "9011:26214:ydotoold_virtual_device" {
@@ -77,6 +77,7 @@ input "1133:50494:Logitech_USB_Receiver_Mouse" {
 # area wacom: (157x98mm) >$ libinput list-devices
 # -> 1800 * 157 / 3200 = x -> x / 98 = y (use 'y')
 input "1386:788:Wacom_Intuos_Pro_S_Pen" {
+    # map_to_output DP-1
     map_to_output DP-1
     map_from_region 0.0x0.0 1.0x0.901
 }

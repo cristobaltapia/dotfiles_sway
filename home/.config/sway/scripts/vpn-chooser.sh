@@ -10,39 +10,33 @@ export LANGUAGE="en_US:en"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 FIELDS=NAME,TYPE,STATE
-POSITION=0
-XOFF=-30
-LOC=3
-CACHE=~/.local/tmp/vpn-wofi
-WWIDTH=340
+WWIDTH=26
 
 LIST=$(nmcli --fields "$FIELDS" connection show | awk \
     -F "[  ]{2,}" \
     '$2 ~ /vpn|wireguard/ {
-      sub(/activated/, "");
+      sub(/activated/, "󰕥");
       sub(/activating/, "");
-      sub(/--/, "");
-      printf "<tt>%-30s\t</tt>%s\n", $1,$3 }')
+      sub(/--/, "󰦜");
+      printf "%-20s\t%s\n", $1,$3 }')
 
 # Dynamically change the height of the rofi menu
 LINENUM=$(echo "$LIST" | wc -l)
 
-WHEIGHT=$((30*$LINENUM))
-
 CHENTRY=$(echo -e "$LIST" | uniq -u | \
-    wofi -i \
+    fuzzel -d \
     --dmenu \
-    -p "Choose a VPN connection: " \
-    --width "$WWIDTH" \
-    --height $WHEIGHT \
-    --cache-file ${CACHE} \
-    --location $LOC \
-    --xoffset $XOFF | \
+    -p "VPN: > " \
+    --font 'FuraCode Nerd Font:size=13'\
+    --border-color 'ebcb8bff' \
+    -w $WWIDTH \
+    -l $LINENUM \
+    --anchor top-right | \
     sed -e 's/<[^>]*>//g')
 
 rm ${CACHE}
 
-ACTIVE=$(echo $CHENTRY | awk -F "[  ]{2,}" '{print //}')
+ACTIVE=$(echo $CHENTRY | awk -F "[  ]{2,}" '{print /󰕥/}')
 
 VPNID=$(echo "$CHENTRY" | awk -F "[  ]{2,}" '{print $1}')
 

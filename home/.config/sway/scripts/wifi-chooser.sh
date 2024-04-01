@@ -12,26 +12,22 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # FIELDS=SSID,SECURITY,BARS,ACTIVE
 FIELDS=SSID,BARS,ACTIVE,SECURITY
-POSITION=0
-XOFF=-30
-LOC=3
-CACHE=~/.local/tmp/wifi-wofi
-WWIDTH=370
-MAXHEIGHT=1000
+WWIDTH=38
+MAXHEIGHT=20
 
 LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | \
   awk -F "[  ]{2,}" '/SSID/ {next} {;
       sub(/yes/, "", $3);
       sub(/no/, "", $3);
       if ($4 == "--") $4=""; else $4="";
-      printf "<tt>%-4s  %-26s </tt>%s   %s\n", $2,$1,$3,$4 }')
+      printf "%-4s  %-26s %s   %s\n", $2,$1,$3,$4 }')
 
 # Bluetooth connections
 LISTB=$(nmcli --fields NAME,TYPE,ACTIVE con show | \
   awk -F "[  ]{2,}" '/bluetooth/ {;
     sub(/yes/, "", $3);
     sub(/no/, "", $3);
-    printf "<tt>   %-26s </tt>%s   \n", $1,$3 }')
+    printf "    %-26s %s   \n", $1,$3 }')
 
 # Gives a list of known connections so we can parse it later
 KNOWNCON=$(nmcli connection show | awk -F '[[:space:]][[:space:]]+' '{printf "%s\n", $1}')
@@ -62,7 +58,13 @@ elif [[ "$CONSTATE" =~ "disabled" ]]; then
 fi
 
 CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LISTB\n$LIST" | uniq -u | \
-    wofi -i --dmenu -p "Wi-Fi SSID: " --width "$WWIDTH" --lines ${LINENUM} --cache-file /dev/null --location $LOC --xoffset $XOFF | awk -F "[  ]{2,}" '{gsub(/<[^>]*>/, ""); print $0}')
+    fuzzel -d -p "Wi-Fi SSID: " \
+    -w "$WWIDTH" \
+    -l ${LINENUM} \
+    --border-color 'ebcb8bff' \
+    --font 'FuraCode Nerd Font:size=13'\
+    --anchor top-right | \
+    awk -F "[  ]{2,}" '{gsub(/<[^>]*>/, ""); print $0}')
 
 
 CHSSID=$(echo "$CHENTRY" | awk -F "[  ]{2,}" '{print $2}')
