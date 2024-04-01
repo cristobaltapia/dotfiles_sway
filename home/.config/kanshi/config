@@ -28,8 +28,13 @@ profile work_b {
 }
 
 profile mpi {
-    output eDP-1 scale 2 mode 3200x1800 position 480,1440
-    output "Dell Inc. DELL U2722D 1K1CFH3" scale 1 mode 2560x1440 position 0,0
+    output eDP-1 scale 2 mode 3200x1800 position 1920,850
+    output "Dell Inc. DELL U2422H GHLV1K3" scale 1 mode 1920x1080 position 0,0
+}
+
+profile mpi {
+    output eDP-1 scale 2 mode 3200x1800 position 0,900
+    output "Dell Inc. DELL U2722D 1K1CFH3" scale 1 mode 1920x1080 position 1600,900
 }
 
 profile maydel {
