@@ -3,7 +3,11 @@ if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
     echo '{"text":"Connected","class":"connected","percentage":100}'
 elif [ -d "/proc/sys/net/ipv4/conf/ppp0" ]; then
     echo '{"text":"Connected","class":"connected","percentage":100}'
-elif [ -d "/proc/sys/net/ipv4/conf/peer_laptop" ]; then
+elif [ -d "/proc/sys/net/ipv4/conf/airvpn_DE" ]; then
+    echo '{"text":"Connected","class":"connected","percentage":100}'
+elif [ -d "/proc/sys/net/ipv4/conf/airvpn_NL" ]; then
+    echo '{"text":"Connected","class":"connected","percentage":100}'
+elif [ -d "/proc/sys/net/ipv4/conf/laptop" ]; then
     echo '{"text":"Connected","class":"connected","percentage":50}'
 else
     echo '{"text":"Disconnected","class":"disconnected","percentage":0}'

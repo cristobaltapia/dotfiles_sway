@@ -4,9 +4,8 @@
   margin: 0px;
   /* font-family: Product Sans, Arial, Helvetica, sans-serif; */
   /* font-family: "FuraCode Nerd Font", Arial, Helvetica, sans-serif; */
-  font-family: Inter Nerd Font;
+  font-family: Inter Nerd Font Propo;
   font-weight: 500;
-  border-radius: 0;
 }
 
 label {
@@ -220,11 +219,12 @@ window.HEADLESS-1 #workspaces button.visible {
 #idle_inhibitor {
   margin-left: 0;
   margin-right: 0;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 7px 0px 5px;
 }
 
 #idle_inhibitor {
   background: #b48ead;
+  padding: 0px 15px 0px 7px;
 }
 
 #clock {
@@ -280,12 +280,12 @@ window.HEADLESS-1 #workspaces button.visible {
 
 #network {
   margin-left: 0;
-  padding-left: 2px;
+  padding-left: 6px;
 }
 
 #custom-vpn {
   margin-right: 0;
-  padding-right: 0;
+  padding-right: 6px;
 }
 
 #custom-vpn.disconnected {
@@ -335,7 +335,7 @@ window.HEADLESS-1 #workspaces button.visible {
 
 #pulseaudio {
   margin-right: 0;
-  padding-right: 0;
+  /* padding-right: 0; */
 }
 
 #pulseaudio.muted {

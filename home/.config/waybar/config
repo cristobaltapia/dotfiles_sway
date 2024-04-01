@@ -198,8 +198,8 @@
     },
     "custom/kblayout": {
       "format": "<b> </b>{}",
-      // "interval": 5,
-      // "signal": 1,
+      "interval": 5,
+      "signal": 1,
       "exec": "~/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'"
     },
     "sway/language" : {
@@ -224,7 +224,6 @@
       "format-ethernet": "",
       "format-linked": "",
       "format-disabled": "",
-      "format-disconnected": "",
       // "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
@@ -248,7 +247,8 @@
     "wireplumber" : {
       "format": "{volume}%  {icon}",
       "format-muted": "",
-      "format-icons": ["", "", ""]
+      "format-icons": ["", "", ""],
+      "on-click": "pavucontrol"
     },
     "pulseaudio": {
       "format": "{volume}% {icon}",
