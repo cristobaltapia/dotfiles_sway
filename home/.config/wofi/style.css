@@ -14,9 +14,9 @@
 #window {
   padding: 2px;
   background-color: rgba(53, 59, 73, 0.97);
-  border: 3px solid #3b4252;
-  border-radius: 2px;
-  font-family: 'Inter Nerd Font','FuraCode Nerd Font Mono';
+  border: 4px solid #ebcb8b;
+  border-radius: 8pt;
+  font-family: 'Inter Nerd Font Propo','FuraCode Nerd Font Mono';
   font-size: 15px;
 }
 
