@@ -8,7 +8,7 @@
       "custom/left1",
       "sway/workspaces",
       "custom/left2",
-      "sway/mode"
+      "sway/mode",
     ],
     // "modules-center": [
     //    "sway/window"
@@ -36,77 +36,88 @@
       "custom/sep2",
       "battery",
       "battery#alert",
-      "sway/language",
+      "power-profiles-daemon",
+      // "sway/language",
       "tray",
       "custom/sep1",
       "clock",
       "custom/sep0",
-      "idle_inhibitor"
+      "custom/wlsunset",
+      "idle_inhibitor",
     ],
     // Modules configuration
     "sway/mode": {
-      "format": "<span style=\"italic\">{}</span>"
+      "format": "<span style=\"italic\">{}</span>",
+    },
+    "custom/wlsunset": {
+      "format": "{icon}",
+      "exec": "$HOME/.config/waybar/scripts/status_wlsunset.sh",
+      "on-click": "$HOME/.config/waybar/scripts/toggle_wlsunset.sh",
+      "return-type": "json",
+      "interval": 3600,
+      "signal": 4,
+      "format-icons": ["", ""],
     },
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
         "activated": "",
-        "deactivated": ""
-      }
+        "deactivated": "",
+      },
     },
     "tray": {
       "icon-size": 16,
-      "spacing": 15
+      "spacing": 15,
     },
     "clock": {
       "tooltip-format": "<tt>{calendar}</tt>",
-      "format": "  {:%d/%m/%Y • %H:%M}"
+      "format": "  {:%d/%m/%Y • %H:%M}",
     },
     "custom/sep0": {
-      "format": ""
+      "format": "",
     },
     "custom/sep1": {
-      "format": ""
+      "format": "",
     },
     "custom/sep2": {
-      "format": ""
+      "format": "",
     },
     "custom/sep3": {
-      "format": ""
+      "format": "",
     },
     "custom/sep4": {
-      "format": ""
+      "format": "",
     },
     "custom/sep5": {
-      "format": ""
+      "format": "",
     },
     "custom/sep6": {
-      "format": ""
+      "format": "",
     },
     "custom/sep7": {
-      "format": ""
+      "format": "",
     },
     "custom/left1": {
-      "format": ""
+      "format": "",
     },
     "custom/left2": {
-      "format": ""
+      "format": "",
     },
     "custom/touchpad": {
       "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
       "tooltip": "Touchpad: active",
-      "format": ""
+      "format": "",
     },
     "bluetooth": {
       "format": "{icon}",
       "format-icons": {
-        "enabled": "",
-        "disabled": ""
+        "enabled": "",
+        "disabled": "",
       },
       "interval": 15,
       "on-click": "blueberry",
       "tooltip": false,
-      "tooltip-format": "{}"
+      "tooltip-format": "{}",
     },
     "custom/weather": {
       "exec": "python ~/.config/waybar/scripts/weather.py",
@@ -133,8 +144,8 @@
         "",
         "",
         "",
-        ""
-      ]
+        "",
+      ],
     },
     "cpu": {
       "format": "{usage}% ",
@@ -144,79 +155,84 @@
         "a": 22,
         "b": 44,
         "c": 67,
-        "d": 88
-      }
+        "d": 88,
+      },
     },
     "memory": {
       "format": "{}% ",
       "states": {
-        "high": 95
-      }
+        "high": 95,
+      },
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": "",
+      },
     },
     "battery": {
       "bat": "BAT0",
       "states": {
         "warning": 25,
-        "critical": 10
+        "critical": 10,
       },
-      "interval": 10,
+      "interval": 30,
       "format": "{capacity}% {icon}",
       "format-charging": "{capacity}% ",
       "format-full": "",
-      "format-icons": [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      "on-click": "gnome-power-statistics"
+      "format-icons": ["", "", "", "", ""],
+      "on-click": "gnome-power-statistics",
     },
     "battery#alert": {
       "bat": "BAT0",
       "states": {
         "warning": 25,
-        "critical": 10
+        "critical": 10,
       },
       "interval": 10,
       "format": "",
       "format-warning": "",
       "format-critical": "",
-      "format-charging": ""
+      "format-charging": "",
     },
     "battery#kb": {
       "bat": "hid-34:88:5d:5e:0a:ab-battery",
       "format": "{icon}",
       "states": {
         "normal": 100,
-        "critical": 20
+        "critical": 20,
       },
       "format-icons": {
         "normal": "",
-        "critical": ""
-      }
+        "critical": "",
+      },
     },
     "custom/kblayout": {
       "format": "<b> </b>{}",
       "interval": 5,
       "signal": 1,
-      "exec": "~/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'"
+      "exec": "~/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'",
     },
-    "sway/language" : {
+    "sway/language": {
       "min-length": 2,
       "max-length": 3,
-      "format" : "{short}",
-      "on-update": "~/.config/sway/scripts/kblayout_notification.sh"
+      "format": "{short}",
+      "on-update": "~/.config/sway/scripts/kblayout_notification.sh",
     },
     "disk": {
       "interval": 30,
       "format": "{free} ",
-      "path": "/"
+      "path": "/",
     },
     "disk#home": {
       "interval": 30,
       "format": "{free} ",
-      "path": "/home"
+      "path": "/home",
     },
     "network": {
       "interface": "wlp2s0", // (Optional) To force the use of this interface
@@ -229,26 +245,22 @@
       "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
       "tooltip-format-linked": "Connected: IP:{ipaddr}/{cidr} ",
       "tooltip-format-disconnected": "Offline ",
-      "interval": 30
+      "interval": 30,
     },
     "custom/vpn": {
       "format": "{icon}",
-      "tooltip-format": "{icon}",
+      "tooltip": false,
       "exec": "$HOME/.config/waybar/scripts/vpn_check.sh",
       "return-type": "json",
       "interval": 30,
       "signal": 2,
-      "format-icons": [
-        "",
-        "",
-        ""
-      ]
+      "format-icons": ["", "", ""],
     },
-    "wireplumber" : {
+    "wireplumber": {
       "format": "{volume}%  {icon}",
       "format-muted": "",
       "format-icons": ["", "", ""],
-      "on-click": "pavucontrol"
+      "on-click": "pavucontrol",
     },
     "pulseaudio": {
       "format": "{volume}% {icon}",
@@ -262,15 +274,13 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": [
-          "",
-          "",
-          ""
-        ]
+        "default": ["", "", ""],
       },
-      "on-click": "pavucontrol"
+      "on-click": "pavucontrol",
+      "tooltip": false,
     },
     "pulseaudio#mic": {
+      "tooltip": false,
       "format": "{format_source}",
       "format-source": "{volume}% ",
       "format-source-muted": "",
@@ -279,30 +289,25 @@
         "handsfree": "",
         "headset": "",
         "phone": "",
-        "portable": ""
+        "portable": "",
       },
       "on-click": "pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo toggle",
       "on-scroll-up": "pactl set-source-volume alsa_input.pci-0000_00_1b.0.analog-stereo +5%",
-      "on-scroll-down": "pactl set-source-volume alsa_input.pci-0000_00_1b.0.analog-stereo -5%"
-    }
+      "on-scroll-down": "pactl set-source-volume alsa_input.pci-0000_00_1b.0.analog-stereo -5%",
+    },
   },
   {
     "layer": "top",
-    "output": [
-      "HDMI-A-1",
-      "DP-1"
-    ],
+    "output": ["HDMI-A-1", "DP-1"],
     "height": 27,
     // Choose the order of the modules
     "modules-left": [
       "custom/left1",
       "sway/workspaces",
       "custom/left2",
-      "sway/mode"
+      "sway/mode",
     ],
-    "modules-center": [
-      "sway/window"
-    ],
+    "modules-center": ["sway/window"],
     "modules-right": [
       "custom/sep3b",
       "cpu",
@@ -312,13 +317,13 @@
       "custom/sep2",
       "sway/language",
       "custom/sep1",
-      "clock"
+      "clock",
     ],
     "sway/mode": {
-      "format": "<i>{}</i>"
+      "format": "<i>{}</i>",
     },
     "sway/window": {
-      "icon": false
+      "icon": false,
     },
     "cpu": {
       "format": "{usage}% ",
@@ -328,63 +333,59 @@
         "a": 22,
         "b": 44,
         "c": 67,
-        "d": 88
-      }
+        "d": 88,
+      },
     },
-    "sway/language" : {
-      "format" : "{short}",
+    "sway/language": {
+      "format": "{short}",
       "min-length": 2,
-      "max-length": 3
+      "max-length": 3,
     },
     "memory": {
       "format": "{}% ",
       "states": {
-        "high": 95
-      }
+        "high": 95,
+      },
     },
     "clock": {
       "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-      "format": "{:%d/%m/%Y • %H:%M}"
+      "format": "{:%d/%m/%Y • %H:%M}",
     },
     "custom/sep1": {
-      "format": ""
+      "format": "",
     },
     "custom/sep2": {
-      "format": ""
+      "format": "",
     },
     "custom/sep3": {
-      "format": ""
+      "format": "",
     },
     "custom/sep3b": {
       //"format": ""
-      "format": ""
+      "format": "",
     },
     "custom/sep4": {
-      "format": ""
+      "format": "",
     },
     "custom/left1": {
-      "format": ""
+      "format": "",
     },
     "custom/left2": {
-      "format": ""
-    }
+      "format": "",
+    },
   },
   {
     "layer": "top",
-    "output": [
-      "HEADLESS-1"
-    ],
+    "output": ["HEADLESS-1"],
     "height": 27,
     // Choose the order of the modules
     "modules-left": [
       "custom/left1",
       "sway/workspaces",
       "custom/left2",
-      "sway/mode"
+      "sway/mode",
     ],
-    "modules-center": [
-      "sway/window"
-    ],
+    "modules-center": ["sway/window"],
     "modules-right": [
       "custom/sep3b",
       "custom/sep4",
@@ -392,13 +393,13 @@
       "custom/sep2",
       "sway/language",
       "custom/sep1",
-      "clock"
+      "clock",
     ],
     "sway/mode": {
-      "format": "<i>{}</i>"
+      "format": "<i>{}</i>",
     },
     "sway/window": {
-      "icon": false
+      "icon": false,
     },
     "cpu": {
       "format": "{usage}% ",
@@ -408,45 +409,45 @@
         "a": 22,
         "b": 44,
         "c": 67,
-        "d": 88
-      }
+        "d": 88,
+      },
     },
-    "sway/language" : {
+    "sway/language": {
       "min-length": 2,
-      "max-length": 3
+      "max-length": 3,
     },
     "memory": {
       "format": "{}% ",
       "states": {
-        "high": 95
-      }
+        "high": 95,
+      },
     },
     "clock": {
       "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-      "format": "{:%d/%m/%Y • %H:%M}"
+      "format": "{:%d/%m/%Y • %H:%M}",
     },
     "custom/sep1": {
-      "format": ""
+      "format": "",
     },
     "custom/sep2": {
-      "format": ""
+      "format": "",
     },
     "custom/sep3": {
-      "format": ""
+      "format": "",
     },
     "custom/sep3b": {
       //"format": ""
-      "format": ""
+      "format": "",
     },
     "custom/sep4": {
-      "format": ""
+      "format": "",
     },
     "custom/left1": {
-      "format": ""
+      "format": "",
     },
     "custom/left2": {
-      "format": ""
-    }
-  }
+      "format": "",
+    },
+  },
 ]
-// vim: set ft=json sw=2:
+// vim: set ft=jsonc sw=2:

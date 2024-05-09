@@ -9,30 +9,35 @@
 }
 
 label {
-    all: unset;
+  all: unset;
 }
+
 button {
-    all: unset;
+  all: unset;
 }
 
 window.HEADLESS-1 * {
   background-color: #bf616a;
   color: #eceff4;
 }
+
 window.HEADLESS-1 #custom-sep3b {
   background: #bf616a;
   color: #88c0d0;
 }
+
 window.HEADLESS-1 #workspaces.focused {
   color: #eceff4;
   background-color: #bf616a;
   border-radius: 4px;
 }
+
 window.HEADLESS-1 #workspaces.visible {
   color: #eceff4;
   background-color: #bf616a;
   border-radius: 4px;
 }
+
 window.HEADLESS-1 #workspaces button.visible {
   color: #eceff4;
   background-color: #bf616a;
@@ -206,6 +211,8 @@ window.HEADLESS-1 #workspaces button.visible {
 #custom-weather,
 #temperature,
 #battery.kb,
+#battery,
+#power-profiles-daemon,
 #disk,
 #pulseaudio,
 #wireplumber,
@@ -216,15 +223,22 @@ window.HEADLESS-1 #workspaces button.visible {
 #language,
 #bluetooth,
 #clock,
+#custom-wlsunset,
 #idle_inhibitor {
   margin-left: 0;
   margin-right: 0;
-  padding: 0px 7px 0px 5px;
+  padding: 2px 7px 0px 5px;
 }
 
+#custom-wlsunset,
 #idle_inhibitor {
   background: #b48ead;
-  padding: 0px 15px 0px 7px;
+  padding: 0px 7px 0px 7px;
+}
+
+#custom-wlsunset:hover,
+#idle_inhibitor:hover {
+  background: #CCB2C7;
 }
 
 #clock {
@@ -233,6 +247,7 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #battery,
+#power-profiles-daemon,
 #battery.alert,
 #tray,
 #language {
@@ -240,11 +255,27 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #2e3440;
 }
 
+#battery:hover{
+  background-color: #BED1AE;
+}
+
+#power-profiles-daemon:hover {
+  background-color: #BED1AE;
+}
+
 #custom-vpn,
 #network,
 #bluetooth {
   background-color: #d08770;
   color: #2e3440;
+}
+
+#bluetooth {
+  font-size: 16px;
+}
+
+#bluetooth:hover {
+  background-color: #DFAE9F;
 }
 
 #bluetooth.disabled {
@@ -263,6 +294,10 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #3b4252;
 }
 
+#pulseaudio:hover {
+  background-color: #ABBDD4;
+}
+
 #wireplumber {
   background-color: #81a1c1;
   color: #3b4252;
@@ -276,6 +311,10 @@ window.HEADLESS-1 #workspaces button.visible {
 #temperature,
 #battery.kb {
   background-color: #4c566a;
+}
+
+#custom-weather:hover {
+  background-color: #707E99;
 }
 
 #network {
@@ -361,13 +400,8 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #eb4d4b;
 }
 
-#battery {
-  /* padding: 0px 8px 0px 8px; */
-  min-width: 60px;
-}
-
 #battery.alert {
-  padding: 0px 0px 0px 0px;
+  padding: 0px 10px 0px 0px;
 }
 
 @keyframes blink {
@@ -380,7 +414,7 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #f53c3c;
   animation-name: blink;
   animation-duration: 0.3s;
-  animation-timing-function: steps(2,start);
+  animation-timing-function: steps(2, start);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -389,7 +423,7 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #ebcb8b;
   animation-name: blink;
   animation-duration: 2s;
-  animation-timing-function: steps(2,start);
+  animation-timing-function: steps(2, start);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -414,3 +448,5 @@ label:focus {
   padding: 0 0px;
   margin: 0 0px;
 }
+
+/* vim: set ft=css sw=2: */

@@ -56,7 +56,17 @@ from numpy import around, linspace
 
 config = configparser.ConfigParser()
 config.read(os.path.expandvars("${HOME}") + "/.config/waybar/scripts/weather.conf")
-lat, long = geocoder.ip('me').latlng
+try:
+    lat, long = geocoder.ip('me').latlng
+except:
+    out = {
+        "text": fr"Not found",
+        "tooltip": "",
+        "percentage": "0",
+        "code": "",
+    }
+    print(json.dumps(out))
+
 
 # Read config file information here
 api_key = config["DEFAULT"]["apikey"]
@@ -64,15 +74,19 @@ city_id = config["DEFAULT"]["cityid"]
 lang = config["DEFAULT"]["lang"]
 
 # base_url variable to store url
-base_url = "http://api.openweathermap.org/data/2.5/weather?"
-# base_url = "https://api.openweathermap.org/data/3.0/onecall?"
+# base_url = "http://api.openweathermap.org/data/2.5/weather?"
+base_url = "https://api.openweathermap.org/data/3.0/onecall?"
 # complete url address
-complete_url = base_url + "appid=" + api_key + "&id=" + city_id + f"&lang={lang}"
-# complete_url = base_url + f"lat={lat}&lon={long}&exclude=minutely&appid={api_key}"
+# complete_url = base_url + "appid=" + api_key + "&id=" + city_id + f"&lang={lang}"
+complete_url = base_url + f"lat={lat}&lon={long}&exclude=minutely&appid={api_key}"
+
+# Reverse geocoding
+city_url = f"http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={long}&appid={api_key}"
 
 # get method of requests module
 # return response object
 response = requests.get(complete_url)
+r_city = requests.get(city_url).json()[0]
 
 # json method of response object
 # convert json format data into
@@ -109,63 +123,55 @@ icon_codes = {c: p for c, p in zip(codes, percentages)}
 # Check the value of "cod" key is equal to
 # "404", means city is found otherwise,
 # city is not found
-if x["cod"] != "404":
 
-    # store the value of "main"
-    # key in variable y
-    y = x["main"]
+# store the value of "main"
+# key in variable y
+current = x["current"]
 
-    # Get temperature in celsius
-    current_temperature = y["temp"] - 273.15
+# Get temperature in celsius
+current_temperature = current["temp"] - 273.15
 
-    # store the value corresponding
-    # to the "pressure" key of y
-    current_pressure = y["pressure"]
+# store the value corresponding
+# to the "pressure" key of y
+current_pressure = current["pressure"]
 
-    # store the value corresponding
-    # to the "humidity" key of y
-    current_humidiy = y["humidity"]
+# store the value corresponding
+# to the "humidity" key of y
+current_humidiy = current["humidity"]
 
-    # store the value of "weather"
-    # key in variable z
-    z = x["weather"]
+# store the value of "weather"
+# key in variable z
+weather = current["weather"]
 
-    # Get the weather description string
-    weather_description = z[0]
-    code = weather_description["icon"]
+# Get the weather description string
+weather_description = weather[0]
+code = weather_description["icon"]
 
-    # Get current time
-    sunrise_int = x["sys"]["sunrise"]
-    sunrise = datetime.datetime.fromtimestamp(sunrise_int)
-    sr = "{h:02d}:{m:02d}".format(h=sunrise.hour, m=sunrise.minute)
-    sunset_int = x["sys"]["sunset"]
-    sunset = datetime.datetime.fromtimestamp(sunset_int)
-    ss = "{h:02d}:{m:02d}".format(h=sunset.hour, m=sunset.minute)
-    city = x["name"]
+# Get current time
+sunrise_int = current["sunrise"]
+sunrise = datetime.datetime.fromtimestamp(sunrise_int)
+sr = "{h:02d}:{m:02d}".format(h=sunrise.hour, m=sunrise.minute)
+sunset_int = current["sunset"]
+sunset = datetime.datetime.fromtimestamp(sunset_int)
+ss = "{h:02d}:{m:02d}".format(h=sunset.hour, m=sunset.minute)
+# city = x["name"]
 
-    info = weather_description["description"]
+info = weather_description["description"]
 
-    # Day or night?
-    if code[-1] == "d":
-        daynight = "day"
-    else:
-        daynight = "night"
-
-    out = {
-        "text": fr"{current_temperature:1.1f}°C",
-        "tooltip": (f"{city} • {current_temperature:1.1f}°C\n{info}" +
-                    f"\n  Sunrise: {sr}\n  Sunset: {ss}"),
-        "percentage": icon_codes[code],
-        "code": code,
-        "class": daynight,
-    }
-
+# Day or night?
+if code[-1] == "d":
+    daynight = "day"
 else:
-    out = {
-        "text": fr"Not found",
-        "tooltip": fr"Stuttgart {current_temperature:1.1f}°C, {info}",
-        "percentage": icon_codes["01d"],
-        "code": code,
-    }
+    daynight = "night"
+
+out = {
+    "text": fr"{current_temperature:1.1f}°C",
+    "tooltip": (f"{r_city['name']} • {current_temperature:1.1f}°C\n{info}" +
+                f"\n  Sunrise: {sr}\n  Sunset: {ss}"),
+    "percentage": icon_codes[code],
+    "code": code,
+    "class": daynight,
+}
+
 
 print(json.dumps(out))

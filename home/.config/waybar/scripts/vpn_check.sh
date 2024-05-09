@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-if [ -d "/proc/sys/net/ipv4/conf/tun0" ]; then
-    echo '{"text":"Connected","class":"connected","percentage":100}'
-elif [ -d "/proc/sys/net/ipv4/conf/ppp0" ]; then
-    echo '{"text":"Connected","class":"connected","percentage":100}'
-elif [ -d "/proc/sys/net/ipv4/conf/airvpn_DE" ]; then
-    echo '{"text":"Connected","class":"connected","percentage":100}'
-elif [ -d "/proc/sys/net/ipv4/conf/airvpn_NL" ]; then
-    echo '{"text":"Connected","class":"connected","percentage":100}'
-elif [ -d "/proc/sys/net/ipv4/conf/laptop" ]; then
-    echo '{"text":"Connected","class":"connected","percentage":50}'
-else
-    echo '{"text":"Disconnected","class":"disconnected","percentage":0}'
-fi
+
+nmcli --get-values ACTIVE,NAME,TYPE connection show \
+  | awk -F ':' 'BEGIN {active = 0}
+    /yes/ {
+        if ($3 ~ /(wireguard|tun|vpn)/) {
+            active = 1
+        }
+    }
+    END {
+        if (active == 1) {
+            print "{\"text\":\"Connected\",\"class\":\"connected\",\"percentage\":100}"
+        } else {
+            print "{\"text\":\"Disconnected\",\"class\":\"disconnected\",\"percentage\":0}"
+        }
+    }'
