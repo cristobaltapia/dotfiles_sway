@@ -37,6 +37,11 @@ profile mpi {
     output "Dell Inc. DELL U2722D 1K1CFH3" scale 1 mode 1920x1080 position 1600,900
 }
 
+profile ubc {
+    output eDP-1 scale 2 mode 3200x1800 position 1920,0
+    output "Ancor Communications Inc ASUS MX239 F3LMTJ021695" scale 1 mode 1920x1080 position 0,-550
+}
+
 profile maydel {
     output eDP-1 scale 2 mode 3200x1800 position 0,180
     output "Dell Inc. DELL U2312HM 2GFKN3BQA6YL" scale 1 mode 1920x1080 position 1600,0
