@@ -161,7 +161,7 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #custom-sep0 {
-  color: #b48ead;
+  color: #434c5e;
   background: #ebcb8b;
 }
 
@@ -218,7 +218,6 @@ window.HEADLESS-1 #workspaces button.visible {
 #wireplumber,
 #memory,
 #cpu,
-#tray,
 #custom-vpn,
 #language,
 #bluetooth,
@@ -230,15 +229,29 @@ window.HEADLESS-1 #workspaces button.visible {
   padding: 2px 7px 0px 5px;
 }
 
+#custom-sep1,
+#tray {
+  margin-left: 0;
+  margin-right: 0;
+  /* padding: 2px 0px 0px 5px; */
+}
+
 #custom-wlsunset,
 #idle_inhibitor {
-  background: #b48ead;
+  background: #434c5e;
   padding: 0px 7px 0px 7px;
+}
+
+#custom-wlsunset.active {
+  color: #d08770;
+}
+#custom-wlsunset.inactive {
+  color: #88c0d0;
 }
 
 #custom-wlsunset:hover,
 #idle_inhibitor:hover {
-  background: #CCB2C7;
+  background: #4c566a;
 }
 
 #clock {
@@ -255,12 +268,16 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #2e3440;
 }
 
-#battery:hover{
-  background-color: #BED1AE;
+#battery:hover {
+  background-color: #bed1ae;
+}
+
+#battery.alert:hover {
+  background-color: #a3be8c;
 }
 
 #power-profiles-daemon:hover {
-  background-color: #BED1AE;
+  background-color: #bed1ae;
 }
 
 #custom-vpn,
@@ -275,7 +292,7 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #bluetooth:hover {
-  background-color: #DFAE9F;
+  background-color: #dfae9f;
 }
 
 #bluetooth.disabled {
@@ -295,7 +312,7 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #pulseaudio:hover {
-  background-color: #ABBDD4;
+  background-color: #abbdd4;
 }
 
 #wireplumber {
@@ -314,7 +331,7 @@ window.HEADLESS-1 #workspaces button.visible {
 }
 
 #custom-weather:hover {
-  background-color: #707E99;
+  background-color: #707e99;
 }
 
 #network {
@@ -438,7 +455,7 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-  color: #3b4252;
+  color: #b48ead;
 }
 
 #custom-kblayout {

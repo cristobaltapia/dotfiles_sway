@@ -38,14 +38,18 @@
       "battery#alert",
       "power-profiles-daemon",
       // "sway/language",
-      "tray",
-      "custom/sep1",
+      "group/tray",
+      // "tray",
+      // "custom/sep1",
       "clock",
       "custom/sep0",
       "custom/wlsunset",
       "idle_inhibitor",
     ],
     // Modules configuration
+    "sway/workspaces": {
+      "alphabetical_sort": true,
+    },
     "sway/mode": {
       "format": "<span style=\"italic\">{}</span>",
     },
@@ -56,13 +60,23 @@
       "return-type": "json",
       "interval": 3600,
       "signal": 4,
-      "format-icons": ["", ""],
+      // "format-icons": ["", ""],
+      "format-icons": ["", ""],
     },
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
         "activated": "",
         "deactivated": "",
+      },
+    },
+    "group/tray": {
+      "orientation": "horizontal",
+      "modules": ["custom/sep1", "tray"],
+      "drawer": {
+        "transition-duration": 300,
+        // "children-class": "not-power",
+        "transition-left-to-right": false,
       },
     },
     "tray": {
@@ -75,49 +89,62 @@
     },
     "custom/sep0": {
       "format": "",
+      "tooltip": false,
     },
     "custom/sep1": {
-      "format": "",
+      "format": "",
+      "tooltip": false,
     },
     "custom/sep2": {
       "format": "",
+      "tooltip": false,
     },
     "custom/sep3": {
       "format": "",
+      "tooltip": false,
     },
     "custom/sep4": {
       "format": "",
+      "tooltip": false,
     },
     "custom/sep5": {
       "format": "",
+      "tooltip": false,
     },
     "custom/sep6": {
       "format": "",
+      "tooltip": false,
     },
     "custom/sep7": {
       "format": "",
+      "tooltip": false,
     },
     "custom/left1": {
       "format": "",
+      "tooltip": false,
     },
     "custom/left2": {
       "format": "",
+      "tooltip": false,
     },
-    "custom/touchpad": {
-      "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
-      "tooltip": "Touchpad: active",
-      "format": "",
-    },
+    // "custom/touchpad": {
+    //   "exec": "swaymsg input 1739:30381:DLL0665:01_06CB:76AD_Touchpa events disable",
+    //   "tooltip": "Touchpad: active",
+    //   "format": "",
+    // },
     "bluetooth": {
       "format": "{icon}",
       "format-icons": {
         "enabled": "",
         "disabled": "",
       },
-      "interval": 15,
+      "interval": 60,
       "on-click": "blueberry",
-      "tooltip": false,
-      "tooltip-format": "{}",
+      "tooltip": true,
+      "tooltip-format": "",
+      "tooltip-format-connected": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": " {device_alias}",
+      "tooltip-format-enumerate-connected-battery": " {device_alias}\t({device_battery_percentage})%",
     },
     "custom/weather": {
       "exec": "python ~/.config/waybar/scripts/weather.py",
@@ -150,7 +177,7 @@
     "cpu": {
       "format": "{usage}% ",
       "tooltip": false,
-      "interval": 2,
+      "interval": 3,
       "states": {
         "a": 22,
         "b": 44,
@@ -194,29 +221,11 @@
         "warning": 25,
         "critical": 10,
       },
-      "interval": 10,
+      "interval": 30,
       "format": "",
       "format-warning": "",
       "format-critical": "",
       "format-charging": "",
-    },
-    "battery#kb": {
-      "bat": "hid-34:88:5d:5e:0a:ab-battery",
-      "format": "{icon}",
-      "states": {
-        "normal": 100,
-        "critical": 20,
-      },
-      "format-icons": {
-        "normal": "",
-        "critical": "",
-      },
-    },
-    "custom/kblayout": {
-      "format": "<b> </b>{}",
-      "interval": 5,
-      "signal": 1,
-      "exec": "~/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'",
     },
     "sway/language": {
       "min-length": 2,
@@ -252,7 +261,7 @@
       "tooltip": false,
       "exec": "$HOME/.config/waybar/scripts/vpn_check.sh",
       "return-type": "json",
-      "interval": 30,
+      "interval": 3600,
       "signal": 2,
       "format-icons": ["", "", ""],
     },
@@ -315,7 +324,7 @@
       "custom/sep4",
       "custom/sep3",
       "custom/sep2",
-      "sway/language",
+      // "sway/language",
       "custom/sep1",
       "clock",
     ],
@@ -353,25 +362,32 @@
     },
     "custom/sep1": {
       "format": "",
+      "interval": "once",
     },
     "custom/sep2": {
       "format": "",
+      "interval": "once",
     },
     "custom/sep3": {
       "format": "",
+      "interval": "once",
     },
     "custom/sep3b": {
       //"format": ""
       "format": "",
+      "interval": "once",
     },
     "custom/sep4": {
       "format": "",
+      "interval": "once",
     },
     "custom/left1": {
       "format": "",
+      "interval": "once",
     },
     "custom/left2": {
       "format": "",
+      "interval": "once",
     },
   },
   {
@@ -397,6 +413,9 @@
     ],
     "sway/mode": {
       "format": "<i>{}</i>",
+    },
+    "sway/workspaces": {
+      "alphabetical_sort": true,
     },
     "sway/window": {
       "icon": false,
@@ -428,25 +447,32 @@
     },
     "custom/sep1": {
       "format": "",
+      "interval": "once",
     },
     "custom/sep2": {
       "format": "",
+      "interval": "once",
     },
     "custom/sep3": {
       "format": "",
+      "interval": "once",
     },
     "custom/sep3b": {
       //"format": ""
       "format": "",
+      "interval": "once",
     },
     "custom/sep4": {
       "format": "",
+      "interval": "once",
     },
     "custom/left1": {
       "format": "",
+      "interval": "once",
     },
     "custom/left2": {
       "format": "",
+      "interval": "once",
     },
   },
 ]
