@@ -19,14 +19,19 @@ client.urgent #bf616a #bf616a #d8dee9 #ebcb8b #bf616a
 # Set floating windows
 # swaymsg -t get_tree
 for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
-for_window [app_id="evolution" title="^Reference for *"] floating enable
-for_window [app_id="evolution" title="Re: *"] floating enable
-for_window [app_id="evolution" title="Fw: *"] floating enable
-for_window [app_id="evolution" title="Fwd: *"] floating enable
-for_window [app_id="evolution" title="Termin *"] floating enable
-for_window [app_id="evolution" title="Besprechung *"] floating enable
+for_window [app_id="evolution" title="Compose Message"] floating enable
+for_window [app_id="evolution" title="^Reference for .*"] floating enable
+for_window [app_id="evolution" title="Re: .*"] floating enable
+for_window [app_id="evolution" title="Fw: .*"] floating enable
+for_window [app_id="evolution" title="Fwd: .*"] floating enable
+for_window [app_id="evolution" title="Termin .*"] floating enable
+for_window [app_id="evolution" title="Meeting — .*"] floating enable
+for_window [app_id="evolution" title="Appointment — .*"] floating enable
+for_window [app_id="evolution" title="Besprechung .*"] floating enable
 for_window [app_id="evolution" title="^Drucken$"] floating enable
 for_window [app_id="evolution-alarm-notif"] floating enable
+for_window [app_id="foot" title="^compose-message"] floating enable; \
+    resize width 1000 height 720;
 # Multimedia
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="com.github.wwmm.easyeffects"] floating enable
@@ -76,10 +81,9 @@ for_window [class="Vtk" title="PyVista"] floating enable
 for_window [class="vtk" title="Visualization Toolkit - OpenGL"] floating enable
 for_window [title="Blender Render"] floating enable; \
     resize width 1300 height 800
-#
-for_window [title="Steam - News *"] kill
+# Steam
+for_window [title="Steam - News .*"] kill
 for_window [class="^Steam$" title="^Friends$"] floating enable
-# for_window [class="^Steam$" title="Steam - News"] floating enable
 for_window [class="^Steam$" title=".* - Chat"] floating enable
 for_window [class="^Steam$" title="^Settings$"] floating enable
 for_window [class="^Steam$" title=".* - event started"] floating enable
@@ -88,34 +92,34 @@ for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
 for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
+for_window [class="hl_linux" title="Counter-Strike"] fullscreen enable
+# Firefox
 for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable; \
-    sticky enable; \
-    move position 1250 0
-for_window [app_id="firefox" title="^Bild-im-Bild$"] floating enable; \
     sticky enable; \
     move position 1250 0
 for_window [app_id="firefox" title="^Firefox — Sharing Indicator$"] floating enable; \
     move position 1800 920
 for_window [title="^nvim-tridactyl$"] floating enable
-for_window [app_id="firefox" title="^Firefox - Weitergabe-Indikator$"] floating enable; \
-    move position 1800 920
+for_window [app_id="firefox" title="^Opening .*"] resize set width 550 height 450
 for_window [app_id="org.pwmt.zathura" title="^\/tmp\/firefox"] floating enable; \
     resize set width 1000 height 1050
-for_window [title="^Vibrometer*"] floating enable; \
+# Misc
+for_window [app_id="foot" title="vimwiki"] floating enable; \
+    resize set width 850 height 810
+for_window [class="feh" title="^pass: .*"] floating enable
+for_window [title="^Vibrometer.*"] floating enable; \
     resize set width 630 height 820
 for_window [title="Pubs edit"] floating enable; \
     resize set width 800 height 800
 for_window [app_id="wofi-pubs"] floating enable
-for_window [app_id="foot" title="vimwiki"] floating enable; \
-    resize set width 850 height 810
-for_window [class="feh" title="^pass: *"] floating enable
-for_window [class="hl_linux" title="Counter-Strike"] fullscreen enable
+for_window [app_id="rofi-pubs"] floating enable
+for_window [app_id="Send Pubs reference"] floating enable
 for_window [app_id="nwg-look"] floating enable
 for_window [app_id="blueman-manager"] floating enable, \
     resize width 650 height 800
 for_window [class="alfaview" title="^alfaview settings$"] floating enable
-for_window [app_id="foot" title="compose-message"] floating enable; \
-    resize width 970 height 720
+for_window [app_id="WebexFileSelector"] floating enable
+# for_window [app_id="CiscoCollabHost" window_type="floating_con"] kill
 for_window [window_role = "pop-up"] floating enable
 for_window [window_role = "bubble"] floating enable
 for_window [window_role = "dialog"] floating enable
@@ -127,3 +131,7 @@ for_window [app_id = "floating_update"] floating enable, resize set width 1000px
 for_window [class = "(?i)pinentry"] floating enable
 for_window [title = "Administrator privileges required"] floating enable
 for_window [app_id = "wihotspot-gui"] floating enable
+for_window [app_id = "solvespace" title = "^Property Browser — SolveSpace"] floating enable; \
+    resize set width 450px height 500px; \
+    move position 1100 60
+for_window [app_id = "gpick"] floating enable

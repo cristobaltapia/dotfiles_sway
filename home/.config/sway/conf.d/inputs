@@ -133,7 +133,16 @@ seat seat0 {
     xcursor_theme "capitaine-cursors"
     # hide_cursor 700
     # xcursor_theme "laser-pointer-cursors"
+    attach "36125:46274:splitkb.com_Aurora_Lily58_rev1"
+    attach "1133:45849:Logitech_K810_Keyboard"
+    attach "1:1:AT_Translated_Set_2_keyboard"
+    attach "9011:26214:ydotoold_virtual_device"
+    attach "1739:30381:DLL0665:01_06CB:76AD_Touchpad"
+    attach "1267:8400:ELAN_Touchscreen"
+    attach "1133:45075:MX_Anywhere_2_Mouse"
+    fallback true
 }
+
 
 # Define seat for wacom tablet
 # seat seat_wacom {
@@ -154,7 +163,7 @@ seat seat0 {
 #     attach 1133:50494:Logitech_USB_Receiver_Mouse
 #     attach 1133:50494:Logitech_USB_Receiver_Consumer_Control
 #     attach 1133:50494:Logitech_USB_Receiver_System_Control
-#     hide_cursor 300
+#     hide_cursor 500
 #     xcursor_theme "laser-pointer-cursors"
 # }
 

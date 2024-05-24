@@ -93,6 +93,11 @@ bindsym $mod+XF86AudioPlay mode passthrough
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+    # Move workspace left or right
+    bindsym $mod+alt+$left move workspace to output left
+    bindsym $mod+alt+$right move workspace to output right
+    bindsym $mod+alt+$up move workspace to output up
+    bindsym $mod+alt+$down move workspace to output down
 #
 # Workspaces:
 #
@@ -224,9 +229,9 @@ bindsym $mod+s mode "resize"
 set $lock "swaylock -f"
 set $mode_system System: (l) lock, (e) logout, (o) turn off screens, (s) suspend, (r) reboot, (S) shutdown, (R) UEFI
 
-set $screenoff  swayidle -w  \
-                timeout 1 'swaymsg "output * dpms off"' \
-                resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
+set $screenoff swayidle -w  \
+               timeout 1 'swaymsg "output * dpms off"' \
+               resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
 
 mode "$mode_system" {
     bindsym l exec $lock, mode "default"

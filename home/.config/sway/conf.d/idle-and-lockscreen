@@ -2,7 +2,7 @@
 
 ### Idle configuration
 exec swayidle -w \
-         timeout 300 'chayang && swaylock -f' \
+         timeout 300 'swaylock -f' \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'chayang -d 0.5 && swaylock -f'
+         before-sleep 'swaylock -f'

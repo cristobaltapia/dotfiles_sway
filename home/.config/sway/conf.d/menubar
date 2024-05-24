@@ -16,7 +16,7 @@ set $menu fuzzel --width=20 --lines 10
 set $passmenu ~/.config/sway/scripts/fuzzel-pass.sh
 
 # Wofi menu for searching through publications
-bindsym $mod+Shift+p exec wofi-pubs
+bindsym $mod+Shift+p exec rofi-pubs
 # Wofi menu for searching wifi connections
 bindsym $mod+Shift+w exec ~/.config/sway/scripts/wifi-chooser.sh
 # Wofi menu for searching through the VPN connections

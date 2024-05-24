@@ -10,7 +10,7 @@ export LANGUAGE="en_US:en"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 FIELDS=NAME,TYPE,STATE
-WWIDTH=26
+WWIDTH=27
 
 LIST=$(nmcli --fields "$FIELDS" connection show | awk \
     -F "[  ]{2,}" \

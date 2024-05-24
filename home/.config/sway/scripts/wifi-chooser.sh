@@ -12,7 +12,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # FIELDS=SSID,SECURITY,BARS,ACTIVE
 FIELDS=SSID,BARS,ACTIVE,SECURITY
-WWIDTH=38
+WWIDTH=40
 MAXHEIGHT=20
 
 LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d' | \
