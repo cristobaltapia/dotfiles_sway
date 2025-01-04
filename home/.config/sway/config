@@ -26,9 +26,15 @@ set $out-left DP-1
 #set $out-secondary DP-1
 set $out-secondary HDMI-A-1
 
+output eDP-1 color_profile icc ~/.config/sway/icc/dell_xps13_2015.icc
+# ddctutil -b 7 setvcp 16 91
+# ddctutil -b 7 setvcp 18 100
+# ddctutil -b 7 setvcp 1A 81
+output 'Dell Inc. DELL P2219H 9Y3B8W2' color_profile icc ~/.config/sway/icc/dell_P2219H.icc
+
 # Your preferred terminal emulator
 # set $term alacritty
-set $term foot
+set $term footclient
 
 # Passthrough mode for headless session over wayvnc
 # mode passthrough {
@@ -42,7 +48,7 @@ set $term foot
 #
     # start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec ~/.config/sway/scripts/executable_cwd-term.sh
+    # bindsym $mod+Shift+Return exec ~/.config/sway/scripts/executable_cwd-term.sh
 
     # kill focused window
     bindsym $mod+Shift+q kill
@@ -62,12 +68,12 @@ set $term foot
     bindsym $mod+Shift+j reload
     #
     # Open nvim with vimwiki
-    bindsym $mod+w exec "foot -T 'vimwiki' nvim -c WikiIndex"
+    bindsym $mod+w exec "footclient -T 'vimwiki' nvim -c WikiIndex"
 
-mode passthrough {
-    bindsym $mod+XF86AudioPlay mode default
-}
-bindsym $mod+XF86AudioPlay mode passthrough
+# mode passthrough {
+#     bindsym $mod+XF86AudioPlay mode default
+# }
+# bindsym $mod+XF86AudioPlay mode passthrough
 
 #
 # Moving around:
@@ -93,11 +99,11 @@ bindsym $mod+XF86AudioPlay mode passthrough
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-    # Move workspace left or right
-    bindsym $mod+alt+$left move workspace to output left
-    bindsym $mod+alt+$right move workspace to output right
-    bindsym $mod+alt+$up move workspace to output up
-    bindsym $mod+alt+$down move workspace to output down
+    # Move container to outputs
+    bindsym $mod+alt+$left move container to output left; focus output left
+    bindsym $mod+alt+$right move container to output right; focus output right
+    bindsym $mod+alt+$up move container to output up; focus output up
+    bindsym $mod+alt+$down move container to output down; focus output down
 #
 # Workspaces:
 #
@@ -115,7 +121,9 @@ bindsym $mod+XF86AudioPlay mode passthrough
     bindsym $mod+F1 workspace P1
     bindsym $mod+F2 workspace P2
     bindsym $mod+F3 workspace P3
-    bindsym $mod+F4 workspace H1
+    bindsym $mod+F4 workspace P4
+    bindsym $mod+F5 workspace P5
+    bindsym $mod+F6 workspace H1
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1, workspace 1
     bindsym $mod+Shift+2 move container to workspace 2, workspace 2
@@ -130,7 +138,9 @@ bindsym $mod+XF86AudioPlay mode passthrough
     bindsym $mod+Shift+F1 move container to workspace P1, workspace P1
     bindsym $mod+Shift+F2 move container to workspace P2, workspace P2
     bindsym $mod+Shift+F3 move container to workspace P3, workspace P3
-    bindsym $mod+Shift+F4 move container to workspace H1, workspace H1
+    bindsym $mod+Shift+F4 move container to workspace P4, workspace P4
+    bindsym $mod+Shift+F5 move container to workspace P5, workspace P5
+    bindsym $mod+Shift+F6 move container to workspace H1, workspace H1
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
     #
@@ -147,6 +157,8 @@ bindsym $mod+XF86AudioPlay mode passthrough
     workspace P1 output $out-secondary $out-left
     workspace P2 output $out-secondary $out-left
     workspace P3 output $out-secondary $out-left
+    workspace P4 output $out-secondary $out-left
+    workspace P5 output $out-secondary $out-left
     workspace H1 output HEADLESS-1 $out-main
 #
 # Layout stuff:
@@ -283,3 +295,5 @@ include ~/.config/sway/conf.d/*
 exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# vim: set ft=swayconfig

@@ -21,3 +21,5 @@ bindsym $mod+Shift+p exec rofi-pubs
 bindsym $mod+Shift+w exec ~/.config/sway/scripts/wifi-chooser.sh
 # Wofi menu for searching through the VPN connections
 bindsym $mod+Shift+v exec ~/.config/sway/scripts/vpn-chooser.sh
+
+# vim: set ft=swayconfig:

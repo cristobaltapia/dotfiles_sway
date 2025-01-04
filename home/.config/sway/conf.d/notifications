@@ -11,3 +11,5 @@ mode "$mode_notifications" {
 }
 
 bindsym $mod+m mode "$mode_notifications"
+
+# vim: set ft=swayconfig:

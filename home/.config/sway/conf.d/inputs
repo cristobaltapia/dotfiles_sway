@@ -179,3 +179,5 @@ focus_follows_mouse no
 
 exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
 # exec_always gsettings set org.gnome.desktop.interface cursor-theme "laser-pointer-cursors"
+
+# vim: set ft=swayconfig:

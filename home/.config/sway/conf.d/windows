@@ -16,19 +16,24 @@ client.focused_inactive #81a1c1 #81a1c1 #d8dee9 #8fbcbb #4c566a
 client.unfocused #4c566a #4c566a #d8dee9 #8fbcbb #4c566a
 client.urgent #bf616a #bf616a #d8dee9 #ebcb8b #bf616a
 
+# Deactivate idle for certain apps
+for_window [title="Jellyfin Media Player"] inhibit_idle visible
+
 # Set floating windows
 # swaymsg -t get_tree
-for_window [app_id="evolution" title="Nachricht verfassen"] floating enable
-for_window [app_id="evolution" title="Compose Message"] floating enable
-for_window [app_id="evolution" title="^Reference for .*"] floating enable
-for_window [app_id="evolution" title="Re: .*"] floating enable
-for_window [app_id="evolution" title="Fw: .*"] floating enable
-for_window [app_id="evolution" title="Fwd: .*"] floating enable
-for_window [app_id="evolution" title="Termin .*"] floating enable
-for_window [app_id="evolution" title="Meeting — .*"] floating enable
-for_window [app_id="evolution" title="Appointment — .*"] floating enable
-for_window [app_id="evolution" title="Besprechung .*"] floating enable
-for_window [app_id="evolution" title="^Drucken$"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Nachricht verfassen"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Compose Message"] floating enable; \
+    resize width 1000 height 720;
+for_window [app_id="org.gnome.Evolution" title="^Reference for .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Re: .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Fw: .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Fwd: .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Termin .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Meeting — .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Task — .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Appointment — .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="Besprechung .*"] floating enable
+for_window [app_id="org.gnome.Evolution" title="^Drucken$"] floating enable
 for_window [app_id="evolution-alarm-notif"] floating enable
 for_window [app_id="foot" title="^compose-message"] floating enable; \
     resize width 1000 height 720;
@@ -73,14 +78,17 @@ for_window [app_id="org.remmina.Remmina"] floating enable
 # Plotting
 for_window [class="Matplotlib"] floating enable
 for_window [class="Makie"] floating enable
+for_window [class="GLWindow" title="Makie"] floating enable
 for_window [title="Figure 1" app_id="python3"] floating enable
 for_window [title="Figure 1" app_id="julia"] floating enable
 for_window [app_id="gnuplot_qt"] floating enable
 for_window [app_id="gksqt"] floating enable
 for_window [class="Vtk" title="PyVista"] floating enable
 for_window [class="vtk" title="Visualization Toolkit - OpenGL"] floating enable
-for_window [title="Blender Render"] floating enable; \
-    resize width 1300 height 800
+for_window [title="Blender Render" app_id="blender"] floating enable; \
+    resize width 1000 height 700
+for_window [title="Preferences" app_id="blender"] floating enable; \
+    resize width 700 height 700
 # Steam
 for_window [title="Steam - News .*"] kill
 for_window [class="^Steam$" title="^Friends$"] floating enable
@@ -100,7 +108,7 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable; \
 for_window [app_id="firefox" title="^Firefox — Sharing Indicator$"] floating enable; \
     move position 1800 920
 for_window [title="^nvim-tridactyl$"] floating enable
-for_window [app_id="firefox" title="^Opening .*"] resize set width 550 height 450
+# for_window [app_id="firefox" title="^Opening .*"] resize set width 550 height 430
 for_window [app_id="org.pwmt.zathura" title="^\/tmp\/firefox"] floating enable; \
     resize set width 1000 height 1050
 # Misc
@@ -135,3 +143,5 @@ for_window [app_id = "solvespace" title = "^Property Browser — SolveSpace"] fl
     resize set width 450px height 500px; \
     move position 1100 60
 for_window [app_id = "gpick"] floating enable
+
+# vim: set ft=swayconfig:

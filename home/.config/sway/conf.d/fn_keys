@@ -42,3 +42,4 @@ mode "$mode_brightness" {
 }
 bindsym $mod+shift+b mode "$mode_brightness"
 
+# vim: set ft=swayconfig:

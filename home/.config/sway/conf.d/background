@@ -10,3 +10,5 @@ output HDMI-A-1 bg ~/.local/share/backgrounds/archlinux-logo-1920-1080.png fill
 output HEADLESS-1 bg ~/.local/share/backgrounds/archlinux-logo-1920-1080.png fill
 # output eDP-1 bg #5e81ac solid_color
 # output DP-1 bg #5e81ac solid_color
+
+# vim: set ft=swayconfig:
