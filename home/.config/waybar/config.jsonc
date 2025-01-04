@@ -25,8 +25,8 @@
       "cpu",
       "memory",
       "custom/sep4",
-      "pulseaudio",
-      // "wireplumber",
+      //"pulseaudio",
+      "wireplumber",
       "pulseaudio#mic",
       //"backlight",
       "custom/sep3",
@@ -244,16 +244,17 @@
       "path": "/home",
     },
     "network": {
-      "interface": "wlp2s0", // (Optional) To force the use of this interface
+      //"interface": "wlp2s0", // (Optional) To force the use of this interface
       "format-wifi": "",
-      "format-ethernet": "",
-      "format-linked": "",
-      "format-disabled": "",
+      "format-ethernet": "",
+      "format-linked": "",
+      "format-disabled": "",
+      "format-disconnected": "",
       // "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
+      "tooltip-format-ethernet": "Connected: IP:{ipaddr}/{cidr} ",
       "tooltip-format-linked": "Connected: IP:{ipaddr}/{cidr} ",
-      "tooltip-format-disconnected": "Offline ",
+      "tooltip-format-disconnected": "Offline ",
       "interval": 30,
     },
     "custom/vpn": {
@@ -333,6 +334,9 @@
     },
     "sway/window": {
       "icon": false,
+    },
+    "sway/workspaces": {
+      "alphabetical_sort": true,
     },
     "cpu": {
       "format": "{usage}% ",

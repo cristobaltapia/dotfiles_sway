@@ -320,6 +320,10 @@ window.HEADLESS-1 #workspaces button.visible {
   color: #3b4252;
 }
 
+#wireplumber.muted {
+  color: #4c566a;
+}
+
 #disk {
   background-color: #4c566a;
 }
