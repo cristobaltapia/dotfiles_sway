@@ -32,7 +32,7 @@ option=$(printf '%s\n' "${options[@]%}" | fuzzel ${fuzzel_opt} --dmenu --width 2
 case ${option} in
   Password )
     # wlrctl keyboard type $(pass get_pass ${SECRET})
-    pass get_pass ${SECRET} | wl-copy
+    pass get_pass ${SECRET} | wl-copy --paste-once -n
     ;;
   User )
     wlrctl keyboard type $(pass get_user ${SECRET})
@@ -41,7 +41,7 @@ case ${option} in
     wlrctl keyboard type $(pass get_user ${SECRET})
     ydotool key 15:1 15:0
     # wlrctl keyboard type $(pass get_pass ${SECRET})
-    pass get_pass ${SECRET} | wl-copy
+    pass get_pass ${SECRET} | wl-copy --paste-once -n
     ;;
   "QR-Code" )
     if [[ $SECRET =~ wifi$ ]]; then
